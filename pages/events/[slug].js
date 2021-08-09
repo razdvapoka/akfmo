@@ -33,6 +33,7 @@ export async function getStaticProps({ params, locale }) {
     props: {
       event: data?.event ?? null,
     },
+    revalidate: 60,
   }
 }
 

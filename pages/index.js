@@ -35,5 +35,6 @@ export async function getStaticProps(context) {
   const data = await getMainPage(context.locale)
   return {
     props: { data: data.main },
+    revalidate: 60,
   }
 }

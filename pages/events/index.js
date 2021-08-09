@@ -19,5 +19,6 @@ export async function getStaticProps(context) {
   const data = await getEventsWithSlugs(context.locale)
   return {
     props: { events: data?.allEvents?.edges?.map((edge) => edge.node) || [] },
+    revalidate: 60,
   }
 }
