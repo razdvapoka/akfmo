@@ -1,7 +1,20 @@
 import { format } from 'date-fns'
+import { ru, de, enUS } from 'date-fns/locale'
+import { useRouter } from 'next/router'
 import { Date as PrismicDate } from 'prismic-reactjs'
 
-export default function Date({ dateString }) {
+const LOCALE_MAP = {
+  ru: ru,
+  en: enUS,
+  de: de,
+}
+
+export default function Date({ dateString, ...rest }) {
+  const { locale } = useRouter()
   const date = PrismicDate(dateString)
-  return <time dateTime={dateString}>{format(date, 'LLLL	d, yyyy')}</time>
+  return (
+    <time dateTime={dateString} {...rest}>
+      {format(date, 'LLLL	d, yyyy', { locale: LOCALE_MAP[locale] })}
+    </time>
+  )
 }
