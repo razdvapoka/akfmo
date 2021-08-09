@@ -1,10 +1,8 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import ErrorPage from 'next/error'
-import Container from '../../components/container'
 import Layout from '../../components/layout'
 import { getEventsWithSlugs, getEvent } from '../../lib/api'
-import EventTitle from '../../components/post-title'
 
 export default function Post({ event }) {
   const router = useRouter()
@@ -12,30 +10,25 @@ export default function Post({ event }) {
     return <ErrorPage statusCode={404} />
   }
 
-  console.log(event)
-
   return (
     <Layout>
-      <Container>
-        {router.isFallback ? (
-          <EventTitle>Loading…</EventTitle>
-        ) : (
-          <article>
-            <Head>
-              <title>event</title>
-              <meta property="og:image" content={event.cover.url} />
-            </Head>
-            <EventTitle>{event.title}</EventTitle>
-          </article>
-        )}
-      </Container>
+      {router.isFallback ? (
+        <h1>Loading…</h1>
+      ) : (
+        <article>
+          <Head>
+            <title>event</title>
+            <meta property="og:image" content={event.cover.url} />
+          </Head>
+          <h1>{event.title}</h1>
+        </article>
+      )}
     </Layout>
   )
 }
 
-export async function getStaticProps({ params }) {
-  const data = await getEvent(params.slug)
-
+export async function getStaticProps({ params, locale }) {
+  const data = await getEvent(params.slug, locale)
   return {
     props: {
       event: data?.event ?? null,
@@ -45,7 +38,8 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths(context) {
   const eventsWithSlugs = await getEventsWithSlugs(context.defaultLocale)
-  const slugs = eventsWithSlugs?.data?.allEvents?.edges?.map(
+  console.log(eventsWithSlugs)
+  const slugs = eventsWithSlugs?.allEvents?.edges?.map(
     ({ node }) => node._meta.uid
   )
   return {
