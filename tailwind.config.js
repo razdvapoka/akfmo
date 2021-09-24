@@ -33,8 +33,8 @@ module.exports = {
       xxl: '7.8rem',
     },
     lineHeight: {
-      m: '100%',
-      l: '120%',
+      m: 1,
+      l: 1.2,
     },
     letterSpacing: {
       tighter: '-0.01em',
