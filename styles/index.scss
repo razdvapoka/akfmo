@@ -1,0 +1,51 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Right Grotesk';
+  src: url('/fonts/RightGrotesk-Medium.woff2') format('woff2'),
+    url('/fonts/RightGrotesk-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Right Grotesk';
+  src: url('/fonts/RightGrotesk-Bold.woff2') format('woff2'),
+    url('/fonts/RightGrotesk-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Right Grotesk';
+  src: url('/fonts/RightGrotesk-Regular.woff2') format('woff2'),
+    url('/fonts/RightGrotesk-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Right Grotesk, sans-serif;
+  font-size: calc((10 / 375) * 100vw);
+}
+
+@screen lg {
+  :root {
+    font-size: calc((10 / 1440) * 100vw);
+  }
+}
+
+body {
+  @apply text-l;
+  @apply leading-m;
+  @apply tracking-tighter;
+}

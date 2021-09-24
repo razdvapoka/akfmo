@@ -1,36 +1,46 @@
+const range = (length) => Array.from(Array(length).keys())
+
 module.exports = {
   mode: 'jit',
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false,
   theme: {
-    extend: {
-      colors: {
-        'accent-1': '#FAFAFA',
-        'accent-2': '#EAEAEA',
-        'accent-7': '#333',
-        success: '#0070f3',
-        cyan: '#79FFE1',
-      },
-      spacing: {
-        28: '7rem',
-      },
-      letterSpacing: {
-        tighter: '-.04em',
-      },
-      lineHeight: {
-        tight: 1.2,
-      },
-      fontSize: {
-        '5xl': '2.5rem',
-        '6xl': '2.75rem',
-        '7xl': '4.5rem',
-        '8xl': '6.25rem',
-      },
-      boxShadow: {
-        small: '0 5px 10px rgba(0, 0, 0, 0.12)',
-        medium: '0 8px 30px rgba(0, 0, 0, 0.12)',
-      },
+    spacing: range(30).reduce(
+      (acc, step) => ({
+        ...acc,
+        [step]: `${(step * 5) / 10}rem`,
+      }),
+      {}
+    ),
+    screens: {
+      lg: '1024px',
     },
+    colors: {
+      white: '#FFFFFF',
+      black: '#231F20',
+      grey1: '#F4F4F2',
+      grey2: '#A1A198',
+      grey3: '#9AA198',
+      grey4: '#2E2C2C',
+      grey5: '#242222',
+      pink: '#FFE8E8',
+    },
+    fontSize: {
+      s: '1.2rem',
+      m: '1.6rem',
+      l: '1.8rem',
+      xl: '3.2rem',
+      xxl: '7.8rem',
+    },
+    lineHeight: {
+      m: '100%',
+      l: '120%',
+    },
+    letterSpacing: {
+      tighter: '-0.01em',
+      wider: '0.01em',
+    },
+    extend: {},
   },
   variants: {
     extend: {},
