@@ -34,10 +34,10 @@ module.exports = {
     },
     lineHeight: {
       m: 1,
+      ml: 1.1,
       l: 1.2,
     },
     letterSpacing: {
-      tighter: '-0.01em',
       wider: '0.01em',
     },
     extend: {},
