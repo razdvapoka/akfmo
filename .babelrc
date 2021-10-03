@@ -1,44 +1,38 @@
 {
-"presets": ["next/babel"],
-"plugins": [
-  [
-    "inline-react-svg",
-    {
-      "svgo": {
-        "plugins": [
-          {
-            "name": "removeDimensions"
-          },
-          {
-            "name": "removeAttrs",
-            "params": { "attrs": "(data-name)" }
-          },
-          {
-            "name": "cleanupIDs"
-          },
-          {
-            "name": "removeTitle"
-          },
-          {
-            "name": "removeViewBox",
-            "active": false
-          },
-          {
-            "name": "convertColors",
-            "params": {
-              "shorthex": false,
-              "currentColor": true
+  "presets": ["next/babel"],
+  "plugins": [
+    [
+      "inline-react-svg",
+      {
+        "svgo": {
+          "plugins": [
+            {
+              "name": "removeDimensions"
+            },
+            {
+              "name": "removeAttrs",
+              "params": { "attrs": "(data-name)" }
+            },
+            {
+              "name": "cleanupIDs"
+            },
+            {
+              "name": "removeTitle"
+            },
+            {
+              "name": "removeViewBox",
+              "active": false
+            },
+            {
+              "name": "convertColors",
+              "params": {
+                "shorthex": false,
+                "currentColor": true
+              }
             }
-          },
-          {
-            "name": "addAttributesToSVGElement",
-            "params": {
-              "attributes": ['preserveAspectRatio="xMidYMid"']
-            }
-          }
-        ]
+          ]
+        }
       }
-    }
+    ]
   ]
-]
 }
