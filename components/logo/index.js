@@ -1,13 +1,18 @@
 import Link from 'next/link'
-import LogoSvg from '../../public/images/logo.svg'
+import LogoSvg from '../../assets/svg/logo.svg'
+import cn from 'classnames'
 
-
-export default function logo() {
+export default function Logo() {
+  let isDarkTheme = false // future: page past events
   return (
-      <Link href="/">
-          <a className="flex justify-center items-center" aria-label={'logotype'}>
-              <LogoSvg className={['w-[35.5rem]', false ? 'stroke-white text-white' : ''].join(' ')} />
-          </a>
-      </Link>
+    <Link href="/">
+      <a className="flex justify-center items-center" aria-label="logotype">
+        <LogoSvg
+          className={cn('w-[35.5rem]', {
+            'stroke-white text-white': isDarkTheme,
+          })}
+        />
+      </a>
+    </Link>
   )
 }
