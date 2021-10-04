@@ -6,7 +6,10 @@ export default function Logo() {
   let isDarkTheme = false // future: page past events
   return (
     <Link href="/">
-      <a className="flex justify-center items-center" aria-label="logotype">
+      <a
+        className="flex justify-center items-center mb-[6rem]"
+        aria-label="logotype"
+      >
         <LogoSvg
           className={cn('w-[35.5rem]', {
             'stroke-white text-white': isDarkTheme,
