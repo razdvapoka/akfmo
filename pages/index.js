@@ -6,6 +6,7 @@ import { useMemo } from 'react'
 import EventGrid from '../components/event-grid'
 import Layout from '../components/layout'
 import { getMainPage } from '../lib/api'
+import Intro from '../components/intro/index'
 
 export default function Index({ data }) {
   const { t } = useTranslation('common')
@@ -15,6 +16,7 @@ export default function Index({ data }) {
       <Head>
         <title>AKFMO</title>
       </Head>
+      <Intro />
       <h1 className="text-3xl uppercase">{data.title}</h1>
       <div className="w-1/3 mt-4">
         <RichText render={data.about} />
