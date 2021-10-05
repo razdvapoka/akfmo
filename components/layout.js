@@ -1,8 +1,6 @@
-import Header from '../components/header'
-import Footer from '../components/footer'
-import Meta from '../components/meta'
+import { Header, Footer, Meta } from '../components'
 
-export default function Layout({ children }) {
+export const Layout = ({ children }) => {
   return (
     <>
       <Meta />

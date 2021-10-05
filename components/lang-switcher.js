@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import cn from 'classnames'
 
-export default function LangSwitcher() {
+export const LangSwitcher = () => {
   const { locale: currentLocale, locales, asPath } = useRouter()
   return (
     <div className="space-x-2">
