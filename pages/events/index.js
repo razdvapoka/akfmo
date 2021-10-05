@@ -1,7 +1,6 @@
 import Head from 'next/head'
-import Layout from '../../components/layout'
 import { getEventsWithSlugs } from '../../lib/api'
-import EventGrid from '../../components/event-grid'
+import { EventGrid, Layout } from '../../components'
 
 export default function Events({ events }) {
   return (
