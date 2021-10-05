@@ -2,7 +2,7 @@ import Link from 'next/link'
 import LogoSvg from '../../assets/svg/logo.svg'
 import cn from 'classnames'
 
-export default function Logo() {
+const Logo = () => {
   let isDarkTheme = false // future: page past events
   return (
     <Link href="/">
@@ -16,3 +16,5 @@ export default function Logo() {
     </Link>
   )
 }
+
+export default Logo
