@@ -3,7 +3,7 @@ import Image from 'next/image'
 import ArrowRight from '../../assets/svg/arrow-right.svg'
 import homeIntroImage from '../../assets/images/home-intro.jpg'
 
-export default function Intro() {
+const Intro = () => {
   return (
     <section className="grid grid-cols-2 grid-rows-1 min-h-[26rem] mb-16">
       <div className="pt-4 pr-2 flex flex-col justify-between border-r">
@@ -35,3 +35,5 @@ export default function Intro() {
     </section>
   )
 }
+
+export default Intro
