@@ -5,7 +5,7 @@ import cn from 'classnames'
 
 export const Menu = () => {
   return (
-    <div className="grid font-bold grid-cols-2 grid-rows-1 gap-8 pt-4 border-t min-h-[20rem]">
+    <div className="grid font-bold uppercase grid-cols-2 grid-rows-1 gap-8 pt-4 border-t min-h-[20rem]">
       <div
         className={cn('grid grid-cols-2 border-b relative', styles.rightLine)}
       >
