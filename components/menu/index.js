@@ -3,7 +3,7 @@ import LangSwitcher from '../lang-switcher'
 import styles from './styles.module.scss'
 import cn from 'classnames'
 
-const Menu = () => {
+export const Menu = () => {
   return (
     <div className="grid grid-cols-2 grid-rows-1 gap-8 pt-4 border-t min-h-[20rem]">
       <div
@@ -86,5 +86,3 @@ const Menu = () => {
     </div>
   )
 }
-
-export default Menu
