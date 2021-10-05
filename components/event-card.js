@@ -1,16 +1,16 @@
 import { RichText } from 'prismic-reactjs'
 import Link from 'next/link'
 import Image from 'next/image'
-import Date from './date'
+import { Date } from './'
 
-export default function EventCard({
+export const EventCard = ({
   _meta: { uid },
   archived,
   description,
   cover,
   date,
   title,
-}) {
+}) => {
   return (
     <Link href={`/events/${uid}`}>
       <a className="block space-y-2">

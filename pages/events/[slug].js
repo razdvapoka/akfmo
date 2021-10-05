@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import ErrorPage from 'next/error'
-import Layout from '../../components/layout'
+import { Layout } from '../../components'
 import { getEventsWithSlugs, getEvent } from '../../lib/api'
 
 export default function Post({ event }) {
