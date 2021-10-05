@@ -7,7 +7,7 @@ export const Logo = () => {
   return (
     <Link href="/">
       <a
-        className="flex justify-center items-center mb-[6rem]"
+        className="flex justify-center items-center mb-12"
         aria-label="logotype"
       >
         <LogoSvg
