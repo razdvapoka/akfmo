@@ -1,6 +1,6 @@
-import EventCard from './event-card'
+import { EventCard } from './'
 
-export default function EventGrid({ events }) {
+export const EventGrid = ({ events }) => {
   return (
     <div className="grid grid-cols-3 gap-8">
       {events.map((event) => (

@@ -9,7 +9,7 @@ const LOCALE_MAP = {
   de: de,
 }
 
-export default function Date({ dateString, ...rest }) {
+export const Date = ({ dateString, ...rest }) => {
   const { locale } = useRouter()
   const date = PrismicDate(dateString)
   return (

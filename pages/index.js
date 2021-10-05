@@ -3,8 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { RichText } from 'prismic-reactjs'
 import { useMemo } from 'react'
-import EventGrid from '../components/event-grid'
-import Layout from '../components/layout'
+import { EventGrid, Layout } from '../components'
 import { getMainPage } from '../lib/api'
 
 export default function Index({ data }) {
