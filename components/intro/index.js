@@ -3,11 +3,11 @@ import Image from 'next/image'
 import ArrowRight from '../../assets/svg/arrow-right.svg'
 import homeIntroImage from '../../assets/images/home-intro.jpg'
 
-const Intro = () => {
+export const Intro = () => {
   return (
     <section className="grid grid-cols-2 grid-rows-1 min-h-[26rem] mb-16">
       <div className="pt-4 pr-2 flex flex-col justify-between border-r">
-        <h2 className="max-w-4xl uppercase text-[1.6rem] font-bold leading-[1.1]">
+        <h2 className="max-w-4xl uppercase text-m font-bold leading-ml">
           The Cultural Forum Moscow sees itself as a co-operational partner and
           contact point for Austrian artists, cultural institutions and
           scientists for the initiation, planning and implementation of
@@ -15,7 +15,7 @@ const Intro = () => {
         </h2>
         <Link href="/">
           <a className="flex justify-between items-center">
-            <span className="max-w-4xl uppercase text-[1.6rem] font-bold leading-[1.1]">
+            <span className="max-w-4xl uppercase text-m font-bold leading-ml">
               Learn more about AKFMO
             </span>
             <ArrowRight className="w-[1.2rem] h-[1.6rem]" />
@@ -23,7 +23,7 @@ const Intro = () => {
         </Link>
       </div>
       <div className="pt-4 flex justify-center items-center">
-        <div className="block max-w-[34.5rem] w-full ">
+        <div className="max-w-[34.5rem] w-full ">
           <Image
             src={homeIntroImage}
             alt="home intro image"
@@ -35,5 +35,3 @@ const Intro = () => {
     </section>
   )
 }
-
-export default Intro

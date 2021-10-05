@@ -6,7 +6,7 @@ import { useMemo } from 'react'
 import EventGrid from '../components/event-grid'
 import Layout from '../components/layout'
 import { getMainPage } from '../lib/api'
-import Intro from '../components/intro/index'
+import { Intro } from '../components'
 
 export default function Index({ data }) {
   const { t } = useTranslation('common')
