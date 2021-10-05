@@ -3,9 +3,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { RichText } from 'prismic-reactjs'
 import { useMemo } from 'react'
-import { EventGrid, Layout } from '../components'
+import { EventGrid, Layout, Intro } from '../components'
 import { getMainPage } from '../lib/api'
-import { Intro } from '../components'
 
 export default function Index({ data }) {
   const { t } = useTranslation('common')
