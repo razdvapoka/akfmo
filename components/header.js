@@ -5,7 +5,7 @@ import Menu from './menu/index.js'
 
 export default function Header() {
   return (
-    <header className="bg-white z-50 relative top-0 left-0 w-screen p-4 pb-0">
+    <header className="bg-white z-50 relative top-0 left-0 w-screen p-4 pt-[3.1rem] pb-0">
       <Logo />
       <Menu />
     </header>
