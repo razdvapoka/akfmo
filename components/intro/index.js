@@ -14,7 +14,7 @@ export const Intro = () => {
           Austro-Russian and Austro-Belarusian cultural and scientific projects.
         </h2>
         <Link href="/">
-          <a className="flex justify-between items-center">
+          <a className="transform translate-y-full flex justify-between items-center">
             <span className="max-w-4xl uppercase text-m font-bold leading-ml">
               Learn more about AKFMO
             </span>
