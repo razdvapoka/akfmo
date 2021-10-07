@@ -10,7 +10,7 @@ export const LangSwitcher = () => {
         <li className="leading-l" key={locale}>
           <Link href={asPath} locale={locale} scroll={false}>
             <a
-              className={cn({
+              className={cn('hover:underline', {
                 'pointer-events-none underline': locale === currentLocale,
               })}
             >
