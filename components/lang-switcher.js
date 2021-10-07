@@ -5,18 +5,20 @@ import cn from 'classnames'
 export const LangSwitcher = () => {
   const { locale: currentLocale, locales, asPath } = useRouter()
   return (
-    <div className="space-x-2">
+    <ul className="font-bold">
       {locales.map((locale) => (
-        <Link key={locale} href={asPath} locale={locale} scroll={false}>
-          <a
-            className={cn({
-              'pointer-events-none underline': locale === currentLocale,
-            })}
-          >
-            {locale}
-          </a>
-        </Link>
+        <li className="leading-l" key={locale}>
+          <Link href={asPath} locale={locale} scroll={false}>
+            <a
+              className={cn({
+                'pointer-events-none underline': locale === currentLocale,
+              })}
+            >
+              {locale}
+            </a>
+          </Link>
+        </li>
       ))}
-    </div>
+    </ul>
   )
 }
