@@ -15,17 +15,19 @@ export default function Index({ data }) {
         <title>AKFMO</title>
       </Head>
       <Intro />
-      <h1 className="text-3xl uppercase">{data.title}</h1>
-      <div className="w-1/3 mt-4">
-        <RichText render={data.about} />
-      </div>
-      <div className="mt-4">
-        <Link href="/events">
-          <a className="block mt-4 underline uppercase text-xl">
-            {t('allEvents')}
-          </a>
-        </Link>
-        <EventGrid events={events} />
+      <div className="hidden">
+        <h1 className="text-3xl uppercase">{data.title}</h1>
+        <div className="w-1/3 mt-4">
+          <RichText render={data.about} />
+        </div>
+        <div className="mt-4">
+          <Link href="/events">
+            <a className="block mt-4 underline uppercase text-xl">
+              {t('allEvents')}
+            </a>
+          </Link>
+          <EventGrid events={events} />
+        </div>
       </div>
     </Layout>
   )
