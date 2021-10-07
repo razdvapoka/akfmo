@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { RichText } from 'prismic-reactjs'
 import { useMemo } from 'react'
-import { EventGrid, Layout } from '../components'
+import { EventGrid, Layout, Intro } from '../components'
 import { getMainPage } from '../lib/api'
 
 export default function Index({ data }) {
@@ -14,17 +14,20 @@ export default function Index({ data }) {
       <Head>
         <title>AKFMO</title>
       </Head>
-      <h1 className="text-3xl uppercase">{data.title}</h1>
-      <div className="w-1/3 mt-4">
-        <RichText render={data.about} />
-      </div>
-      <div className="mt-4">
-        <Link href="/events">
-          <a className="block mt-4 underline uppercase text-xl">
-            {t('allEvents')}
-          </a>
-        </Link>
-        <EventGrid events={events} />
+      <Intro />
+      <div className="hidden">
+        <h1 className="text-3xl uppercase">{data.title}</h1>
+        <div className="w-1/3 mt-4">
+          <RichText render={data.about} />
+        </div>
+        <div className="mt-4">
+          <Link href="/events">
+            <a className="block mt-4 underline uppercase text-xl">
+              {t('allEvents')}
+            </a>
+          </Link>
+          <EventGrid events={events} />
+        </div>
       </div>
     </Layout>
   )

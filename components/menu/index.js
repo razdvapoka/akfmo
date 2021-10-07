@@ -1,38 +1,39 @@
 import Link from 'next/link'
 import { LangSwitcher } from '../'
-import styles from './styles.module.scss'
 import cn from 'classnames'
 
-export const Menu = () => {
+export const Menu = ({ hasBottomGap }) => {
   return (
-    <div className="grid font-bold uppercase grid-cols-2 grid-rows-1 gap-8 pt-4 border-t min-h-[20rem]">
-      <div
-        className={cn('grid grid-cols-2 border-b relative', styles.rightLine)}
-      >
-        <nav>
+    <div
+      className={cn('font-bold flex pt-4 border-t min-h-[20rem] uppercase', {
+        'pb-4': hasBottomGap,
+      })}
+    >
+      <nav className="w-1/2 flex border-r relative">
+        <div className="flex-1 leading-l">
           <ul>
-            <li className="leading-l">
+            <li>
               <Link href="/">
                 <a className="hover:underline" aria-label="logotype">
                   Events
                 </a>
               </Link>
             </li>
-            <li className="leading-l">
+            <li>
               <Link href="/">
                 <a className="hover:underline" aria-label="logotype">
                   Publications
                 </a>
               </Link>
             </li>
-            <li className="leading-l">
+            <li>
               <Link href="/">
                 <a className="hover:underline" aria-label="logotype">
                   About AKFMO
                 </a>
               </Link>
             </li>
-            <li className="leading-l">
+            <li>
               <Link href="/">
                 <a className="hover:underline" aria-label="logotype">
                   Contact Us
@@ -40,29 +41,29 @@ export const Menu = () => {
               </Link>
             </li>
           </ul>
-        </nav>
-        <nav>
+        </div>
+        <div className="flex-1">
           <LangSwitcher />
-        </nav>
-      </div>
-      <div className="grid grid-cols-3 border-b">
-        <nav aria-label="social links">
+        </div>
+      </nav>
+      <div className="w-1/2 grid grid-cols-3 leading-l">
+        <nav className="pl-4" aria-label="social links">
           <ul>
-            <li className="leading-l">
+            <li>
               <Link href="/">
                 <a className="hover:underline" aria-label="logotype">
                   Instagram
                 </a>
               </Link>
             </li>
-            <li className="leading-l">
+            <li>
               <Link href="/">
                 <a className="hover:underline" aria-label="logotype">
                   Facebook
                 </a>
               </Link>
             </li>
-            <li className="leading-l">
+            <li>
               <Link href="/">
                 <a className="hover:underline" aria-label="logotype">
                   Visit Us
