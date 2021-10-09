@@ -2,8 +2,11 @@ import Link from 'next/link'
 import FooterLogoSvg from '../../assets/svg/footerLogo.svg'
 import styles from './styles.module.scss'
 import cn from 'classnames'
+import { NavigationList, SocialList } from '../'
+import useTranslation from 'next-translate/useTranslation'
 
 export const Footer = () => {
+  const { t } = useTranslation('common')
   return (
     <footer className="px-4 py-[15rem] font-bold uppercase">
       <nav className="grid grid-cols-2 min-h-[68rem] grid-rows-2 gap-x-8 mb-8">
@@ -13,70 +16,19 @@ export const Footer = () => {
             styles.rightLine
           )}
         >
-          <ul aria-label="navigation list">
-            <li className="leading-l">
-              <Link href="/">
-                <a className="hover:underline" aria-label="logotype">
-                  Events
-                </a>
-              </Link>
-            </li>
-            <li className="leading-l">
-              <Link href="/">
-                <a className="hover:underline" aria-label="logotype">
-                  Publications
-                </a>
-              </Link>
-            </li>
-            <li className="leading-l">
-              <Link href="/">
-                <a className="hover:underline" aria-label="logotype">
-                  About AKFMO
-                </a>
-              </Link>
-            </li>
-            <li className="leading-l">
-              <Link href="/">
-                <a className="hover:underline" aria-label="logotype">
-                  Contact Us
-                </a>
-              </Link>
-            </li>
-          </ul>
+          <NavigationList />
         </div>
         <div className="flex items-end border-b pb-4">
-          <ul aria-label="navigation social list">
-            <li className="leading-l">
-              <Link href="/">
-                <a className="hover:underline" aria-label="logotype">
-                  Instagram
-                </a>
-              </Link>
-            </li>
-            <li className="leading-l">
-              <Link href="/">
-                <a className="hover:underline" aria-label="logotype">
-                  Facebook
-                </a>
-              </Link>
-            </li>
-            <li className="leading-l">
-              <Link href="/">
-                <a className="hover:underline" aria-label="logotype">
-                  Visit Us
-                </a>
-              </Link>
-            </li>
-          </ul>
+          <SocialList />
         </div>
         <div className={cn('relative flex items-end', styles.rightLine)}>
           <Link href="/">
-            <a className="hover:underline">website by Kit collective</a>
+            <a className="hover:underline">{t('collectiveFooter')}</a>
           </Link>
         </div>
         <div className="flex items-end">
           <Link href="/">
-            <a className="hover:underline">AKFMO 2021</a>
+            <a className="hover:underline">{t('akfmoFooter')}</a>
           </Link>
         </div>
       </nav>
