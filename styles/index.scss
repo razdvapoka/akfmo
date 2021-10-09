@@ -37,6 +37,13 @@
   font-family: Right Grotesk, sans-serif;
   font-size: calc((10 / 375) * 100vw);
 }
+input.bg-grey3:-webkit-autofill,
+input.bg-grey3:-webkit-autofill:hover,
+input.bg-grey3:-webkit-autofill:focus,
+input.bg-grey3:-webkit-autofill:active{
+  background: rgba(0, 0, 0, 0) !important;
+  -webkit-box-shadow: 0 0 0 30px #9AA198 inset !important;
+}
 
 @screen lg {
   :root {

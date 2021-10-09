@@ -3,6 +3,7 @@ import LogoSvg from '../../assets/svg/logo.svg'
 import cn from 'classnames'
 import useTranslation from 'next-translate/useTranslation'
 
+
 export const Logo = () => {
   const { t } = useTranslation('common')
   let isDarkTheme = false // future: page past events

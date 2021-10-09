@@ -20,5 +20,12 @@
 
   "inroText": "The Cultural Forum Moscow sees itself as a co-operational partner and contact point for Austrian artists, cultural institutions and scientists for the initiation, planning and implementation of Austro-Russian and Austro-Belarusian cultural and scientific projects.",
   "introLinkText": "Learn more about AKFMO",
-  "introImageAltText": "intro image"
+  "introImageAltText": "intro image",
+
+  "switchAll": "view All events",
+  "switchPast": "view past events",
+
+  "subscribeTitle": "Sign up for our newsletter. It will inform you periodically about all important events and other news concerning the Austrian Culturl Forum Moscow.",
+  "subscribeInput": "Your Email",
+  "subscribeImageAlt": "image"
 }
