@@ -13,6 +13,18 @@ export default function Index({ data }) {
       ).flat(),
     [data]
   )
+
+  const publications = useMemo(
+    () =>
+      repeat(
+        10,
+        data.publications.map(({ publication }) => publication)
+      ).flat(),
+    [data]
+  )
+
+  console.log(publications)
+
   return (
     <Layout>
       <Head>
