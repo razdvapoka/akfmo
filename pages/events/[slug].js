@@ -39,7 +39,6 @@ export async function getStaticProps({ params, locale }) {
 
 export async function getStaticPaths(context) {
   const eventsWithSlugs = await getEventsWithSlugs(context.defaultLocale)
-  console.log(eventsWithSlugs)
   const slugs = eventsWithSlugs?.allEvents?.edges?.map(
     ({ node }) => node._meta.uid
   )

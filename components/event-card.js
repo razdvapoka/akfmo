@@ -1,31 +1,54 @@
-import { RichText } from 'prismic-reactjs'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Date } from './'
+import cn from 'classnames'
+import { format } from 'date-fns'
+import { useMemo } from 'react'
+// import useTranslation from 'next-translate/useTranslation'
 
 export const EventCard = ({
-  _meta: { uid },
-  archived,
-  description,
+  _meta: { uid, tags },
   cover,
   date,
   title,
+  location,
+  className,
 }) => {
+  // const { t } = useTranslation('common')
+  const dateString = useMemo(() => format(new Date(date), 'dd.MM.yy'), [date])
   return (
     <Link href={`/events/${uid}`}>
-      <a className="block space-y-2">
-        <div className="aspect-w-16 aspect-h-9">
-          <Image
-            alt={`Cover Image for ${title}`}
-            src={cover.url}
-            layout="fill"
-            objectFit="cover"
-          />
+      <a className={cn('block bg-grey1 pt-4 pb-6', className)}>
+        <div className="pl-5 uppercase font-bold text-m tracking-wider mb-4">
+          {location} | {dateString}
         </div>
-        <h2>{title}</h2>
-        <RichText render={description} />
-        <Date className="block" dateString={date} />
-        {archived && <div>archived!</div>}
+        <div className="flex">
+          <div
+            className={cn(
+              'pl-5',
+              cover.dimensions.width > cover.dimensions.height
+                ? 'w-7/10'
+                : 'w-3/5'
+            )}
+          >
+            <Image
+              className="filter grayscale"
+              alt={`Cover Image for ${title}`}
+              src={cover.url}
+              layout="responsive"
+              objectFit="cover"
+              width={cover.dimensions.width}
+              height={cover.dimensions.height}
+            />
+          </div>
+          <ul className="ml-4 uppercase text-grey2 font-bold text-m tracking-wider space-y-[0.4rem]">
+            {tags.map((tag) => (
+              <li key={tag}>{tag}</li>
+            ))}
+          </ul>
+        </div>
+        <h3 className="text-xl font-medium leading-ml mt-2 w-4/5 pl-5">
+          {title}
+        </h3>
       </a>
     </Link>
   )
