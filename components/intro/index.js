@@ -3,18 +3,16 @@ import Image from 'next/image'
 import homeIntroImage from '../../assets/images/home-intro.jpg'
 import styles from './styles.module.scss'
 import cn from 'classnames'
+import useTranslation from 'next-translate/useTranslation'
 
 export const Intro = () => {
+  const { t } = useTranslation('common')
   return (
     <section className="flex min-h-[24rem] mb-16">
       <div className="w-1/2 border-r pr-4">
         <div className="h-full flex flex-col justify-between border-t pt-4">
           <h2 className="w-5/6 uppercase text-m font-bold leading-ml">
-            The Cultural Forum Moscow sees itself as a co-operational partner
-            and contact point for Austrian artists, cultural institutions and
-            scientists for the initiation, planning and implementation of
-            Austro-Russian and Austro-Belarusian cultural and scientific
-            projects.
+            {t('intro.text')}
           </h2>
           <Link href="/">
             <a
@@ -29,7 +27,7 @@ export const Intro = () => {
                   styles.learnMoreLinkText
                 )}
               >
-                Learn more about AKFMO
+                {t('intro.linkText')}
               </span>
               <span className="text-m font-bold leading-m transform translate-x-2">
                 →
@@ -43,7 +41,7 @@ export const Intro = () => {
           <div className="w-1/2 tranform translate-y-2">
             <Image
               src={homeIntroImage}
-              alt="home intro image"
+              alt={t('intro.imageAltText')}
               layout="responsive"
               objectFit="cover"
             />

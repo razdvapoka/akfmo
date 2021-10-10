@@ -1,8 +1,10 @@
 import Link from 'next/link'
-import { LangSwitcher } from '../'
+import { LangSwitcher, NavigationList, SocialList } from '../'
 import cn from 'classnames'
+import useTranslation from 'next-translate/useTranslation'
 
 export const Menu = ({ hasBottomGap }) => {
+  const { t } = useTranslation('common')
   return (
     <div
       className={cn('font-bold flex pt-4 border-t min-h-[20rem] uppercase', {
@@ -11,36 +13,7 @@ export const Menu = ({ hasBottomGap }) => {
     >
       <nav className="w-1/2 flex border-r relative">
         <div className="flex-1 leading-l">
-          <ul>
-            <li>
-              <Link href="/">
-                <a className="hover:underline" aria-label="logotype">
-                  Events
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/">
-                <a className="hover:underline" aria-label="logotype">
-                  Publications
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/">
-                <a className="hover:underline" aria-label="logotype">
-                  About AKFMO
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/">
-                <a className="hover:underline" aria-label="logotype">
-                  Contact Us
-                </a>
-              </Link>
-            </li>
-          </ul>
+          <NavigationList />
         </div>
         <div className="flex-1">
           <LangSwitcher />
@@ -48,38 +21,16 @@ export const Menu = ({ hasBottomGap }) => {
       </nav>
       <div className="w-1/2 grid grid-cols-3 leading-l">
         <nav className="pl-4" aria-label="social links">
-          <ul>
-            <li>
-              <Link href="/">
-                <a className="hover:underline" aria-label="logotype">
-                  Instagram
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/">
-                <a className="hover:underline" aria-label="logotype">
-                  Facebook
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/">
-                <a className="hover:underline" aria-label="logotype">
-                  Visit Us
-                </a>
-              </Link>
-            </li>
-          </ul>
+          <SocialList />
         </nav>
         <div className="flex justify-center items-start">
           <Link href="/">
-            <a className="hover:underline">Subscribe</a>
+            <a className="hover:underline">{t('subscribe')}</a>
           </Link>
         </div>
         <div className="flex justify-end items-start">
           <Link href="/">
-            <a className="hover:underline">AKFMO</a>
+            <a className="hover:underline">{t('akfmo')}</a>
           </Link>
         </div>
       </div>

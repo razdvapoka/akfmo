@@ -1,14 +1,16 @@
 import Link from 'next/link'
 import LogoSvg from '../../assets/svg/logo.svg'
 import cn from 'classnames'
+import useTranslation from 'next-translate/useTranslation'
 
 export const Logo = () => {
+  const { t } = useTranslation('common')
   let isDarkTheme = false // future: page past events
   return (
     <Link href="/">
       <a
         className="flex justify-center items-center mb-12"
-        aria-label="logotype"
+        aria-label={t('logotype')}
       >
         <LogoSvg
           className={cn('w-[35.5rem]', {

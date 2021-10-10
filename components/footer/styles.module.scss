@@ -1,0 +1,9 @@
+.rightLine:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  right: -2rem;
+  width: 1px;
+  background: currentColor;
+}
