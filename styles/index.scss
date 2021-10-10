@@ -40,9 +40,13 @@
 input.bg-grey3:-webkit-autofill,
 input.bg-grey3:-webkit-autofill:hover,
 input.bg-grey3:-webkit-autofill:focus,
-input.bg-grey3:-webkit-autofill:active{
+input.bg-grey3:-webkit-autofill:active {
   background: rgba(0, 0, 0, 0) !important;
-  -webkit-box-shadow: 0 0 0 30px #9AA198 inset !important;
+  -webkit-box-shadow: 0 0 0 30px #9aa198 inset !important;
+}
+
+*:focus {
+  outline: none !important;
 }
 
 @screen lg {
