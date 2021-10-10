@@ -32,7 +32,7 @@ export const EventCard = ({
           >
             <Image
               className="filter grayscale"
-              alt={`Cover Image for ${title}`}
+              alt={cover.alt || title}
               src={cover.url}
               layout="responsive"
               objectFit="cover"
