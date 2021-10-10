@@ -12,8 +12,5 @@ export * from './intro'
 export * from './menu'
 export * from './lists/navigation-list'
 export * from './lists/social-list'
-<<<<<<< HEAD
 export * from './event-switcher'
 export * from './subscribe'
-=======
->>>>>>> main
