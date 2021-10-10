@@ -17,7 +17,7 @@ export const EventSwitcher = () => {
           }
         )}
       >
-        {t('switchAll')}
+        {t('switchEvents.all')}
       </button>
       <button
         onClick={() => toggleViewAll(false)}
@@ -28,7 +28,7 @@ export const EventSwitcher = () => {
           }
         )}
       >
-        {t('switchPast')}
+        {t('switchEvents.past')}
       </button>
     </div>
   )

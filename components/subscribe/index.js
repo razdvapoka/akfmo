@@ -31,7 +31,7 @@ export const Subscribe = () => {
     <section className="flex">
       <div className="w-1/2 flex flex-col pl-[2.4rem] pt-8 pb-[10rem] pr-10 bg-grey3">
         <h2 className="text-xl leading-ml uppercase font-bold mb-[20rem]">
-          {t('subscribeTitle')}
+          {t('subscribeForm.title')}
         </h2>
         <form className="relative text-m leading-m" onSubmit={validateEmail}>
           <label>
@@ -44,7 +44,7 @@ export const Subscribe = () => {
                 }
               )}
               name="email"
-              placeholder={t('subscribeInput')}
+              placeholder={t('subscribeForm.input')}
               onKeyDown={_handleKeyDown}
               onChange={(e) => {
                 changeEmail(e.target.value)
@@ -65,7 +65,7 @@ export const Subscribe = () => {
         <div className="relative h-full w-1/3 tranform -translate-x-2">
           <Image
             src={subscribeImage}
-            alt={t('subscribeImageAlt')}
+            alt={t('subscribeForm.imageAlt')}
             layout="responsive"
             objectFit="cover"
           />
