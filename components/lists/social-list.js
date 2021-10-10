@@ -1,29 +1,35 @@
 import Link from 'next/link'
 import useTranslation from 'next-translate/useTranslation'
 
-export const SocialList = ({ events }) => {
+const SOCIAL_ITEMS = [
+  {
+    title: 'social.instagram',
+    href: 'https://www.instagram.com/',
+  },
+  {
+    title: 'social.facebook',
+    href: 'https://facebook.com/',
+  },
+  {
+    title: 'social.visitUs',
+    href: '/',
+  },
+]
+
+export const SocialList = () => {
   const { t } = useTranslation('common')
-  const SOCIAL_ITEMS = [
-    {
-      title: t('socialInstagram'),
-      href: 'https://www.instagram.com/',
-    },
-    {
-      title: t('socialFacebook'),
-      href: 'https://facebook.com/',
-    },
-    {
-      title: t('socialVisitUs'),
-      href: '/',
-    },
-  ]
   return (
     <ul>
       {SOCIAL_ITEMS.map(({ title, href }, index) => (
         <li key={index}>
           <Link href={href}>
-            <a className="hover:underline" target="_blank" aria-label={title}>
-              {title}
+            <a
+              className="hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t(title)}
+            >
+              {t(title)}
             </a>
           </Link>
         </li>
