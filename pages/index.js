@@ -19,7 +19,13 @@ export default function Index({ data }) {
       repeat(
         10,
         data.publications.map(({ publication }) => publication)
-      ).flat(),
+      )
+        .flat()
+        .map((p, i) => ({
+          ...p,
+          title: `${p.title}—(${i + 1})`,
+          year: p.year + i,
+        })),
     [data]
   )
 
