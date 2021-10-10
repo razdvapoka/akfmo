@@ -1,31 +1,24 @@
 {
   "allEvents": "all events",
-
   "logotype": "Logotype image",
-
-  "navigationEvents": "Events",
-  "navigationPublications": "Publications",
-  "navigationAbout": "About AKFMO",
-  "navigationContact": "Contact Us",
-
-  "socialInstagram": "Instagram",
-  "socialFacebook": "Facebook",
-  "socialVisitUs": "Visit Us",
-
   "subscribe": "Subscribe",
   "akfmo": "AKFMO",
-
   "akfmoFooter": "AKFMO 2021",
   "collectiveFooter": "website by Kit collective",
-
-  "introText": "The Cultural Forum Moscow sees itself as a co-operational partner and contact point for Austrian artists, cultural institutions and scientists for the initiation, planning and implementation of Austro-Russian and Austro-Belarusian cultural and scientific projects.",
-  "introLinkText": "Learn more about AKFMO",
-  "introImageAltText": "intro image",
-
-  "switchAll": "view All events",
-  "switchPast": "view past events",
-
-  "subscribeTitle": "Sign up for our newsletter. It will inform you periodically about all important events and other news concerning the Austrian Culturl Forum Moscow.",
-  "subscribeInput": "Your Email",
-  "subscribeImageAlt": "image"
+  "navigation": {
+    "events": "Events",
+    "publications": "Publications",
+    "about": "About AKFMO",
+    "contact": "Contact Us"
+  },
+  "social": {
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "visitUs": "Visit Us"
+  },
+  "intro": {
+    "text": "The Cultural Forum Moscow sees itself as a co-operational partner and contact point for Austrian artists, cultural institutions and scientists for the initiation, planning and implementation of Austro-Russian and Austro-Belarusian cultural and scientific projects.",
+    "linkText": "Learn more about AKFMO",
+    "imageAltText": "intro image"
+  }
 }
