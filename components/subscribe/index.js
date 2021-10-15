@@ -7,7 +7,7 @@ import subscribeImage from '../../assets/images/subscribe.jpg'
 
 export const Subscribe = () => {
   const [email, changeEmail] = useState(null)
-  const [invalidMail, toggleInvalidMail] = useToggle(false)
+  const [isEmailInvalid, setIsEmailInvalid] = useToggle(false)
   const { t } = useTranslation('common')
 
   const subscribeSend = () => {
@@ -20,7 +20,7 @@ export const Subscribe = () => {
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     re.test(String(email).toLowerCase())
       ? subscribeSend()
-      : toggleInvalidMail(true)
+      : setIsEmailInvalid(true)
   }
 
   const _handleKeyDown = (e) => {
@@ -38,9 +38,9 @@ export const Subscribe = () => {
             <input
               type="email"
               className={cn(
-                'uppercase  font-bold w-full focus:bg-grey3 bg-grey3 pb-2 border-b placeholder-black',
+                'uppercase  font-bold w-full focus:bg-grey3 bg-grey3 pb-2 pr-4 border-b placeholder-black',
                 {
-                  'border-pink': invalidMail,
+                  'border-pink': isEmailInvalid,
                 }
               )}
               name="email"
@@ -48,21 +48,21 @@ export const Subscribe = () => {
               onKeyDown={_handleKeyDown}
               onChange={(e) => {
                 changeEmail(e.target.value)
-                toggleInvalidMail(false)
+                setIsEmailInvalid(false)
               }}
             />
           </label>
           <label className="absolute right-0 cursor-pointer h-4">
             <input
-              className="bg-grey3 w-4 cursor-pointer"
+              className="bg-grey3 w-4 cursor-pointer align-middle"
               type="submit"
               value="→"
             />
           </label>
         </form>
       </div>
-      <div className="w-1/2 flex justify-center items-center bg-pink py-16">
-        <div className="relative h-full w-1/3 tranform -translate-x-2">
+      <div className="w-1/2 flex justify-center items-center bg-pink">
+        <div className="w-1/3">
           <Image
             src={subscribeImage}
             alt={t('subscribeForm.imageAlt')}
