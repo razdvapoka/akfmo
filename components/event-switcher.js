@@ -11,7 +11,8 @@ export const EventSwitcher = () => {
       <button
         onClick={() => toggleViewAll(true)}
         className={cn(
-          'font-bold border-b border-black w-full h-[16rem] text-m text-grey2 uppercase', viewAll ? 'text-black' : 'text-grey2'
+          'font-bold border-b border-black w-full h-[16rem] text-m text-grey2 uppercase',
+          viewAll ? 'text-black' : 'text-grey2'
         )}
       >
         {t('switchEvents.all')}
@@ -19,7 +20,8 @@ export const EventSwitcher = () => {
       <button
         onClick={() => toggleViewAll(false)}
         className={cn(
-          'font-bold w-full h-[16rem] text-m text-grey2 uppercase', !viewAll ? 'text-black' : 'text-grey2'
+          'font-bold w-full h-[16rem] text-m text-grey2 uppercase',
+          !viewAll ? 'text-black' : 'text-grey2'
         )}
       >
         {t('switchEvents.past')}
