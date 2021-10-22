@@ -1,5 +1,13 @@
 const range = (length) => Array.from(Array(length).keys())
 
+const gridColumnStart = range(12).reduce(
+  (agg, s) => ({
+    ...agg,
+    [s + 13]: `${s + 13}`,
+  }),
+  {}
+)
+
 module.exports = {
   mode: 'jit',
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
@@ -40,7 +48,15 @@ module.exports = {
     letterSpacing: {
       wider: '0.01em',
     },
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        24: 'repeat(24, minmax(0, 1fr))',
+      },
+      gridColumnStart,
+      width: {
+        '7/10': '70%',
+      },
+    },
   },
   variants: {
     extend: {},
