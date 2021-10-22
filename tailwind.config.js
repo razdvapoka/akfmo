@@ -1,6 +1,6 @@
 const range = (length) => Array.from(Array(length).keys())
 
-const gridColumnStart = range(12).reduce(
+const gridColumnExtend = range(12).reduce(
   (agg, s) => ({
     ...agg,
     [s + 13]: `${s + 13}`,
@@ -52,7 +52,8 @@ module.exports = {
       gridTemplateColumns: {
         24: 'repeat(24, minmax(0, 1fr))',
       },
-      gridColumnStart,
+      gridColumnStart: gridColumnExtend,
+      gridColumnEnd: gridColumnExtend,
       width: {
         '7/10': '70%',
       },
