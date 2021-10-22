@@ -7,7 +7,7 @@ export const EventSwitcher = () => {
   const { t } = useTranslation('common')
 
   return (
-    <div className="px-4 border-l border-r mb-14">
+    <div className="px-4 border-l border-r mt-10 mb-14">
       <button
         onClick={() => toggleViewAll(true)}
         className={cn(
