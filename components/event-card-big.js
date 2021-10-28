@@ -15,14 +15,12 @@ export const EventCardBig = ({
   const dateString = useMemo(() => format(new Date(date), 'dd.MM.yy'), [date])
   return (
     <Link href={`/events/${uid}`}>
-      <a className={cn('block bg-pink py-8 grid grid-cols-24', className)}>
-        <div className="col-start-5 col-end-[20] uppercase font-bold text-m tracking-wider mb-4">
+      <a className={cn('bg-pink py-8 grid grid-cols-24', className)}>
+        <div className="col-start-5 col-end-20 uppercase font-bold text-m tracking-wider mb-4">
           {location} | {dateString}
         </div>
-        <div className="flex col-start-5 col-end-[22]">
-          <div
-            className='w-full'
-          >
+        <div className="flex col-start-5 col-end-22">
+          <div className="w-full">
             <Image
               className="filter grayscale"
               alt={cover.alt || title}
