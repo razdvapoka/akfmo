@@ -10,10 +10,10 @@ export const EventGrid = ({ events }) => {
   return (
     <div className="grid grid-cols-24 gap-y-16 items-center">
       {events.map((event, index) =>
-          ((index + 1) % 6) === 0 ? (
+        (index + 1) % 6 === 0 ? (
           <EventCardBig
             key={`${event._meta.uid}-${index}`}
-            className='col-span-full w-screen transform -translate-x-4'
+            className="col-span-full w-screen transform -translate-x-4"
             {...event}
           />
         ) : (
