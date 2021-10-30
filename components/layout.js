@@ -6,7 +6,7 @@ export const Layout = ({ children }) => {
       <Meta />
       <div className="min-h-screen flex flex-col">
         <Header />
-        <main className="flex-1 px-4">{children}</main>
+        <main className="flex-1 px-4 overflow-hidden">{children}</main>
         <Subscribe />
         <Footer />
       </div>
