@@ -38,6 +38,19 @@
   font-size: calc((10 / 375) * 100vw);
 }
 
+input.clear-autofill:-webkit-autofill,
+input.clear-autofill:-webkit-autofill:hover,
+input.clear-autofill:-webkit-autofill:focus,
+input.clear-autofill:-webkit-autofill:active {
+  -webkit-text-fill-color: #231f20;
+  -webkit-box-shadow: 0 0 0px 100px #9aa198 inset !important;
+  filter: none;
+}
+
+*:focus {
+  outline: none !important;
+}
+
 @screen lg {
   :root {
     font-size: calc((10 / 1440) * 100vw);

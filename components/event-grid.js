@@ -3,7 +3,11 @@ import cn from 'classnames'
 
 const getColStart = (index) => {
   const remainder = (index + 1) % 3
-  return remainder === 0 ? 'col-start-8' : remainder === 2 ? 'col-start-14' : ''
+  return remainder === 0
+    ? 'col-start-8'
+    : remainder === 2
+    ? 'col-start-14'
+    : 'col-start-2'
 }
 
 export const EventGrid = ({ events }) => {

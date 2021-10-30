@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useMemo } from 'react'
-import { EventGrid, Layout, Intro } from '../components'
+import { EventGrid, Layout, Intro, EventSwitcher } from '../components'
 import { getMainPage } from '../lib/api'
 import { repeat } from '../lib/utils'
 
@@ -37,8 +37,9 @@ export default function Index({ data }) {
         <title>AKFMO</title>
       </Head>
       <Intro />
-      <section id="events" className="mt-16">
+      <section id="events" className="mt-18">
         <EventGrid events={events} />
+        <EventSwitcher />
       </section>
     </Layout>
   )
