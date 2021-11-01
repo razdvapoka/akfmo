@@ -14,25 +14,8 @@ export default function Index({ data }) {
     [data]
   )
 
-  const publications = useMemo(
-    () =>
-      repeat(
-        10,
-        data.publications.map(({ publication }) => publication)
-      )
-        .flat()
-        .map((p, i) => ({
-          ...p,
-          title: `${p.title}—(${i + 1})`,
-          year: p.year + i,
-        })),
-    [data]
-  )
-
-  console.log(publications)
-
   return (
-    <Layout>
+    <Layout className="overflow-hidden">
       <Head>
         <title>AKFMO</title>
       </Head>

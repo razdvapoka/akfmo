@@ -11,8 +11,8 @@ export const Publication = ({ publications }) => {
 
   return (
     <section className="flex pt-4">
-      <div className="pr-4 w-1/2 relative">
-        <div className="pt-4 border-t h-full min-h-2">
+      <div className="pr-4 w-1/2">
+        <div className="py-4 border-t h-full">
           <div className="w-2/3 mx-auto sticky top-4">
             <Image
               src={publications[imageIndex].cover.url}
