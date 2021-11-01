@@ -30,5 +30,8 @@
     "input": "Your Email",
     "imageAlt": "image",
     "subscribed": " You are subscribed!"
+  },
+  "buttons": {
+    "register": "Register"
   }
 }
