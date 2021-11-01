@@ -1,6 +1,8 @@
 import Link from 'next/link'
+import useTranslation from 'next-translate/useTranslation'
 
 export const Publication = ({ setPublicationIndex, index, item }) => {
+  const { t } = useTranslation('common')
   const handleMouseEnter = () => {
     setPublicationIndex(index)
   }
@@ -21,7 +23,7 @@ export const Publication = ({ setPublicationIndex, index, item }) => {
           </time>
           <h2 className="w-5/6 mr-auto flex justify-between">
             {item.title}
-            <span>open PDF ↓</span>
+            <span>{t('buttons.openPdf')}</span>
           </h2>
         </a>
       </Link>
