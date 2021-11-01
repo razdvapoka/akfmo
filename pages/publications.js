@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useMemo } from 'react'
 import { repeat } from '../lib/utils'
 import { getMainPage } from '../lib/api'
-import { Layout, Publication } from '../components'
+import { Layout, Publications } from '../components'
 
 export default function Events({ data }) {
   const publications = useMemo(
@@ -28,7 +28,7 @@ export default function Events({ data }) {
         <title>AKFMO Publications</title>
       </Head>
 
-      <Publication publications={publications}></Publication>
+      <Publications publications={publications}></Publications>
     </Layout>
   )
 }
