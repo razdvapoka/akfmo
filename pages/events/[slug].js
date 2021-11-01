@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import ErrorPage from 'next/error'
-import { Layout } from '../../components'
+import { EventInfo, Layout } from '../../components'
 import { getEventsWithSlugs, getEvent } from '../../lib/api'
 
 export default function Post({ event }) {
@@ -21,6 +21,7 @@ export default function Post({ event }) {
             <meta property="og:image" content={event.cover.url} />
           </Head>
           <h1>{event.title}</h1>
+          <EventInfo event={event} />
         </article>
       )}
     </Layout>

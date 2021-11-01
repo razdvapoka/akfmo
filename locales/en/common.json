@@ -30,5 +30,10 @@
     "input": "Your Email",
     "imageAlt": "image",
     "subscribed": " You are subscribed!"
+  },
+  "eventInfo": {
+    "date": "date",
+    "format": "format",
+    "location": "location"
   }
 }
