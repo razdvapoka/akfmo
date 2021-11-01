@@ -10,8 +10,6 @@ export default function Post({ event }) {
     return <ErrorPage statusCode={404} />
   }
 
-  console.log(router)
-
   return (
     <Layout>
       {router.isFallback ? (
@@ -23,7 +21,7 @@ export default function Post({ event }) {
             <meta property="og:image" content={event.cover.url} />
           </Head>
           <h1 className="mb-4">{event.title}</h1>
-          <Share linkurl={router} title={event.title} />
+          <Share url={router.asPath} title={event.title} />
         </article>
       )}
     </Layout>
