@@ -30,5 +30,10 @@
     "input": "Your Email",
     "imageAlt": "image",
     "subscribed": " You are subscribed!"
+  },
+  "share": {
+    "twitter": "Share on twitter",
+    "facebook": "Share on facebook",
+    "telegram": "Share on telegram"
   }
 }

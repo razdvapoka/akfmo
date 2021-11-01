@@ -29,5 +29,10 @@
     "title": "Sign up for our newsletter. It will inform you periodically about all important events and other news concerning the Austrian Culturl Forum Moscow.",
     "input": "Your Email",
     "imageAlt": "image"
+  },
+  "share": {
+    "twitter": "Share on twitter",
+    "facebook": "Share on facebook",
+    "telegram": "Share on telegram"
   }
 }

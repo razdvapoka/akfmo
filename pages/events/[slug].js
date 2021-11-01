@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import ErrorPage from 'next/error'
-import { Layout } from '../../components'
+import { Layout, Share } from '../../components'
 import { getEventsWithSlugs, getEvent } from '../../lib/api'
 
 export default function Post({ event }) {
@@ -9,6 +9,8 @@ export default function Post({ event }) {
   if (!router.isFallback && !event?._meta?.uid) {
     return <ErrorPage statusCode={404} />
   }
+
+  console.log(router)
 
   return (
     <Layout>
@@ -20,7 +22,8 @@ export default function Post({ event }) {
             <title>event</title>
             <meta property="og:image" content={event.cover.url} />
           </Head>
-          <h1>{event.title}</h1>
+          <h1 className="mb-4">{event.title}</h1>
+          <Share linkurl={router} title={event.title} />
         </article>
       )}
     </Layout>
