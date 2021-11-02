@@ -30,6 +30,9 @@
     "input": "Your Email",
     "imageAlt": "image"
   },
+  "buttons": {
+    "openPdf": "open pdf ↓"
+  },
   "share": {
     "twitter": "Share on twitter",
     "facebook": "Share on facebook",
