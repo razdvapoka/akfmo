@@ -1,12 +1,13 @@
+import cn from 'classnames'
 import { Header, Footer, Meta, Subscribe } from '../components'
 
-export const Layout = ({ children }) => {
+export const Layout = ({ children, className }) => {
   return (
     <>
       <Meta />
-      <div className="min-h-screen flex flex-col">
+      <div className={cn('min-h-screen flex flex-col', className)}>
         <Header />
-        <main className="flex-1 px-4 overflow-hidden">{children}</main>
+        <main className="flex-1 px-4">{children}</main>
         <Subscribe />
         <Footer />
       </div>

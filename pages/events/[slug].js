@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import ErrorPage from 'next/error'
-import { ButtonLink, EventHeader, Layout } from '../../components'
+import { ButtonLink, EventHeader, Layout, Share } from '../../components'
 import { getEventsWithSlugs, getEvent } from '../../lib/api'
 import useTranslation from 'next-translate/useTranslation'
 
@@ -23,8 +23,9 @@ export default function Post({ event }) {
             <title>event</title>
             <meta property="og:image" content={event.cover.url} />
           </Head>
+          <h1 className="mb-4">{event.title}</h1>
+          <Share url={router.asPath} title={event.title} />
           <EventHeader title={event.title} tags={event._meta.tags} />
-
           <ButtonLink
             link={event.eventurl.url}
             text={t('buttons.register')}
