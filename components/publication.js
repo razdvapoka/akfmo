@@ -21,10 +21,10 @@ export const Publication = ({ setPublicationIndex, index, item }) => {
           <time className="w-1/6" dateTime={item.year}>
             {item.year}
           </time>
-          <h2 className="w-5/6 mr-auto flex justify-between">
-            {item.title}
+          <div className="w-5/6 flex justify-between">
+            <h2>{item.title}</h2>
             <span>{t('buttons.openPdf')}</span>
-          </h2>
+          </div>
         </a>
       </Link>
     </li>

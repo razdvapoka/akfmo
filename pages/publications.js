@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import { useMemo } from 'react'
 import { repeat } from '../lib/utils'
-import { getMainPage } from '../lib/api'
+import { getPublications } from '../lib/api'
 import { Layout, Publications } from '../components'
 
-export default function Events({ data }) {
+export default function PublicationsPage({ data }) {
   const publications = useMemo(
     () =>
       repeat(
@@ -20,8 +20,6 @@ export default function Events({ data }) {
     [data]
   )
 
-  console.log(publications)
-
   return (
     <Layout>
       <Head>
@@ -34,7 +32,7 @@ export default function Events({ data }) {
 }
 
 export async function getStaticProps(context) {
-  const data = await getMainPage(context.locale)
+  const data = await getPublications(context.locale)
   return {
     props: { data: data.main },
     revalidate: 60,
