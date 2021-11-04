@@ -1,10 +1,13 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import ErrorPage from 'next/error'
-import { Layout, Share } from '../../components'
+import { ButtonLink, EventHeader, Layout, Share } from '../../components'
 import { getEventsWithSlugs, getEvent } from '../../lib/api'
+import useTranslation from 'next-translate/useTranslation'
 
 export default function Post({ event }) {
+  const { t } = useTranslation('common')
+
   const router = useRouter()
   if (!router.isFallback && !event?._meta?.uid) {
     return <ErrorPage statusCode={404} />
@@ -22,6 +25,10 @@ export default function Post({ event }) {
           </Head>
           <h1 className="mb-4">{event.title}</h1>
           <Share url={router.asPath} title={event.title} />
+          <EventHeader title={event.title} tags={event._meta.tags} />
+          <ButtonLink link={event.eventurl.url} className="w-full h-18">
+            {t('buttons.register')}
+          </ButtonLink>
         </article>
       )}
     </Layout>

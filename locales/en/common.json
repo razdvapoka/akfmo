@@ -32,6 +32,7 @@
     "subscribed": " You are subscribed!"
   },
   "buttons": {
+    "register": "Register",
     "openPdf": "open pdf ↓"
   },
   "share": {
