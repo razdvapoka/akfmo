@@ -30,6 +30,11 @@
     "input": "Your Email",
     "imageAlt": "image"
   },
+  "eventInfo": {
+    "date": "date",
+    "format": "format",
+    "location": "location"
+  },
   "buttons": {
     "register": "Register",
     "openPdf": "open pdf ↓"
