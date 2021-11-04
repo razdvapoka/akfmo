@@ -1,19 +1,17 @@
-import Link from 'next/link'
 import cn from 'classnames'
 
-export const ButtonLink = ({ link, text, className }) => {
+export const ButtonLink = ({ link, className, children }) => {
   return (
-    <Link href={link}>
-      <a
-        target="_blank"
-        className={cn(
-          'border inline-flex items-center justify-center uppercase font-bold text-m leading-m',
-          className
-        )}
-        rel="noopener noreferrer"
-      >
-        {text}
-      </a>
-    </Link>
+    <a
+      target="_blank"
+      href={link}
+      className={cn(
+        'border inline-flex items-center justify-center uppercase font-bold text-m leading-m',
+        className
+      )}
+      rel="noopener noreferrer"
+    >
+      {children}
+    </a>
   )
 }
