@@ -1,8 +1,13 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import ErrorPage from 'next/error'
-import { EventInfo, Layout } from '../../components'
-import { ButtonLink, EventHeader, Layout, Share } from '../../components'
+import {
+  EventInfo,
+  ButtonLink,
+  EventHeader,
+  Layout,
+  Share,
+} from '../../components'
 import { getEventsWithSlugs, getEvent } from '../../lib/api'
 import useTranslation from 'next-translate/useTranslation'
 
