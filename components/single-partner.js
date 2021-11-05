@@ -2,7 +2,6 @@ import Image from 'next/image'
 import { RichText } from 'prismic-reactjs'
 
 export const SinglePartner = ({ partner }) => {
-  console.log(partner)
   return (
     <li>
       <div className="w-1/4 mb-6">
