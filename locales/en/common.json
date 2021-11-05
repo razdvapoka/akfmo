@@ -45,5 +45,8 @@
     "facebook": "Share on facebook",
     "telegram": "Share on telegram",
     "share": "share"
+  },
+  "partners": {
+    "title": "Partner & Organizer"
   }
 }
