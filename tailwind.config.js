@@ -21,7 +21,9 @@ module.exports = {
       {}
     ),
     screens: {
-      lg: '1024px',
+      lg: {
+        max: '1023px',
+      },
     },
     colors: {
       white: '#FFFFFF',
