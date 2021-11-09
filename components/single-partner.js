@@ -15,7 +15,7 @@ export const SinglePartner = ({ partner }) => {
         />
       </div>
       <div className="w-3/5 text-l leading-l">
-        {RichText.render(partner.description)}
+        <RichText render={partner.description} />
       </div>
     </li>
   )
