@@ -44,5 +44,8 @@
     "facebook": "Share on facebook",
     "telegram": "Share on telegram",
     "share": "share"
+  },
+  "press": {
+    "title": "press"
   }
 }
