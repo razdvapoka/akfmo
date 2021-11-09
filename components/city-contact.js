@@ -9,9 +9,9 @@ export const CityContact = () => {
         <div className="py-4 "></div>
       </div>
       <div className="w-1/2 pt-4">
-        <div className="border-l pl-4 pb-4 font-bold text-m leading-m">
-          <h2 className="uppercase mb-6">{t('contactCity.title')}</h2>
-          <adress className="w-2/4 inline-block text-xl leading-l font-normal mb-9">
+        <div className="border-l pl-4 pb-4 text-m leading-m">
+          <h2 className="uppercase font-bold mb-6">{t('contactCity.title')}</h2>
+          <adress className="w-2/4 inline-block text-xl leading-l font-medium mb-9">
             {t('contactCity.adress')}
             <br />
             {t('contactCity.tel') + ' ' + t('contactCity.telNumber')}

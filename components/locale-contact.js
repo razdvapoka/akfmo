@@ -6,9 +6,11 @@ export const LocaleContact = () => {
   return (
     <div className="flex pb-4">
       <div className="w-1/2 pr-4">
-        <div className="py-4 border-t font-bold text-m leading-m">
-          <h2 className="uppercase mb-6">{t('contactLocale.title')}</h2>
-          <adress className="w-3/4 inline-block text-xl leading-l font-normal mb-9">
+        <div className="py-4 border-t text-m leading-m">
+          <h2 className="uppercase font-bold mb-6">
+            {t('contactLocale.title')}
+          </h2>
+          <adress className="w-3/4 inline-block text-xl leading-l font-medium mb-9">
             {t('contactLocale.adress')}
             <br />
             {t('contactLocale.tel') + ' ' + t('contactLocale.telNumber')}
