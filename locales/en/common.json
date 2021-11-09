@@ -31,7 +31,13 @@
     "imageAlt": "image",
     "subscribed": " You are subscribed!"
   },
+  "eventInfo": {
+    "date": "date",
+    "format": "format",
+    "location": "location"
+  },
   "buttons": {
+    "register": "Register",
     "openPdf": "open pdf ↓"
   },
   "share": {
