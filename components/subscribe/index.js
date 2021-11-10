@@ -38,7 +38,7 @@ export const Subscribe = () => {
   return (
     <section className="flex lg:flex-col lg:mb-4">
       <div className="w-1/2 flex flex-col pl-[2.4rem] pt-8 pb-[10rem] pr-10 bg-grey3 lg:w-full lg:mb-4 lg:p-4">
-        <h2 className="text-xl leading-ml uppercase font-bold mb-[20rem] lg:text-[2rem] lg:mb-6">
+        <h2 className="text-xl leading-ml uppercase font-bold mb-[20rem] lg:text-ml lg:mb-6">
           {t('subscribeForm.title')}
         </h2>
         {isSubscribed ? (
