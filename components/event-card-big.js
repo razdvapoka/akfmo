@@ -21,7 +21,7 @@ export const EventCardBig = ({
           className
         )}
       >
-        <div className="col-start-5 col-end-20 uppercase font-bold text-m tracking-wider mb-4 lg:col-start-1 lg:col-span-full lg:mb-2">
+        <div className="col-start-5 col-end-20 uppercase font-bold text-m tracking-wider mb-4 lg:col-start-1 lg:col-span-full lg:mb-2 lg:text-xs">
           {location} | {dateString}
         </div>
         <div className="flex col-start-5 col-end-22 lg:col-start-1 lg:col-span-full lg:flex-col lg:mb-1">
@@ -36,13 +36,13 @@ export const EventCardBig = ({
               height={cover.dimensions.height}
             />
           </div>
-          <ul className="ml-4 uppercase text-grey2 font-bold text-m tracking-wider space-y-[0.4rem] lg:flex lg:space-y-0 lg:space-x-1 lg:absolute lg:bottom-2 lg:text-s lg:ml-0">
+          <ul className="ml-4 uppercase text-grey2 font-bold text-m tracking-wider space-y-[0.4rem] lg:flex lg:space-y-0 lg:space-x-1 lg:absolute lg:bottom-2 lg:text-xs lg:ml-0">
             {tags.map((tag) => (
               <li key={tag}>{tag}</li>
             ))}
           </ul>
         </div>
-        <h3 className="text-xl font-medium leading-ml mt-2 col-span-11 col-start-5 lg:col-start-1 lg:col-span-full lg:w-full lg:p-0 lg:text-l lg:pr-4 lg:pb-6 lg:mt-0">
+        <h3 className="text-xl font-medium leading-ml mt-2 col-span-11 col-start-5 lg:col-start-1 lg:col-span-full lg:w-full lg:p-0 lg:text-ml lg:pr-4 lg:pb-6 lg:mt-0">
           {title}
         </h3>
       </a>

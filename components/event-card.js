@@ -20,7 +20,7 @@ export const EventCard = ({
       <a
         className={cn('block bg-grey1 pt-4 pb-6 lg:p-2 lg:relative', className)}
       >
-        <div className="pl-5 uppercase font-bold text-m tracking-wider mb-4 lg:mb-2 lg:pl-0">
+        <div className="pl-5 uppercase font-bold text-m tracking-wider mb-4 lg:mb-2 lg:pl-0 lg:text-xs">
           {location} | {dateString}
         </div>
         <div className="flex lg:flex-col">
@@ -42,13 +42,13 @@ export const EventCard = ({
               height={cover.dimensions.height}
             />
           </div>
-          <ul className="ml-4 uppercase text-grey2 font-bold text-m tracking-wider space-y-[0.4rem] lg:ml-0 lg:flex lg:space-y-0 lg:space-x-1 lg:absolute lg:bottom-2 lg:text-s">
+          <ul className="ml-4 uppercase text-grey2 font-bold text-m tracking-wider space-y-[0.4rem] lg:ml-0 lg:flex lg:space-y-0 lg:space-x-1 lg:absolute lg:bottom-2 lg:text-xs">
             {tags.map((tag) => (
               <li key={tag}>{tag}</li>
             ))}
           </ul>
         </div>
-        <h3 className="text-xl font-medium leading-ml mt-2 w-4/5 pl-5 lg:w-full lg:p-0 lg:text-l lg:pr-4 lg:pb-6 lg:mt-0">
+        <h3 className="text-xl font-medium leading-ml mt-2 w-4/5 pl-5 lg:w-full lg:p-0 lg:pr-4 lg:pb-6 lg:mt-0 lg:text-ml">
           {title}
         </h3>
       </a>
