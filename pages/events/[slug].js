@@ -25,16 +25,19 @@ export default function Post({ event }) {
       {router.isFallback ? (
         <h1>Loading…</h1>
       ) : (
-        <article>
+        <article className="lg:flex lg:flex-col">
           <Head>
             <title>event</title>
             <meta property="og:image" content={event.cover.url} />
           </Head>
-          <EventInfo event={event} />
-          <h1 className="mb-4">{event.title}</h1>
-          <Share url={router.asPath} title={event.title} />
+
           <EventHeader title={event.title} tags={event._meta.tags} />
-          <ButtonLink link={event.eventurl.url} className="w-full h-18 mb-16">
+          <Share url={router.asPath} title={event.title} />
+          <EventInfo event={event} />
+          <ButtonLink
+            link={event.eventurl.url}
+            className="w-full h-18 mb-16 lg:order-4"
+          >
             {t('buttons.register')}
           </ButtonLink>
 

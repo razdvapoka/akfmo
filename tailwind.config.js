@@ -36,9 +36,12 @@ module.exports = {
       pink: '#FFE8E8',
     },
     fontSize: {
+      xs: '1.1rem',
       s: '1.2rem',
       m: '1.6rem',
       l: '1.8rem',
+      ml: '2rem',
+      mx: '3rem',
       xl: '3.2rem',
       xxl: '7.8rem',
     },
