@@ -8,22 +8,24 @@ import useTranslation from 'next-translate/useTranslation'
 export const Footer = () => {
   const { t } = useTranslation('common')
   return (
-    <footer className="px-4 py-[15rem] font-bold uppercase">
-      <nav className="grid grid-cols-2 min-h-[68rem] grid-rows-2 gap-x-8 mb-8">
+    <footer className="px-4 py-[15rem] font-bold uppercase lg:py-6 lg:bg-black lg:text-white lg:border-white">
+      <nav className="grid grid-cols-2 min-h-[68rem] grid-rows-2 gap-x-8 mb-8 lg:min-h-[45rem] lg:text-m">
         <div
           className={cn(
-            ' flex items-end relative border-b pb-4',
+            ' flex items-end relative border-b pb-4 lg:items-start',
             styles.rightLine
           )}
         >
           <NavigationList />
         </div>
-        <div className="flex items-end border-b pb-4">
+        <div className="flex items-end border-b pb-4 lg:items-start">
           <SocialList />
         </div>
         <div className={cn('relative flex items-end', styles.rightLine)}>
           <Link href="/">
-            <a className="hover:underline">{t('collectiveFooter')}</a>
+            <a className="hover:underline lg:inline-block lg:word-spacing-1 lg:pr-1">
+              {t('collectiveFooter')}
+            </a>
           </Link>
         </div>
         <div className="flex items-end">
@@ -32,7 +34,7 @@ export const Footer = () => {
           </Link>
         </div>
       </nav>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center lg:hidden">
         <FooterLogoSvg className="w-[22rem]" />
       </div>
     </footer>

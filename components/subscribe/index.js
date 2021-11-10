@@ -36,9 +36,9 @@ export const Subscribe = () => {
   const { t } = useTranslation('common')
 
   return (
-    <section className="flex">
-      <div className="w-1/2 flex flex-col pl-[2.4rem] pt-8 pb-[10rem] pr-10 bg-grey3">
-        <h2 className="text-xl leading-ml uppercase font-bold mb-[20rem]">
+    <section className="flex lg:flex-col lg:mb-4">
+      <div className="w-1/2 flex flex-col pl-[2.4rem] pt-8 pb-[10rem] pr-10 bg-grey3 lg:w-full lg:mb-4 lg:p-4">
+        <h2 className="text-xl leading-ml uppercase font-bold mb-[20rem] lg:text-[2rem] lg:mb-6">
           {t('subscribeForm.title')}
         </h2>
         {isSubscribed ? (
@@ -73,8 +73,8 @@ export const Subscribe = () => {
           </form>
         )}
       </div>
-      <div className="w-1/2 flex justify-center items-center bg-pink">
-        <div className="w-1/3">
+      <div className="w-1/2 flex justify-center items-center bg-pink lg:w-full lg:p-8">
+        <div className="w-1/3 lg:w-full">
           <Image
             src={subscribeImage}
             alt={t('subscribeForm.imageAlt')}
