@@ -70,5 +70,11 @@
     "emailButton": "EMAIL",
     "siteButton": "Website",
     "siteLink": "akfmo.com"
+  },
+  "partners": {
+    "title": "Partner & Organizer"
+  },
+  "press": {
+    "title": "press"
   }
 }

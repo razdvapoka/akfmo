@@ -54,8 +54,8 @@
     "fax": "Fax",
     "faxNumber": "+7 (495) 937 42 69",
     "mail": "info@akfmo.com",
-    "fbLink": "https://fb.com",
-    "inLink": "https://in.com",
+    "fbLink": "fb.com",
+    "inLink": "in.com",
     "emailButton": "EMAIL",
     "fbButton": "FB",
     "inButton": "IN"
@@ -70,6 +70,12 @@
     "mail": "info@akfmo.com",
     "emailButton": "EMAIL",
     "siteButton": "Website",
-    "siteLink": "https://akfmo.com"
+    "siteLink": "akfmo.com"
+  },
+  "partners": {
+    "title": "Partner & Organizer"
+  },
+  "press": {
+    "title": "press"
   }
 }

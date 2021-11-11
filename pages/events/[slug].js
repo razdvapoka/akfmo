@@ -7,6 +7,8 @@ import {
   EventHeader,
   Layout,
   Share,
+  Partners,
+  Press,
 } from '../../components'
 import { getEventsWithSlugs, getEvent } from '../../lib/api'
 import useTranslation from 'next-translate/useTranslation'
@@ -33,9 +35,13 @@ export default function Post({ event }) {
           <h1 className="mb-4">{event.title}</h1>
           <Share url={router.asPath} title={event.title} />
           <EventHeader title={event.title} tags={event._meta.tags} />
-          <ButtonLink link={event.eventurl.url} className="w-full h-18">
+          <ButtonLink link={event.eventurl.url} className="w-full h-18 mb-16">
             {t('buttons.register')}
           </ButtonLink>
+          {event?.partners?.length > 0 && (
+            <Partners partners={event.partners} />
+          )}
+          {event?.press?.length > 0 && <Press press={event.press} />}
         </article>
       )}
     </Layout>
