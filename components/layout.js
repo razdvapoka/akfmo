@@ -14,3 +14,14 @@ export const Layout = ({ children, className }) => {
     </>
   )
 }
+
+export const PopUpLayout = ({ children, className }) => {
+  return (
+    <>
+      <Meta />
+      <div className={cn('min-h-screen flex flex-col', className)}>
+        <main className="flex-1 px-4">{children}</main>
+      </div>
+    </>
+  )
+}

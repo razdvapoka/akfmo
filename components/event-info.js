@@ -9,7 +9,7 @@ export const EventInfo = ({ event }) => {
     [event.date]
   )
   return (
-    <div className="flex h-20 text-m leading-ml uppercase mb-16 space-x-2 w-7/10">
+    <div className="flex h-20 text-m leading-ml uppercase mb-16 space-x-2 col-start-2 col-end-15">
       <div className="pl-2 border-l flex flex-col justify-between w-1/3">
         <h2 className="font-bold"> {t('eventInfo.date')}</h2>
         <time dateTime={event.date}>{dateString}</time>
