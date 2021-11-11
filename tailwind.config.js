@@ -49,6 +49,8 @@ module.exports = {
     },
     letterSpacing: {
       wider: '0.01em',
+      wide: '0.03em',
+      tighter: '-0.01em',
     },
     extend: {
       gridTemplateColumns: {

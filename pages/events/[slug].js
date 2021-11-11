@@ -1,3 +1,5 @@
+import cn from 'classnames'
+import { RichText } from 'prismic-reactjs'
 import { useCallback } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
@@ -16,6 +18,42 @@ import {
 import { getEventsWithSlugs, getEvent } from '../../lib/api'
 import useTranslation from 'next-translate/useTranslation'
 import X from '../../assets/svg/x.svg'
+import Image from 'next/image'
+import styles from './styles.module.scss'
+
+var htmlSerializer = function (type, element, content, children) {
+  console.log(type, element, content, children)
+  switch (type) {
+    case 'image':
+      return (
+        <figure>
+          <Image
+            src={element.url}
+            width={element.dimensions.width}
+            height={element.dimensions.height}
+            layout="responsive"
+            alt={element.alt}
+          />
+          <figcaption className="text-s leading-m tracking-wide uppercase mt-2">
+            {element.alt}
+          </figcaption>
+        </figure>
+      )
+    case 'embed':
+      return (
+        <div className="aspect-w-16 aspect-h-9">
+          <div
+            className={styles.embed}
+            dangerouslySetInnerHTML={{ __html: element.oembed.html }}
+          />
+        </div>
+      )
+
+    // Return null to stick with the default behavior for all other elements
+    default:
+      return null
+  }
+}
 
 export default function Post({ event }) {
   const { t } = useTranslation('common')
@@ -45,10 +83,10 @@ export default function Post({ event }) {
           </Head>
           <div className="col-span-2 border-r uppercase text-m leading-m pt-[18rem] font-bold">
             <hr className="mr-4" />
-            <div className="space-y-4 pt-2">
+            <nav className="space-y-4 pt-2">
               <NavigationList />
               <LangSwitcher />
-            </div>
+            </nav>
           </div>
           <div className="col-start-3 col-end-23 grid grid-cols-20">
             <EventHeader title={event.title} tags={event._meta.tags} />
@@ -58,6 +96,12 @@ export default function Post({ event }) {
               </button>
             </div>
             <Share url={router.asPath} title={event.title} />
+            <div className={cn('col-start-2 col-end-13', styles.richText)}>
+              <RichText
+                render={event.content}
+                htmlSerializer={htmlSerializer}
+              />
+            </div>
             <ButtonLink
               link={event.eventurl.url}
               className="col-start-2 col-end-20 h-18 mt-10 mb-16"
