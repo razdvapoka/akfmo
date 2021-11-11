@@ -10,6 +10,8 @@ import {
   Partners,
   Press,
   PopUpLayout,
+  NavigationList,
+  LangSwitcher,
 } from '../../components'
 import { getEventsWithSlugs, getEvent } from '../../lib/api'
 import useTranslation from 'next-translate/useTranslation'
@@ -41,10 +43,16 @@ export default function Post({ event }) {
             <title>event</title>
             <meta property="og:image" content={event.cover.url} />
           </Head>
-          <div className="col-span-2 border-r"></div>
-          <div className="col-start-3 col-end-22 grid grid-cols-20">
+          <div className="col-span-2 border-r uppercase text-m leading-m pt-[18rem] font-bold">
+            <hr className="mr-4" />
+            <div className="space-y-4 pt-2">
+              <NavigationList />
+              <LangSwitcher />
+            </div>
+          </div>
+          <div className="col-start-3 col-end-23 grid grid-cols-20">
             <EventHeader title={event.title} tags={event._meta.tags} />
-            <div className="col-start-19 col-end-20 flex justify-items-end">
+            <div className="col-start-19 col-end-20 flex justify-end">
               <button className="w-9 h-9" onClick={goBack}>
                 <X />
               </button>
@@ -62,7 +70,12 @@ export default function Post({ event }) {
             )}
             {event?.press?.length > 0 && <Press press={event.press} />}
           </div>
-          <div className="col-span-2 border-l"></div>
+          <div className="col-span-2 border-l pt-[18rem]">
+            <hr className="ml-4" />
+            <div className="space-y-4 pt-2 text-m leading-m font-bold uppercase text-right">
+              akfmo
+            </div>
+          </div>
         </article>
       )}
     </PopUpLayout>
