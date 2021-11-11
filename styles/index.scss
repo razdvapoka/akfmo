@@ -35,7 +35,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: Right Grotesk, sans-serif;
-  font-size: calc((10 / 375) * 100vw);
+  font-size: calc((10 / 1440) * 100vw);
 }
 
 input.clear-autofill:-webkit-autofill,
@@ -53,7 +53,7 @@ input.clear-autofill:-webkit-autofill:active {
 
 @screen lg {
   :root {
-    font-size: calc((10 / 1440) * 100vw);
+    font-size: calc((10 / 320) * 100vw);
   }
 }
 

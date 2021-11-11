@@ -8,6 +8,7 @@ import {
   Layout,
   Share,
   Partners,
+  Press,
 } from '../../components'
 import { getEventsWithSlugs, getEvent } from '../../lib/api'
 import useTranslation from 'next-translate/useTranslation'
@@ -38,6 +39,7 @@ export default function Post({ event }) {
             {t('buttons.register')}
           </ButtonLink>
           <Partners partners={event.partners} />
+          <Press press={event.press} />
         </article>
       )}
     </Layout>
