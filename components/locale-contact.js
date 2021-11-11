@@ -1,12 +1,13 @@
 import { ButtonLink } from '.'
 import useTranslation from 'next-translate/useTranslation'
+import AboutEllipse from '../assets/svg/about-ellipse.svg'
 
 export const LocaleContact = () => {
   const { t } = useTranslation('common')
   return (
     <div className="flex pb-4">
       <div className="w-1/2 pr-4">
-        <div className="py-4 border-t text-m leading-m">
+        <div className="py-2 border-t text-m leading-m">
           <h2 className="uppercase font-bold mb-6">
             {t('contactLocale.title')}
           </h2>
@@ -39,10 +40,12 @@ export const LocaleContact = () => {
       </div>
       <div className="w-1/2">
         <div className="pl-4">
-          <div className="border-t"></div>
+          <div className="border-t" />
         </div>
-        <div className="pt-4 h-full">
-          <div className="border-l h-full"></div>
+        <div className="pt-4">
+          <div className="border-l pl-4 pr-4 pb-4">
+            <AboutEllipse />
+          </div>
         </div>
       </div>
     </div>

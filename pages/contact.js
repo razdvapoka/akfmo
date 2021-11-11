@@ -5,9 +5,9 @@ export default function Contact() {
   return (
     <Layout>
       <Head>
-        <title>AKFMO contact</title>
+        <title>AKFMO: Contact Us</title>
       </Head>
-      <section className="pt-4">
+      <section className="pt-4 pb-8">
         <LocaleContact />
         <CityContact />
       </section>
