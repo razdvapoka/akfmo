@@ -38,8 +38,10 @@ export default function Post({ event }) {
           <ButtonLink link={event.eventurl.url} className="w-full h-18 mb-16">
             {t('buttons.register')}
           </ButtonLink>
-          <Partners partners={event.partners} />
-          <Press press={event.press} />
+          {event?.partners?.length > 0 && (
+            <Partners partners={event.partners} />
+          )}
+          {event?.press?.length > 0 && <Press press={event.press} />}
         </article>
       )}
     </Layout>
