@@ -7,7 +7,7 @@ export const LocaleContact = () => {
   return (
     <div className="flex pb-4">
       <div className="w-1/2 pr-4">
-        <div className="py-2 border-t text-m leading-m">
+        <div className="pt-2 border-t text-m leading-m">
           <h2 className="uppercase font-bold mb-6">
             {t('contactLocale.title')}
           </h2>
@@ -43,7 +43,7 @@ export const LocaleContact = () => {
           <div className="border-t" />
         </div>
         <div className="pt-4">
-          <div className="border-l pl-4 pr-4 pb-4">
+          <div className="border-l pl-4 pr-4">
             <AboutEllipse />
           </div>
         </div>
