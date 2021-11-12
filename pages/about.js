@@ -1,0 +1,93 @@
+import Head from 'next/head'
+import Image from 'next/image'
+import { RichText } from 'prismic-reactjs'
+import { Layout, SinglePressa } from '../components'
+import { getAbout } from '../lib/api'
+import styles from './styles.module.scss'
+import cn from 'classnames'
+
+const htmlSerializer = function (type, element) {
+  switch (type) {
+    case 'image':
+      return (
+        <figure className="w-3/5">
+          <Image
+            src={element.url}
+            width={element.dimensions.width}
+            height={element.dimensions.height}
+            layout="responsive"
+            alt={element.alt}
+          />
+        </figure>
+      )
+    // Return null to stick with the default behavior for all other elements
+    default:
+      return null
+  }
+}
+
+const AboutSection = ({ title, content }) => {
+  return (
+    <section className="grid grid-cols-24 pt-2 pb-16 border-t">
+      <div className="col-start-1 col-span-6 text-m leading-m tracking-wider uppercase font-bold">
+        <RichText render={title} />
+      </div>
+      <div
+        className={cn(
+          'col-start-7 col-end-22 text-xl leading-m tracking-wider font-medium',
+          styles.aboutSectionRichText
+        )}
+      >
+        <RichText render={content} htmlSerializer={htmlSerializer} />
+      </div>
+    </section>
+  )
+}
+
+const AboutPressSection = ({ title, items }) => {
+  return (
+    <section className="grid grid-cols-24 pt-2 pb-16 border-t">
+      <div className="col-start-1 col-span-6 text-m leading-m tracking-wider uppercase font-bold">
+        <RichText render={title} />
+      </div>
+      <div className="col-start-7 col-end-22 pt-8">
+        <ul>
+          {items.map((item, index) => (
+            <SinglePressa pressa={item.item} key={index} />
+          ))}
+        </ul>
+      </div>
+    </section>
+  )
+}
+
+const SECTION_COMPONENTS = {
+  Aboutsection: AboutSection,
+  Aboutpresssection: AboutPressSection,
+}
+
+export default function About({ data }) {
+  return (
+    <Layout>
+      <Head>
+        <title>AKFMO: About</title>
+      </Head>
+      <div className="mt-2 pb-6">
+        {data?.sections.map(({ section }) => {
+          const Component = SECTION_COMPONENTS[section.__typename]
+          return Component ? (
+            <Component key={section._meta.id} {...section} />
+          ) : null
+        })}
+      </div>
+    </Layout>
+  )
+}
+
+export async function getStaticProps(context) {
+  const data = await getAbout(context.locale)
+  return {
+    props: { data: data.about },
+    revalidate: 60,
+  }
+}

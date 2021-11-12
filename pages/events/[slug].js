@@ -21,8 +21,7 @@ import X from '../../assets/svg/x.svg'
 import Image from 'next/image'
 import styles from './styles.module.scss'
 
-var htmlSerializer = function (type, element, content, children) {
-  console.log(type, element, content, children)
+const htmlSerializer = function (type, element) {
   switch (type) {
     case 'image':
       return (
