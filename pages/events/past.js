@@ -3,10 +3,10 @@ import { repeat } from '../../lib/utils'
 import { useMemo } from 'react'
 import { Events } from '../../components/pages'
 
-export default function EventsPage({ events }) {
+export default function PastEventsPage({ events }) {
   const fakeEvents = useMemo(() => repeat(5, events).flat().reverse(), [events])
 
-  return <Events events={fakeEvents} />
+  return <Events events={fakeEvents} isInverted />
 }
 
 export async function getStaticProps(context) {

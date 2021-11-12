@@ -3,6 +3,7 @@ import Image from 'next/image'
 import cn from 'classnames'
 import { format } from 'date-fns'
 import { useMemo } from 'react'
+// import { useInvertedContext } from '../lib/contexts'
 
 export const EventCardBig = ({
   _meta: { uid, tags },
@@ -12,10 +13,17 @@ export const EventCardBig = ({
   location,
   className,
 }) => {
+  // const [isInverted] = useInvertedContext()
   const dateString = useMemo(() => format(new Date(date), 'dd.MM.yy'), [date])
   return (
     <Link href={`/events/${uid}`}>
-      <a className={cn('bg-pink py-8 grid grid-cols-24', className)}>
+      <a
+        className={cn(
+          'bg-pink py-8 grid grid-cols-24',
+          // { 'text-white': isInverted },
+          className
+        )}
+      >
         <div className="col-start-5 col-end-20 uppercase font-bold text-m tracking-wider mb-4">
           {location} | {dateString}
         </div>
@@ -31,7 +39,7 @@ export const EventCardBig = ({
               height={cover.dimensions.height}
             />
           </div>
-          <ul className="ml-4 uppercase text-grey2 font-bold text-m tracking-wider space-y-[0.4rem]">
+          <ul className="ml-4 uppercase text-grey2 font-medium text-m tracking-wider space-y-[0.4rem]">
             {tags.map((tag) => (
               <li key={tag}>{tag}</li>
             ))}

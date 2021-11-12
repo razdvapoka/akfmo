@@ -1,14 +1,21 @@
 import Link from 'next/link'
-import FooterLogoSvg from '../../assets/svg/footerLogo.svg'
+// import FooterLogoSvg from '../../assets/svg/footerLogo.svg'
 import styles from './styles.module.scss'
 import cn from 'classnames'
 import { NavigationList, SocialList } from '../'
 import useTranslation from 'next-translate/useTranslation'
+import { useInvertedContext } from '../../lib/contexts'
 
 export const Footer = () => {
   const { t } = useTranslation('common')
+  const [isInverted] = useInvertedContext()
   return (
-    <footer className="px-4 py-[15rem] font-bold uppercase">
+    <footer
+      className={cn(
+        'px-4 pt-8 font-bold uppercase',
+        isInverted ? 'bg-white text-black' : 'bg-grey5 text-white'
+      )}
+    >
       <nav className="grid grid-cols-2 min-h-[68rem] grid-rows-2 gap-x-8 mb-8">
         <div
           className={cn(
@@ -32,9 +39,9 @@ export const Footer = () => {
           </Link>
         </div>
       </nav>
-      <div className="flex justify-center items-center">
+      {/* <div className="flex justify-center items-center">
         <FooterLogoSvg className="w-[22rem]" />
-      </div>
+      </div> */}
     </footer>
   )
 }
