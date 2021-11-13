@@ -26,10 +26,15 @@ const htmlSerializer = function (type, element) {
   }
 }
 
-const AboutSection = ({ title, content }) => {
+const AboutSection = ({ title, content, index }) => {
   return (
     <section className="grid grid-cols-24 pt-2 pb-16 border-t lg:grid-cols-4 lg:pt-4 lg:pb-6">
-      <div className="col-start-1 col-span-6 text-m leading-m tracking-wider uppercase font-bold lg:col-span-full header-about lg:pb-4">
+      <div
+        className={cn(
+          'col-start-1 col-span-6 text-m leading-m tracking-wider uppercase font-bold lg:col-span-full lg:pb-4',
+          { 'lg:text-center lg:mb-6 lg:border-b': index === 0 }
+        )}
+      >
         <RichText render={title} />
       </div>
       <div
@@ -73,10 +78,10 @@ export default function About({ data }) {
         <title>AKFMO: About</title>
       </Head>
       <div className="mt-2 pb-6 fix-header-about">
-        {data?.sections.map(({ section }) => {
+        {data?.sections.map(({ section }, index) => {
           const Component = SECTION_COMPONENTS[section.__typename]
           return Component ? (
-            <Component key={section._meta.id} {...section} />
+            <Component key={section._meta.id} index={index} {...section} />
           ) : null
         })}
       </div>
