@@ -8,16 +8,16 @@ import useTranslation from 'next-translate/useTranslation'
 export const Intro = () => {
   const { t } = useTranslation('common')
   return (
-    <section className="flex min-h-[24rem] mb-16">
-      <div className="w-1/2 border-r pr-4">
-        <div className="h-full flex flex-col justify-between border-t pt-4">
-          <h2 className="w-5/6 uppercase text-m font-bold leading-ml">
+    <section className="flex min-h-[24rem] mb-16 lg:min-h-0 lg:mb-8">
+      <div className="w-1/2 border-r pr-4 lg:w-full lg:border-r-0 lg:pr-0">
+        <div className="h-full flex flex-col justify-between border-t pt-4 lg:pt-2">
+          <h2 className="w-5/6 uppercase text-m font-bold leading-ml lg:w-full lg:mb-4">
             {t('intro.text')}
           </h2>
           <Link href="/">
             <a
               className={cn(
-                'transform translate-y-3/4 flex justify-between items-center',
+                'transform translate-y-3/4 flex justify-between items-center lg:translate-y-0',
                 styles.learnMoreLink
               )}
             >
@@ -36,7 +36,7 @@ export const Intro = () => {
           </Link>
         </div>
       </div>
-      <div className="w-1/2 pl-4">
+      <div className="w-1/2 pl-4 lg:hidden">
         <div className="h-full border-t flex justify-center items-end">
           <div className="w-1/2 tranform translate-y-2">
             <Image
