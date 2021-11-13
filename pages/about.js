@@ -10,7 +10,7 @@ const htmlSerializer = function (type, element) {
   switch (type) {
     case 'image':
       return (
-        <figure className="w-3/5">
+        <figure className="w-3/5 lg:w-full">
           <Image
             src={element.url}
             width={element.dimensions.width}
@@ -28,13 +28,13 @@ const htmlSerializer = function (type, element) {
 
 const AboutSection = ({ title, content }) => {
   return (
-    <section className="grid grid-cols-24 pt-2 pb-16 border-t">
-      <div className="col-start-1 col-span-6 text-m leading-m tracking-wider uppercase font-bold">
+    <section className="grid grid-cols-24 pt-2 pb-16 border-t lg:grid-cols-4 lg:pt-4 lg:pb-6">
+      <div className="col-start-1 col-span-6 text-m leading-m tracking-wider uppercase font-bold lg:col-span-full header-about lg:pb-4">
         <RichText render={title} />
       </div>
       <div
         className={cn(
-          'col-start-7 col-end-22 text-xl leading-m tracking-wider font-medium',
+          'col-start-7 col-end-22 text-xl leading-m tracking-wider font-medium lg:col-span-full lg:text-m lg:leading-ml',
           styles.aboutSectionRichText
         )}
       >
@@ -46,11 +46,11 @@ const AboutSection = ({ title, content }) => {
 
 const AboutPressSection = ({ title, items }) => {
   return (
-    <section className="grid grid-cols-24 pt-2 pb-16 border-t">
+    <section className="grid grid-cols-24 pt-2 pb-16 border-t lg:pb-6">
       <div className="col-start-1 col-span-6 text-m leading-m tracking-wider uppercase font-bold">
         <RichText render={title} />
       </div>
-      <div className="col-start-7 col-end-22 pt-8">
+      <div className="col-start-7 col-end-22 pt-8 lg:col-span-full lg:pt-4">
         <ul>
           {items.map((item, index) => (
             <SinglePressa pressa={item.item} key={index} />
@@ -72,7 +72,7 @@ export default function About({ data }) {
       <Head>
         <title>AKFMO: About</title>
       </Head>
-      <div className="mt-2 pb-6">
+      <div className="mt-2 pb-6 fix-header-about">
         {data?.sections.map(({ section }) => {
           const Component = SECTION_COMPONENTS[section.__typename]
           return Component ? (

@@ -51,10 +51,16 @@ input.clear-autofill:-webkit-autofill:active {
   outline: none !important;
 }
 
+
 @screen lg {
   :root {
     font-size: calc((10 / 320) * 100vw);
   }
+  .fix-header-about section:nth-child(1) .header-about{
+  text-align: center;
+  margin-bottom: 3rem;
+  border-bottom-width: 1px;
+}
 }
 
 body {

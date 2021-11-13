@@ -32,3 +32,17 @@
   width: 6rem;
   transform: translate(-100%, 0);
 }
+
+@screen lg {
+  .aboutSectionRichText > figure {
+  margin: 2rem 0;
+}
+.aboutSectionRichText > ul {
+  margin-bottom: 2rem;
+  width: 21rem;
+  margin-left: auto;
+}
+.aboutSectionRichText > ul > li::before {
+  width: 7rem;
+}
+}
