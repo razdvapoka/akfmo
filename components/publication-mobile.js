@@ -6,7 +6,7 @@ export const PublicationMobile = ({ item }) => {
   const { t } = useTranslation('common')
 
   return (
-    <li className="pt-6 uppercase font-bold mb-4 flex-col flex">
+    <li className="pt-6 uppercase font-bold mb-4 hidden lg:block">
       <header className="pb-2 border-b">
         <time dateTime={item.year}>[ {item.year} ]</time>
         <h2 className="w-3/4">{item.title}</h2>

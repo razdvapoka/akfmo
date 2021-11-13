@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 import { Publication, PublicationMobile } from '.'
 
 export const Publications = ({ publications }) => {
@@ -31,18 +31,16 @@ export const Publications = ({ publications }) => {
         </div>
         <nav className="pt-4 lg:pt-0">
           <ul className="border-l pl-4 pt-4 lg:border-l-0 lg:p-0">
-            {publications.map((item, index) =>
-              false ? (
+            {publications.map((item, index) => (
+              <Fragment key={index}>
                 <Publication
                   setPublicationIndex={setPublicationIndex}
                   index={index}
                   item={item}
-                  key={index}
                 />
-              ) : (
                 <PublicationMobile item={item} key={index} />
-              )
-            )}
+              </Fragment>
+            ))}
           </ul>
         </nav>
       </div>
