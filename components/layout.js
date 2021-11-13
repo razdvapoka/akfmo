@@ -29,7 +29,7 @@ export const PopUpLayout = ({ children, className, isInverted }) => {
     <InvertedProvider initialValue={isInverted}>
       <Meta />
       <div className={cn('min-h-screen flex flex-col', className)}>
-        <main className="flex-1 px-4">{children}</main>
+        <main className="flex-1 px-4 lg:px-2">{children}</main>
       </div>
     </InvertedProvider>
   )
