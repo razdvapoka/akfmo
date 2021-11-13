@@ -9,7 +9,7 @@ export const Publication = ({ setPublicationIndex, index, item }) => {
 
   return (
     <li
-      className="py-4 border-b uppercase font-bold mb-8"
+      className="py-4 border-b uppercase font-bold mb-8 lg:hidden"
       onMouseEnter={handleMouseEnter}
     >
       <Link href={item.file.url}>

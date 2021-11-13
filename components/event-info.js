@@ -21,8 +21,9 @@ export const EventInfo = ({ event }) => {
     <div
       className={`
         flex lg:flex-col
+        col-start-2 col-end-15 
+        lg:col-start-1 lg:col-span-full
         h-20 lg:h-auto
-        w-7/10
         text-m leading-ml uppercase
         mb-16 lg:mb-8
         space-x-2 lg:space-x-0

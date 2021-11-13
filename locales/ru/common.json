@@ -5,6 +5,7 @@
   "akfmo": "AKFMO",
   "akfmoFooter": "AKFMO 2021",
   "collectiveFooter": "website by Kit collective",
+  "events": "Events",
   "navigation": {
     "events": "Events",
     "publications": "Publications",
@@ -45,6 +46,35 @@
     "facebook": "Share on facebook",
     "telegram": "Share on telegram",
     "share": "share"
+  },
+  "contactLocale": {
+    "title": "AKFMO address & contacts",
+    "adress": "Located at the Austrian Embassy, Moscow",
+    "tel": "Tel",
+    "telNumber": "+7 (495) 780 60 66",
+    "fax": "Fax",
+    "faxNumber": "+7 (495) 937 42 69",
+    "mail": "info@akfmo.com",
+    "fbLink": "fb.com",
+    "inLink": "in.com",
+    "emailButton": "EMAIL",
+    "fbButton": "FB",
+    "inButton": "IN"
+  },
+  "contactCity": {
+    "title": "Austrian Embassy Address & contacts",
+    "adress": "Starokonyushenniy per. 1 119034 Moscow",
+    "tel": "Tel",
+    "telNumber": "+7 (495) 780 60 66",
+    "fax": "Fax",
+    "faxNumber": "+7 (495) 937 42 69",
+    "mail": "info@akfmo.com",
+    "emailButton": "EMAIL",
+    "siteButton": "Website",
+    "siteLink": "akfmo.com"
+  },
+  "partners": {
+    "title": "Partner & Organizer"
   },
   "press": {
     "title": "press"

@@ -3,8 +3,10 @@ import { useMemo } from 'react'
 import { EventGrid, Layout, Intro, EventSwitcher } from '../components'
 import { getMainPage } from '../lib/api'
 import { repeat } from '../lib/utils'
+import useTranslation from 'next-translate/useTranslation'
 
 export default function Index({ data }) {
+  const { t } = useTranslation('common')
   const events = useMemo(
     () =>
       repeat(
@@ -20,7 +22,10 @@ export default function Index({ data }) {
         <title>AKFMO</title>
       </Head>
       <Intro />
-      <section id="events" className="mt-18">
+      <section id="events" className="mt-18 lg:border-t lg:pt-2 lg:mt-0">
+        <h2 className="font-bold hidden uppercase text-m leading-ml mb-4 lg:inline-block">
+          {t('events')}
+        </h2>
         <EventGrid events={events} />
         <EventSwitcher />
       </section>
