@@ -7,9 +7,12 @@ export const Menu = ({ hasBottomGap }) => {
   const { t } = useTranslation('common')
   return (
     <div
-      className={cn('font-bold flex pt-4 border-t min-h-[20rem] uppercase', {
-        'pb-4': hasBottomGap,
-      })}
+      className={cn(
+        'font-bold flex pt-4 border-t min-h-[20rem] uppercase lg:hidden',
+        {
+          'pb-4': hasBottomGap,
+        }
+      )}
     >
       <nav className="w-1/2 flex border-r relative">
         <div className="flex-1 leading-l">

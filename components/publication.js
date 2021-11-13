@@ -23,7 +23,9 @@ export const Publication = ({ setPublicationIndex, index, item }) => {
           </time>
           <div className="w-5/6 flex justify-between">
             <h2>{item.title}</h2>
-            <span>{t('buttons.openPdf')}</span>
+            <span className="lg:w-1/4 lg:text-right">
+              <span className="lg:hidden">{t('buttons.openPdf')}</span> ↓
+            </span>
           </div>
         </a>
       </Link>
