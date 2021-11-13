@@ -19,7 +19,7 @@ export const Footer = () => {
       <nav className="grid grid-cols-2 min-h-[68rem] grid-rows-2 gap-x-8 mb-8">
         <div
           className={cn(
-            ' flex items-end relative border-b pb-4',
+            'flex items-end relative border-b pb-4',
             styles.rightLine
           )}
         >
