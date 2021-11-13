@@ -4,12 +4,15 @@ import cn from 'classnames'
 import useTranslation from 'next-translate/useTranslation'
 import Image from 'next/image'
 import subscribeImage from '../../assets/images/subscribe.jpg'
+import Link from 'next/link'
+import { CheckboxIcon } from '..'
 
 const EMAIL_REGEX =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i
 
 export const Subscribe = () => {
   const [email, setEmail] = useState(null)
+  const [isTermsActive, setIsTermsActive] = useToggle(false)
   const [isSubscribed, setIsSubscribed] = useState(false)
   const [isEmailValid, setIsEmailValid] = useToggle(false)
 
@@ -33,12 +36,16 @@ export const Subscribe = () => {
     [setEmail, setIsEmailValid]
   )
 
+  const handleTermsChange = (e) => {
+    setIsTermsActive(e.target.value)
+  }
+
   const { t } = useTranslation('common')
 
   return (
-    <section className="flex lg:flex-col lg:mb-4">
-      <div className="w-1/2 flex flex-col pl-[2.4rem] pt-8 pb-[10rem] pr-10 bg-grey3 lg:w-full lg:mb-4 lg:p-4">
-        <h2 className="text-xl leading-ml uppercase font-bold mb-[20rem] lg:text-ml lg:mb-6">
+    <section className="flex lg:flex-col">
+      <div className="w-1/2 flex flex-col pl-[2.4rem] pt-8 pb-[10rem] pr-10 bg-grey3 lg:w-full lg:p-4">
+        <h2 className="text-xl leading-ml uppercase font-bold mb-[20rem] lg:text-m lg:mb-6 lg:normal-case lg:-tracking-[0.01em] lg:font-normal">
           {t('subscribeForm.title')}
         </h2>
         {isSubscribed ? (
@@ -51,7 +58,7 @@ export const Subscribe = () => {
               <input
                 type="email"
                 className={cn(
-                  'uppercase font-bold w-full focus:bg-grey3 bg-grey3 pb-2 pr-4 border-b placeholder-black clear-autofill'
+                  'uppercase font-bold w-full focus:bg-grey3 bg-grey3 pb-2 pr-4 border-b placeholder-black clear-autofill lg:mb-1'
                 )}
                 name="email"
                 placeholder={t('subscribeForm.input')}
@@ -69,6 +76,20 @@ export const Subscribe = () => {
                 type="submit"
                 value="→"
               />
+            </label>
+            <label className="lg:text-[1rem] flex items-center cursor-pointer">
+              <input
+                type="checkbox"
+                checked={isTermsActive}
+                onChange={handleTermsChange}
+                className="w-0 h-0 opacity-0 -z-1"
+                required
+              ></input>
+              <CheckboxIcon checked={isTermsActive} className={'mr-1'} /> By
+              submitting you are agreeing to the &nbsp;
+              <Link href="/terms">
+                <a className="underline"> terms and conditions.</a>
+              </Link>
             </label>
           </form>
         )}

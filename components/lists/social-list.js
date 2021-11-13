@@ -19,7 +19,7 @@ const SOCIAL_ITEMS = [
 export const SocialList = () => {
   const { t } = useTranslation('common')
   return (
-    <ul className="leading-l lg:space-y-2">
+    <ul className="leading-l lg:space-y-2 lg:leading-m">
       {SOCIAL_ITEMS.map(({ title, href }, index) => (
         <li key={index}>
           <Link href={href}>
