@@ -12,25 +12,27 @@ export const Footer = () => {
   return (
     <footer
       className={cn(
-        'px-4 pt-8 font-bold uppercase',
+        'px-4 pt-8 font-bold uppercase lg:py-6',
         isInverted ? 'bg-white text-black' : 'bg-grey5 text-white'
       )}
     >
-      <nav className="grid grid-cols-2 min-h-[68rem] grid-rows-2 gap-x-8 mb-8">
+      <nav className="grid grid-cols-2 min-h-[68rem] grid-rows-2 gap-x-8 mb-8 lg:min-h-[45rem] lg:text-m lg:gap-x-4 lg:mb-0">
         <div
           className={cn(
-            ' flex items-end relative border-b pb-4',
+            'flex items-end relative border-b pb-4 lg:items-start',
             styles.rightLine
           )}
         >
           <NavigationList />
         </div>
-        <div className="flex items-end border-b pb-4">
+        <div className="flex items-end border-b pb-4 lg:items-start">
           <SocialList />
         </div>
         <div className={cn('relative flex items-end', styles.rightLine)}>
           <Link href="/">
-            <a className="hover:underline">{t('collectiveFooter')}</a>
+            <a className="hover:underline lg:inline-block lg:word-spacing-1 lg:pr-3">
+              {t('collectiveFooter')}
+            </a>
           </Link>
         </div>
         <div className="flex items-end">

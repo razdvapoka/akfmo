@@ -61,3 +61,12 @@ body {
   @apply text-l;
   @apply leading-m;
 }
+
+@layer utilities {
+  .word-spacing-none {
+    word-spacing: none;
+  }
+  .word-spacing-1 {
+    word-spacing: 0.55rem;
+  }
+}

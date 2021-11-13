@@ -23,7 +23,7 @@ const NAV_ITEMS = [
 export const NavigationList = () => {
   const { t } = useTranslation('common')
   return (
-    <ul className="leading-l">
+    <ul className="leading-l lg:space-y-2 lg:leading-m">
       {NAV_ITEMS.map(({ title, href }, index) => (
         <li key={index}>
           <Link href={href}>
