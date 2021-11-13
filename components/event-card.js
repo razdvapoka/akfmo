@@ -3,6 +3,7 @@ import Image from 'next/image'
 import cn from 'classnames'
 import { format } from 'date-fns'
 import { useMemo } from 'react'
+import { useInvertedContext } from '../lib/contexts'
 // import useTranslation from 'next-translate/useTranslation'
 
 export const EventCard = ({
@@ -14,11 +15,16 @@ export const EventCard = ({
   className,
 }) => {
   // const { t } = useTranslation('common')
+  const [isInverted] = useInvertedContext()
   const dateString = useMemo(() => format(new Date(date), 'dd.MM.yy'), [date])
   return (
     <Link href={`/events/${uid}`}>
       <a
-        className={cn('block bg-grey1 pt-4 pb-6 lg:p-2 lg:relative', className)}
+        className={cn(
+          'block pt-4 pb-6 lg:p-2 lg:relative',
+          isInverted ? 'bg-grey4 text-white' : 'bg-grey1',
+          className
+        )}
       >
         <div className="pl-5 uppercase font-bold text-m tracking-wider mb-4 lg:mb-2 lg:pl-0 lg:text-xs">
           {location} | {dateString}
@@ -42,7 +48,7 @@ export const EventCard = ({
               height={cover.dimensions.height}
             />
           </div>
-          <ul className="ml-4 uppercase text-grey2 font-bold text-m tracking-wider space-y-[0.4rem] lg:ml-0 lg:flex lg:space-y-0 lg:space-x-1 lg:absolute lg:bottom-2 lg:text-xs">
+          <ul className="ml-4 uppercase text-grey2 font-medium text-m tracking-wider space-y-[0.4rem] lg:ml-0 lg:flex lg:space-y-0 lg:space-x-1 lg:absolute lg:bottom-2 lg:text-xs">
             {tags.map((tag) => (
               <li key={tag}>{tag}</li>
             ))}

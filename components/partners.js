@@ -1,16 +1,17 @@
 import useTranslation from 'next-translate/useTranslation'
-import { SinglePressa } from '.'
+import { SinglePartner } from '.'
 
-export const Press = ({ press }) => {
+export const Partners = ({ partners }) => {
   const { t } = useTranslation('common')
+
   return (
     <section className="border-t mb-16 pt-2 col-start-2 col-end-20">
       <h2 className="font-bold uppercase text-m leading-l mb-10">
-        {t('press.title')}
+        {t('partners.title')}
       </h2>
-      <ul>
-        {press.map((item, index) => (
-          <SinglePressa pressa={item.item} key={index} />
+      <ul className="space-y-4">
+        {partners.map((item, index) => (
+          <SinglePartner partner={item.item} key={index} />
         ))}
       </ul>
     </section>

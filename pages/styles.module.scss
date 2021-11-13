@@ -1,0 +1,48 @@
+.aboutSectionRichText > p + p {
+  margin-top: 1em;
+}
+
+.aboutSectionRichText > figure {
+  margin: 3rem 0;
+}
+
+.aboutSectionRichText a:hover {
+  text-decoration: underline;
+}
+
+.aboutSectionRichText > ul {
+  margin-top: 1em;
+  margin-bottom: 7.5rem;
+}
+
+.aboutSectionRichText > ul > li + li {
+  margin-top: 1em;
+}
+
+.aboutSectionRichText > ul > li {
+  position: relative;
+}
+
+.aboutSectionRichText > ul > li::before {
+  position: absolute;
+  display: block;
+  content: '—';
+  left: 0;
+  top: 0;
+  width: 6rem;
+  transform: translate(-100%, 0);
+}
+
+@screen lg {
+  .aboutSectionRichText > figure {
+    margin: 2rem 0;
+  }
+  .aboutSectionRichText > ul {
+    margin-bottom: 2rem;
+    width: 21rem;
+    margin-left: auto;
+  }
+  .aboutSectionRichText > ul > li::before {
+    width: 7rem;
+  }
+}
