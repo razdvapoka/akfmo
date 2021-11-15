@@ -30,7 +30,6 @@ export const OtherEvents = ({ events, isPastEvent }) => {
   const fakeEvents = repeat(4, events).flat()
   return (
     <section className="col-start-2 col-end-20 border-t pt-2 lg:w-screen lg:transform lg:translate-x-[-2rem] lg:bg-white lg:border-t-0">
-      <hr className="hidden lg:block mx-4 mb-2" />
       <h2 className="mb-8 lg:mb-6 text-m leading-m uppercase font-bold tracking-wider lg:ml-4">
         {t(isPastEvent ? 'moreEventsPast' : 'moreEventsUpcoming')}
       </h2>

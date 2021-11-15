@@ -4,7 +4,7 @@ import { SinglePressa } from './single-pressa'
 export const Press = ({ press }) => {
   const { t } = useTranslation('common')
   return (
-    <section className="border-t mb-12 pt-2 col-start-2 col-end-20">
+    <section className="border-t mb-12 pt-2 col-start-2 col-end-20 lg:mb-0">
       <h2 className="font-bold uppercase text-m leading-l mb-10 lg:mb-4">
         {t('press.title')}
       </h2>
