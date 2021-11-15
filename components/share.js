@@ -1,6 +1,9 @@
 import TwitterSvg from '../assets/svg/twitter.svg'
+import TwitterMobSvg from '../assets/svg/twitter-mob.svg'
 import FacebookSvg from '../assets/svg/facebook.svg'
+import FacebookMobSvg from '../assets/svg/facebook-mob.svg'
 import TelegramSvg from '../assets/svg/telegram.svg'
+import TelegramMobSvg from '../assets/svg/telegram-mob.svg'
 import useTranslation from 'next-translate/useTranslation'
 
 export const Share = ({ url, title }) => {
@@ -16,7 +19,8 @@ export const Share = ({ url, title }) => {
         className="w-9 h-9 mr-2 lg:h-6 lg:w-6"
         aria-label={t('share.twitter')}
       >
-        <TwitterSvg />
+        <TwitterSvg className="lg:hidden" />
+        <TwitterMobSvg className="hidden lg:block" />
       </a>
 
       <a
@@ -26,7 +30,8 @@ export const Share = ({ url, title }) => {
         className="w-9 h-9 mr-2 lg:h-6 lg:w-6"
         aria-label={t('share.facebook')}
       >
-        <FacebookSvg />
+        <FacebookSvg className="lg:hidden" />
+        <FacebookMobSvg className="hidden lg:block" />
       </a>
 
       <a
@@ -36,7 +41,8 @@ export const Share = ({ url, title }) => {
         className="w-9 h-9 lg:h-6 lg:w-6"
         aria-label={t('share.telegram')}
       >
-        <TelegramSvg />
+        <TelegramSvg className="lg:hidden" />
+        <TelegramMobSvg className="hidden lg:block" />
       </a>
     </div>
   )
