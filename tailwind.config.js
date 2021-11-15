@@ -34,9 +34,11 @@ module.exports = {
       grey4: '#2E2C2C',
       grey5: '#242222',
       pink: '#FFE8E8',
+      red: '#ED4A57',
     },
     fontSize: {
-      xs: '1.1rem',
+      xxs: '1.1rem',
+      xs: '1rem',
       s: '1.2rem',
       m: '1.6rem',
       l: '1.8rem',

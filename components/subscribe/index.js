@@ -15,16 +15,25 @@ export const Subscribe = () => {
   const [isTermsActive, setIsTermsActive] = useToggle(false)
   const [isSubscribed, setIsSubscribed] = useState(false)
   const [isEmailValid, setIsEmailValid] = useToggle(false)
+  const [isErrorActive, setIsErrorActive] = useToggle(false)
+  const [isInputFocus, setIsInputFocus] = useToggle(false)
 
   const handleSubmit = useCallback(
     (e) => {
       e.preventDefault()
+      console.log('work')
+      setIsErrorActive(true)
       if (isEmailValid) {
         console.log(`subscribed: ${email}`)
         setIsSubscribed(true)
+        setEmail('')
       }
+      setTimeout(() => {
+        setIsErrorActive(false)
+        setIsSubscribed(false)
+      }, 2000)
     },
-    [email, isEmailValid, setIsSubscribed]
+    [email, isEmailValid, setIsSubscribed, setIsErrorActive, setEmail]
   )
 
   const handleEmailChange = useCallback(
@@ -40,6 +49,11 @@ export const Subscribe = () => {
     setIsTermsActive(e.target.value)
   }
 
+  const clearInput = (e) => {
+    e.preventDefault()
+    setEmail('')
+  }
+
   const { t } = useTranslation('common')
 
   return (
@@ -48,51 +62,65 @@ export const Subscribe = () => {
         <h2 className="text-xl leading-ml uppercase font-bold mb-[20rem] lg:text-m lg:mb-6 lg:normal-case lg:-tracking-[0.01em] lg:font-normal">
           {t('subscribeForm.title')}
         </h2>
-        {isSubscribed ? (
-          <div className="uppercase text-m leading-m font-bold h-6 pt-[0.2rem]">
-            {t('subscribeForm.subscribed')}
-          </div>
-        ) : (
-          <form className="relative text-m leading-m" onSubmit={handleSubmit}>
-            <label>
+        <form className="relative text-m leading-m" onSubmit={handleSubmit}>
+          <label>
+            <input
+              type="email"
+              className={cn(
+                'uppercase font-bold w-full focus:bg-grey3 bg-grey3 pb-2 pr-4 border-b focus:text-white placeholder-black clear-autofill lg:mb-1'
+              )}
+              name="email"
+              placeholder={t('subscribeForm.input')}
+              value={email}
+              onChange={handleEmailChange}
+              onFocus={() => setIsInputFocus(true)}
+              onBlur={() => setIsInputFocus(false)}
+            />
+          </label>
+          <label className="absolute right-0 h-4">
+            {email && !isEmailValid ? (
               <input
-                type="email"
-                className={cn(
-                  'uppercase font-bold w-full focus:bg-grey3 bg-grey3 pb-2 pr-4 border-b placeholder-black clear-autofill lg:mb-1'
-                )}
-                name="email"
-                placeholder={t('subscribeForm.input')}
-                onChange={handleEmailChange}
+                className="bg-grey3 w-4 cursor-pointer align-middle text-center text-white"
+                onClick={(e) => clearInput(e)}
+                type="button"
+                value="←"
               />
-            </label>
-            <label className="absolute right-0 h-4">
+            ) : (
               <input
                 className={cn(
-                  'bg-grey3 w-4 cursor-pointer align-middle',
-                  isEmailValid
-                    ? 'opacity-100 cursor-pointer'
-                    : 'opacity-50 pointer-events-none'
+                  'bg-grey3 w-4 cursor-pointer align-middle text-center',
+                  isEmailValid ? 'cursor-pointer' : 'pointer-events-none',
+                  isErrorActive && !isEmailValid ? 'text-red' : null
                 )}
                 type="submit"
                 value="→"
               />
-            </label>
-            <label className="lg:text-[1rem] flex items-center cursor-pointer">
-              <input
-                type="checkbox"
-                checked={isTermsActive}
-                onChange={handleTermsChange}
-                className="w-0 h-0 opacity-0 -z-1"
-                required
-              ></input>
-              <CheckboxIcon checked={isTermsActive} className={'mr-1'} /> By
-              submitting you are agreeing to the &nbsp;
-              <Link href="/terms">
-                <a className="underline"> terms and conditions.</a>
-              </Link>
-            </label>
-          </form>
-        )}
+            )}
+          </label>
+          <label className="lg:text-[1rem] flex items-center cursor-pointer">
+            <input
+              type="checkbox"
+              checked={isTermsActive}
+              onChange={handleTermsChange}
+              className="w-0 h-0 opacity-0 -z-1"
+            ></input>
+            <CheckboxIcon checked={isTermsActive} className={'mr-1'} /> By
+            submitting you are agreeing to the &nbsp;
+            <Link href="/terms">
+              <a className="underline"> terms and conditions.</a>
+            </Link>
+          </label>
+        </form>
+        {isErrorActive && isSubscribed ? (
+          <div className="uppercase text-xxs leading-m font-medium h-6 pt-[0.2rem]">
+            {t('subscribeForm.subscribed')}
+          </div>
+        ) : null}
+        {isErrorActive && !isEmailValid ? (
+          <div className="uppercase text-xxs leading-m font-medium text-red h-6 pt-[0.2rem]">
+            {t('subscribeForm.subscribedError')}
+          </div>
+        ) : null}
       </div>
       <div className="w-1/2 flex justify-center items-center bg-pink lg:w-full lg:p-8">
         <div className="w-1/3 lg:w-full">
