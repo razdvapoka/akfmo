@@ -1,5 +1,5 @@
 import useTranslation from 'next-translate/useTranslation'
-import { SinglePressa } from '.'
+import { SinglePressa } from './single-pressa'
 
 export const Press = ({ press }) => {
   const { t } = useTranslation('common')

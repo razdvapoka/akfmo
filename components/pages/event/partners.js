@@ -1,5 +1,5 @@
 import useTranslation from 'next-translate/useTranslation'
-import { SinglePartner } from '.'
+import { SinglePartner } from './single-partner'
 
 export const Partners = ({ partners }) => {
   const { t } = useTranslation('common')

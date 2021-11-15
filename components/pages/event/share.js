@@ -1,9 +1,9 @@
-import TwitterSvg from '../assets/svg/twitter.svg'
-import TwitterMobSvg from '../assets/svg/twitter-mob.svg'
-import FacebookSvg from '../assets/svg/facebook.svg'
-import FacebookMobSvg from '../assets/svg/facebook-mob.svg'
-import TelegramSvg from '../assets/svg/telegram.svg'
-import TelegramMobSvg from '../assets/svg/telegram-mob.svg'
+import TwitterSvg from '../../../assets/svg/twitter.svg'
+import TwitterMobSvg from '../../../assets/svg/twitter-mob.svg'
+import FacebookSvg from '../../../assets/svg/facebook.svg'
+import FacebookMobSvg from '../../../assets/svg/facebook-mob.svg'
+import TelegramSvg from '../../../assets/svg/telegram.svg'
+import TelegramMobSvg from '../../../assets/svg/telegram-mob.svg'
 import useTranslation from 'next-translate/useTranslation'
 
 export const Share = ({ url, title }) => {
