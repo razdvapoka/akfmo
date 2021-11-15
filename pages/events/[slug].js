@@ -1,8 +1,9 @@
 import cn from 'classnames'
 import { RichText } from 'prismic-reactjs'
-import { useCallback } from 'react'
+import { useCallback, useMemo } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
+import Link from 'next/link'
 import ErrorPage from 'next/error'
 import {
   EventInfo,
@@ -21,6 +22,8 @@ import X from '../../assets/svg/x.svg'
 import BigX from '../../assets/svg/x-big.svg'
 import Image from 'next/image'
 import styles from './styles.module.scss'
+import format from 'date-fns/format'
+import { repeat } from '../../lib/utils'
 
 const htmlSerializer = function (type, element, content, children, key) {
   switch (type) {
@@ -55,7 +58,45 @@ const htmlSerializer = function (type, element, content, children, key) {
   }
 }
 
-export default function Post({ event }) {
+const OtherEvent = ({ _meta: { uid }, title, date, location, index }) => {
+  const dateString = useMemo(() => format(new Date(date), 'dd.MM.yyyy'), [date])
+  return (
+    <Link href={`/events/${uid}`}>
+      <a className={cn('block w-1/2 mb-6', styles.otherEvent)}>
+        {index > 1 && <hr className={cn(styles.otherEventSeparator, 'mb-6')} />}
+        <div className={cn('', styles.otherEventInnerBox)}>
+          <h3 className="text-xl leading-ml tracking-tighter font-medium mb-8">
+            {title}
+          </h3>
+          <div className="text-m leading-m uppercase font-bold tracking-wider">{`${location} | ${dateString}`}</div>
+        </div>
+      </a>
+    </Link>
+  )
+}
+
+const OtherEvents = ({ events, isPastEvent }) => {
+  const { t } = useTranslation('common')
+  const fakeEvents = repeat(4, events).flat()
+  return (
+    <section className="col-start-2 col-end-20 border-t pt-2">
+      <h2 className="mb-8 text-m leading-m uppercase font-bold tracking-wider">
+        {t(isPastEvent ? 'moreEventsPast' : 'moreEventsUpcoming')}
+      </h2>
+      <div className="flex flex-wrap">
+        {fakeEvents.map(({ node }, index) => (
+          <OtherEvent
+            key={`${node._meta.uid}-${index}`}
+            {...node}
+            index={index}
+          />
+        ))}
+      </div>
+    </section>
+  )
+}
+
+export default function Post({ event, events }) {
   const { t } = useTranslation('common')
 
   const router = useRouter()
@@ -66,6 +107,17 @@ export default function Post({ event }) {
       router.push('/')
     }
   }, [router])
+
+  const isPastEvent = useMemo(() => new Date(event?.date) < new Date(), [event])
+  const otherEvents = useMemo(
+    () =>
+      events?.filter(({ node }) =>
+        node._meta.uid !== event?._meta?.uid && isPastEvent
+          ? new Date(node.date) < new Date()
+          : new Date(node.date) >= new Date()
+      ) || [],
+    [events, event, isPastEvent]
+  )
 
   if (!router.isFallback && !event?._meta?.uid) {
     return <ErrorPage statusCode={404} />
@@ -81,12 +133,14 @@ export default function Post({ event }) {
             <title>event</title>
             <meta property="og:image" content={event.cover.url} />
           </Head>
-          <div className="col-span-2 border-r uppercase text-m leading-m pt-[18rem] font-bold lg:hidden">
-            <hr className="mr-4" />
-            <nav className="space-y-4 pt-2">
-              <NavigationList />
-              <LangSwitcher />
-            </nav>
+          <div className="col-span-2 border-r uppercase text-m leading-m font-bold lg:hidden">
+            <div className="sticky top-[20rem]">
+              <hr className="mr-4" />
+              <nav className="space-y-4 pt-2">
+                <NavigationList />
+                <LangSwitcher />
+              </nav>
+            </div>
           </div>
           <div className="col-start-3 col-end-23 grid grid-cols-20 lg:flex lg:flex-col">
             <EventHeader title={event.title} tags={event._meta.tags} />
@@ -116,11 +170,18 @@ export default function Post({ event }) {
               <Partners partners={event.partners} />
             )}
             {event?.press?.length > 0 && <Press press={event.press} />}
+            {otherEvents?.length > 0 && (
+              <OtherEvents events={otherEvents} isPastEvent={isPastEvent} />
+            )}
           </div>
-          <div className="col-span-2 border-l pt-[18rem] lg:hidden">
-            <hr className="ml-4" />
-            <div className="space-y-4 pt-2 text-m leading-m font-bold uppercase text-right">
-              akfmo
+          <div className="col-span-2 border-l lg:hidden">
+            <div className="sticky top-[20rem]">
+              <hr className="ml-4" />
+              <Link href="/">
+                <a className="block pt-2 text-m leading-m font-bold uppercase text-right hover:underline">
+                  akfmo
+                </a>
+              </Link>
             </div>
           </div>
         </article>
@@ -134,6 +195,7 @@ export async function getStaticProps({ params, locale }) {
   return {
     props: {
       event: data?.event ?? null,
+      events: data?.allEvents?.edges ?? null,
     },
     revalidate: 60,
   }

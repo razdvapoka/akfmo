@@ -79,8 +79,8 @@
   "press": {
     "title": "press"
   },
-  "events": {
-    "past": "Past Events",
-    "upcoming": "Upcoming Events"
-  }
+  "eventsPast": "Past Events",
+  "eventsUpcoming": "Upcoming Events",
+  "moreEventsPast": "More Past Events",
+  "moreEventsUpcoming": "More Upcoming Events"
 }

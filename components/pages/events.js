@@ -17,12 +17,12 @@ const Switcher = () => {
     >
       <Link href="/events/past">
         <a className="flex items-center justify-center w-1/2 hover:underline py-5 border-r">
-          {t('events.past')}
+          {t('eventsPast')}
         </a>
       </Link>
       <Link href="/events/upcoming">
         <a className="flex items-center justify-center w-1/2 hover:underline py-5">
-          {t('events.upcoming')}
+          {t('eventsUpcoming')}
         </a>
       </Link>
     </div>
