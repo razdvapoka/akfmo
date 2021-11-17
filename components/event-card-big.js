@@ -4,6 +4,7 @@ import cn from 'classnames'
 import { format } from 'date-fns'
 import { useMemo } from 'react'
 // import { useInvertedContext } from '../lib/contexts'
+import styles from './styles.module.scss'
 
 export const EventCardBig = ({
   _meta: { uid, tags },
@@ -19,8 +20,9 @@ export const EventCardBig = ({
     <Link href={`/events/${uid}`}>
       <a
         className={cn(
-            'bg-pink py-8 grid grid-cols-24 lg:grid-cols-4 lg:py-2 lg:px-6 lg:relative',
+          'bg-pink py-8 grid grid-cols-24 lg:grid-cols-4 lg:py-2 lg:px-6 lg:relative',
           // { 'text-white': isInverted },
+          styles.eventCard,
           className
         )}
       >
@@ -29,15 +31,19 @@ export const EventCardBig = ({
         </div>
         <div className="flex col-start-5 col-end-22 lg:col-start-1 lg:col-span-full lg:flex-col lg:mb-1">
           <div className="w-full">
-            <Image
-              className="filter grayscale"
-              alt={cover.alt || title}
-              src={cover.url}
-              layout="responsive"
-              objectFit="cover"
-              width={cover.dimensions.width}
-              height={cover.dimensions.height}
-            />
+            <div className="aspect-w-1 aspect-h-1">
+              <Image
+                className={cn(
+                  'filter grayscale transition-all',
+                  styles.eventCardImage
+                )}
+                alt={cover.alt || title}
+                src={cover.url}
+                layout="fill"
+                objectFit="cover"
+                objectPosition="center"
+              />
+            </div>
           </div>
           <ul className="ml-4 uppercase text-grey2 font-medium text-m tracking-wider space-y-[0.4rem] lg:flex lg:space-y-0 lg:space-x-1 lg:absolute lg:bottom-2 lg:text-xs lg:ml-0">
             {tags.map((tag) => (

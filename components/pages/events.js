@@ -15,14 +15,14 @@ const Switcher = () => {
         { 'text-white': isInverted }
       )}
     >
-      <Link href="/events/past">
-        <a className="flex items-center justify-center w-1/2 hover:underline py-5 border-r">
-          {t('eventsPast')}
-        </a>
-      </Link>
       <Link href="/events/upcoming">
         <a className="flex items-center justify-center w-1/2 hover:underline py-5">
           {t('eventsUpcoming')}
+        </a>
+      </Link>
+      <Link href="/events/past">
+        <a className="flex items-center justify-center w-1/2 hover:underline py-5 border-r">
+          {t('eventsPast')}
         </a>
       </Link>
     </div>

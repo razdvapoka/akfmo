@@ -5,6 +5,7 @@ import { format } from 'date-fns'
 import { useMemo } from 'react'
 import { useInvertedContext } from '../lib/contexts'
 // import useTranslation from 'next-translate/useTranslation'
+import styles from './styles.module.scss'
 
 export const EventCard = ({
   _meta: { uid, tags },
@@ -23,6 +24,7 @@ export const EventCard = ({
         className={cn(
           'block pt-4 pb-6 lg:p-2 lg:relative',
           isInverted ? 'bg-grey4 text-white' : 'bg-grey1',
+          styles.eventCard,
           className
         )}
       >
@@ -39,7 +41,10 @@ export const EventCard = ({
             )}
           >
             <Image
-              className="filter grayscale"
+              className={cn(
+                'filter grayscale transition-all',
+                styles.eventCardImage
+              )}
               alt={cover.alt || title}
               src={cover.url}
               layout="responsive"
