@@ -17,11 +17,11 @@ export default function Index({ data }) {
   )
 
   return (
-    <Layout className="overflow-hidden">
+    <Layout className="overflow-hidden lg:overflow-visible">
       <Head>
         <title>AKFMO</title>
       </Head>
-      <Intro />
+      <Intro about={data.about} />
       <section id="events" className="mt-18 lg:border-t lg:pt-2 lg:mt-0">
         <h2 className="font-bold hidden uppercase text-m leading-ml mb-4 lg:inline-block">
           {t('events')}
