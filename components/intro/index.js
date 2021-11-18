@@ -12,9 +12,9 @@ export const Intro = ({ about }) => {
     <section className="flex min-h-[24rem] mb-16 lg:min-h-0 lg:mb-8">
       <div className="w-1/2 border-r pr-4 lg:w-full lg:border-r-0 lg:pr-0">
         <div className="h-full flex flex-col justify-between border-t pt-4 lg:pt-2">
-          <p className="w-5/6 uppercase text-m font-bold leading-ml lg:w-full lg:mb-4">
+          <div className="w-5/6 uppercase text-m font-bold leading-ml lg:w-full lg:mb-4">
             <RichText render={about} />
-          </p>
+          </div>
           <Link href="/">
             <a
               className={cn(

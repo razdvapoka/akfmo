@@ -1,6 +1,6 @@
 {
   "allEvents": "all events",
-  "logotype": "Logotype image",
+  "logotype": "AKFMO logo",
   "subscribe": "Subscribe",
   "akfmo": "AKFMO",
   "akfmoFooter": "AKFMO 2021",
@@ -81,6 +81,11 @@
   },
   "eventsPast": "Past Events",
   "eventsUpcoming": "Upcoming Events",
+  "eventsPastShort": "Past",
+  "eventsUpcomingShort": "Upcoming",
   "moreEventsPast": "More Past Events",
-  "moreEventsUpcoming": "More Upcoming Events"
+  "moreEventsUpcoming": "More Upcoming Events",
+  "menu": "menu",
+  "close": "close",
+  "home": "home"
 }

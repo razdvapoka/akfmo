@@ -43,7 +43,8 @@ export const Subscribe = () => {
   const { t } = useTranslation('common')
 
   return (
-    <section className="flex lg:flex-col">
+    <section className="flex lg:flex-col relative">
+      <div className="absolute -top-8" id="subscribe" />
       <div className="w-1/2 flex flex-col pl-[2.4rem] pt-8 pb-[10rem] pr-10 bg-grey3 lg:w-full lg:p-4">
         <h2 className="text-xl leading-ml uppercase font-bold mb-[20rem] lg:text-m lg:mb-6 lg:normal-case lg:-tracking-[0.01em] lg:font-normal">
           {t('subscribeForm.title')}

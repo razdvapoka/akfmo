@@ -42,6 +42,7 @@ module.exports = {
       l: '1.8rem',
       ml: '2rem',
       mx: '3rem',
+      mxx: '4rem',
       xl: '3.2rem',
       xxl: '7.8rem',
     },

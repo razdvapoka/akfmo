@@ -17,7 +17,7 @@ export default function Index({ data }) {
   )
 
   return (
-    <Layout className="overflow-hidden lg:overflow-visible">
+    <Layout className="overflow-hidden lg:overflow-visible" isMain>
       <Head>
         <title>AKFMO</title>
       </Head>

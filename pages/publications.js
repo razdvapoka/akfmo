@@ -16,7 +16,6 @@ export default function PublicationsPage({ data }) {
 
 export async function getStaticProps(context) {
   const data = await getPublications(context.locale)
-  console.log(data.publications_page.publications)
   return {
     props: {
       data: data.publications_page.publications.map(
