@@ -36,7 +36,7 @@ export const Menu = ({ hasBottomGap }) => {
           <SocialList />
         </nav>
         <div className="flex justify-center items-start">
-          <Link href="/">
+          <Link href="#subscribe">
             <a className="hover:underline">{t('subscribe')}</a>
           </Link>
         </div>
