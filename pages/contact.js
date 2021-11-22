@@ -1,7 +1,10 @@
 import Head from 'next/head'
 import { CityContact, Layout, LocaleContact } from '../components'
+import { getContacts } from '../lib/api'
 
-export default function Contact() {
+export default function Contact({
+  data: { address, embassy, facebook, instagram, email },
+}) {
   return (
     <Layout>
       <Head>
@@ -11,9 +14,22 @@ export default function Contact() {
         <h1 className="hidden lg:flex border-t py-4 items-center justify-center text-m uppercase font-bold">
           contact us
         </h1>
-        <LocaleContact />
-        <CityContact />
+        <LocaleContact
+          address={address}
+          facebookUrl={facebook.url}
+          instagramUrl={instagram.url}
+          email={email}
+        />
+        <CityContact embassy={embassy} />
       </section>
     </Layout>
   )
+}
+
+export async function getStaticProps(context) {
+  const data = await getContacts(context.locale)
+  return {
+    props: { data: data.contact_page },
+    revalidate: 60,
+  }
 }

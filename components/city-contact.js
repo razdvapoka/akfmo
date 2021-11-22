@@ -2,8 +2,9 @@ import { ButtonLink } from '.'
 import useTranslation from 'next-translate/useTranslation'
 import AboutRect from '../assets/svg/about-rect.svg'
 import AboutRectMob from '../assets/svg/about-rect-m.svg'
+import { RichText } from 'prismic-reactjs'
 
-export const CityContact = () => {
+export const CityContact = ({ embassy }) => {
   const { t } = useTranslation('common')
   return (
     <div className="flex pb-4 border-t lg:flex-col-reverse lg:pb-0">
@@ -23,11 +24,7 @@ export const CityContact = () => {
             {t('contactCity.title')}
           </h2>
           <adress className="w-1/2 inline-block text-xl leading-l font-medium mb-12 lg:text-m lg:w-3/4 lg:mb-4">
-            {t('contactCity.adress')}
-            <br />
-            {t('contactCity.tel') + ' ' + t('contactCity.telNumber')}
-            <br />
-            {t('contactCity.fax') + ' ' + t('contactCity.faxNumber')}
+            <RichText render={embassy} />
           </adress>
           <div className="flex justify-between h-24 space-x-8 lg:h-10 lg:space-x-2">
             <ButtonLink
