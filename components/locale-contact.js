@@ -18,9 +18,9 @@ export const LocaleContact = ({
           <h2 className="uppercase font-bold mb-6 lg:text-m">
             {t('contactLocale.title')}
           </h2>
-          <adress className="w-3/4 inline-block text-xl leading-l font-medium mb-9 lg:mb-7 lg:text-m lg:leading-ml lg:w-full lg:pr-4">
+          <address className="w-3/4 inline-block text-xl leading-l font-medium mb-9 lg:mb-7 lg:text-m lg:leading-ml lg:w-full lg:pr-4 not-italic">
             <RichText render={address} />
-          </adress>
+          </address>
           <ButtonLink
             link={email}
             className="w-1/2 h-24 mr-4 lg:w-[15.6rem] lg:h-10 lg:mr-2"

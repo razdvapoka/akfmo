@@ -23,9 +23,9 @@ export const CityContact = ({ embassy }) => {
           <h2 className="uppercase font-bold mb-10 lg:text-m lg:mb-6">
             {t('contactCity.title')}
           </h2>
-          <adress className="w-1/2 inline-block text-xl leading-l font-medium mb-12 lg:text-m lg:w-3/4 lg:mb-4">
+          <address className="w-1/2 inline-block text-xl leading-l font-medium mb-12 lg:text-m lg:w-3/4 lg:mb-4 not-italic">
             <RichText render={embassy} />
-          </adress>
+          </address>
           <div className="flex justify-between h-24 space-x-8 lg:h-10 lg:space-x-2">
             <ButtonLink
               link={'mailto:' + t('contactCity.mail')}
