@@ -15,7 +15,7 @@ export const Intro = ({ about }) => {
           <div className="w-5/6 uppercase text-m font-bold leading-ml lg:w-full lg:mb-4">
             <RichText render={about} />
           </div>
-          <Link href="/">
+          <Link href="/about">
             <a
               className={cn(
                 'transform translate-y-3/4 flex justify-between items-center lg:translate-y-0',
