@@ -55,8 +55,7 @@
   "contactCity": {
     "title": "Austrian Embassy Address & contacts",
     "emailButton": "EMAIL",
-    "siteButton": "Website",
-    "siteLink": "https://akfmo.org"
+    "siteButton": "Website"
   },
   "partners": {
     "title": "Partner & Organizer"
