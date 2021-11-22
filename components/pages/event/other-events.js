@@ -2,12 +2,18 @@ import cn from 'classnames'
 import Link from 'next/link'
 import useTranslation from 'next-translate/useTranslation'
 import styles from './styles.module.scss'
-import format from 'date-fns/format'
 import { repeat } from '../../../lib/utils'
-import { useMemo } from 'react'
+import { useEventDateString } from '../../../lib/hooks'
 
-const OtherEvent = ({ _meta: { uid }, title, date, location, index }) => {
-  const dateString = useMemo(() => format(new Date(date), 'dd.MM.yyyy'), [date])
+const OtherEvent = ({
+  _meta: { uid },
+  title,
+  date,
+  end_date: endDate,
+  location,
+  index,
+}) => {
+  const dateString = useEventDateString(date, endDate)
   return (
     <Link href={`/events/${uid}`}>
       <a className={cn('block w-1/2 mb-6 lg:min-w-[75%]', styles.otherEvent)}>

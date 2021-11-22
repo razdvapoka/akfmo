@@ -1,27 +1,25 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import cn from 'classnames'
-import { format } from 'date-fns'
-import { useMemo } from 'react'
-// import { useInvertedContext } from '../lib/contexts'
 import styles from './styles.module.scss'
+import { useEventDateString } from '../lib/hooks'
 
 export const EventCardBig = ({
   _meta: { uid, tags },
   cover,
   date,
+  end_date: endDate,
   title,
   location,
   className,
 }) => {
-  // const [isInverted] = useInvertedContext()
-  const dateString = useMemo(() => format(new Date(date), 'dd.MM.yy'), [date])
+  const dateString = useEventDateString(date, endDate)
+
   return (
     <Link href={`/events/${uid}`}>
       <a
         className={cn(
           'bg-pink py-8 grid grid-cols-24 lg:grid-cols-4 lg:py-2 lg:px-6 lg:relative',
-          // { 'text-white': isInverted },
           styles.eventCard,
           className
         )}

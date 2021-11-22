@@ -1,11 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import cn from 'classnames'
-import { format } from 'date-fns'
-import { useMemo } from 'react'
 import { useInvertedContext } from '../lib/contexts'
-// import useTranslation from 'next-translate/useTranslation'
 import styles from './styles.module.scss'
+import { useEventDateString } from '../lib/hooks'
 
 export const EventCard = ({
   _meta: { uid, tags },
@@ -14,10 +12,10 @@ export const EventCard = ({
   title,
   location,
   className,
+  end_date: endDate,
 }) => {
-  // const { t } = useTranslation('common')
   const [isInverted] = useInvertedContext()
-  const dateString = useMemo(() => format(new Date(date), 'dd.MM.yy'), [date])
+  const dateString = useEventDateString(date, endDate)
   return (
     <Link href={`/events/${uid}`}>
       <a
