@@ -1,6 +1,6 @@
 {
   "allEvents": "all events",
-  "logotype": "Logotype image",
+  "logotype": "AKFMO logo",
   "subscribe": "Subscribe",
   "akfmo": "AKFMO",
   "akfmoFooter": "AKFMO 2021",
@@ -54,7 +54,6 @@
   },
   "contactCity": {
     "title": "Austrian Embassy Address & contacts",
-    "mail": "info@akfmo.com",
     "emailButton": "EMAIL",
     "siteButton": "Website",
     "siteLink": "https://akfmo.org"
