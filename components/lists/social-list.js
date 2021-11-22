@@ -12,10 +12,6 @@ const SOCIAL_ITEMS = [
     href: 'https://www.facebook.com/austrian.cultural.forum',
     isExternal: true,
   },
-  {
-    title: 'social.visitUs',
-    href: '/contact',
-  },
 ]
 
 export const SocialList = () => {

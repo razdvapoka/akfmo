@@ -1,5 +1,4 @@
 import Link from 'next/link'
-// import FooterLogoSvg from '../../assets/svg/footerLogo.svg'
 import styles from './styles.module.scss'
 import cn from 'classnames'
 import { NavigationList, SocialList } from '../'
@@ -29,11 +28,14 @@ export const Footer = () => {
           <SocialList />
         </div>
         <div className={cn('relative flex items-end', styles.rightLine)}>
-          <Link href="/">
-            <a className="hover:underline lg:inline-block lg:word-spacing-1 lg:pr-3">
-              {t('collectiveFooter')}
-            </a>
-          </Link>
+          <a
+            className="hover:underline lg:inline-block lg:word-spacing-1 lg:pr-3"
+            href="https://kitcollective.online"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t('collectiveFooter')}
+          </a>
         </div>
         <div className="flex items-end">
           <Link href="/">
@@ -41,9 +43,6 @@ export const Footer = () => {
           </Link>
         </div>
       </nav>
-      {/* <div className="flex justify-center items-center">
-        <FooterLogoSvg className="w-[22rem]" />
-      </div> */}
     </footer>
   )
 }

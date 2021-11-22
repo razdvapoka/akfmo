@@ -1,16 +1,16 @@
 {
-  "allEvents": "all events",
-  "logotype": "AKFMO logo",
-  "subscribe": "Subscribe",
+  "allEvents": "Все мероприятия",
+  "logotype": "Логотип АКФ",
+  "subscribe": "Подписаться",
   "akfmo": "AKFMO",
   "akfmoFooter": "AKFMO 2021",
-  "collectiveFooter": "website by Kit collective",
-  "events": "Events",
+  "collectiveFooter": "разработка и дизайн Kit collective",
+  "events": "Мероприятия",
   "navigation": {
-    "events": "Events",
-    "publications": "Publications",
-    "about": "About AKFMO",
-    "contact": "Contact Us"
+    "events": "Мероприятия",
+    "publications": "Публикации",
+    "about": "О нас",
+    "contact": "Контакты"
   },
   "social": {
     "instagram": "Instagram",
@@ -18,59 +18,58 @@
     "visitUs": "Visit Us"
   },
   "intro": {
-    "linkText": "Learn more about AKFMO",
-    "imageAltText": "intro image"
+    "linkText": "Подробнее о нас",
+    "imageAltText": "декоративное изображение"
   },
   "switchEvents": {
-    "all": "view all events",
-    "past": "view past events"
+    "all": "посмотреть текущие мероприятия",
+    "past": "посмотреть прошедшие мероприятия"
   },
   "subscribeForm": {
-    "title": "Sign up for our newsletter. It will inform you periodically about all important events and other news concerning the Austrian Culturl Forum Moscow.",
-    "input": "Your Email",
-    "imageAlt": "image",
-    "subscribed": " You are subscribed!"
+    "title": "С помощью рассылки Вы сможете всегда находиться в курсе всех актуальных мероприятий нашего Культурного Форума.",
+    "input": "Ваш электронный адрес",
+    "imageAlt": "декоративное изображение",
+    "subscribed": " Вы подписались!"
   },
   "eventInfo": {
-    "date": "date",
-    "format": "format",
-    "location": "location"
+    "date": "дата",
+    "format": "формат",
+    "location": "место"
   },
   "buttons": {
-    "register": "Register",
-    "openPdf": "open pdf"
+    "register": "Зарегистрироваться",
+    "openPdf": "открыть pdf"
   },
   "share": {
-    "twitter": "Share on twitter",
-    "facebook": "Share on facebook",
-    "telegram": "Share on telegram",
-    "share": "share"
+    "twitter": "поделиться в twitter",
+    "facebook": "поделиться в facebook",
+    "telegram": "поделиться в telegram",
+    "share": "поделиться"
   },
   "contactLocale": {
-    "title": "AKFMO address & contacts",
-    "emailButton": "EMAIL",
+    "title": "АКФ: адрес и контакты",
+    "emailButton": "email",
     "fbButton": "FB",
     "inButton": "IN"
   },
   "contactCity": {
-    "title": "Austrian Embassy Address & contacts",
-    "emailButton": "EMAIL",
-    "siteButton": "Website",
-    "siteLink": "https://akfmo.org"
+    "title": "Посольство Австрии в Москве: адрес и контакты",
+    "emailButton": "email",
+    "siteButton": "Сайт"
   },
   "partners": {
-    "title": "Partner & Organizer"
+    "title": "Партнеры и Организаторы"
   },
   "press": {
-    "title": "press"
+    "title": "Пресса"
   },
-  "eventsPast": "Past Events",
-  "eventsUpcoming": "Upcoming Events",
-  "eventsPastShort": "Past",
-  "eventsUpcomingShort": "Upcoming",
-  "moreEventsPast": "More Past Events",
-  "moreEventsUpcoming": "More Upcoming Events",
-  "menu": "menu",
-  "close": "close",
-  "home": "home"
+  "eventsPast": "Прошедшие мероприятия",
+  "eventsUpcoming": "Предстоящие мероприятия",
+  "eventsPastShort": "Прошедшие",
+  "eventsUpcomingShort": "Предстоящие",
+  "moreEventsPast": "Больше прошедших мероприятий",
+  "moreEventsUpcoming": "Больше предстоящих мероприятий",
+  "menu": "меню",
+  "close": "закрыть",
+  "home": "домой"
 }
