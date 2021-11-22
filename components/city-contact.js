@@ -4,7 +4,7 @@ import AboutRect from '../assets/svg/about-rect.svg'
 import AboutRectMob from '../assets/svg/about-rect-m.svg'
 import { RichText } from 'prismic-reactjs'
 
-export const CityContact = ({ embassy }) => {
+export const CityContact = ({ embassy, email, url }) => {
   const { t } = useTranslation('common')
   return (
     <div className="flex pb-4 border-t lg:flex-col-reverse lg:pb-0">
@@ -27,13 +27,10 @@ export const CityContact = ({ embassy }) => {
             <RichText render={embassy} />
           </address>
           <div className="flex justify-between h-24 space-x-8 lg:h-10 lg:space-x-2">
-            <ButtonLink
-              link={'mailto:' + t('contactCity.mail')}
-              className="w-1/2"
-            >
+            <ButtonLink link={email} className="w-1/2">
               {t('contactCity.emailButton')}
             </ButtonLink>
-            <ButtonLink link={t('contactCity.siteLink')} className="w-1/2">
+            <ButtonLink link={url} className="w-1/2">
               {t('contactCity.siteButton')}
             </ButtonLink>
           </div>

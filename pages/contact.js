@@ -3,7 +3,15 @@ import { CityContact, Layout, LocaleContact } from '../components'
 import { getContacts } from '../lib/api'
 
 export default function Contact({
-  data: { address, embassy, facebook, instagram, email },
+  data: {
+    address,
+    embassy,
+    facebook,
+    instagram,
+    email,
+    embassyemail,
+    embassyurl,
+  },
 }) {
   return (
     <Layout>
@@ -18,9 +26,13 @@ export default function Contact({
           address={address}
           facebookUrl={facebook.url}
           instagramUrl={instagram.url}
-          email={email}
+          email={email.url}
         />
-        <CityContact embassy={embassy} />
+        <CityContact
+          embassy={embassy}
+          email={embassyemail.url}
+          url={embassyurl.url}
+        />
       </section>
     </Layout>
   )
