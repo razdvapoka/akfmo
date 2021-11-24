@@ -22,6 +22,7 @@ import { Share } from './share'
 import { EventInfo } from './event-info'
 import { Partners } from './partners'
 import { Press } from './press'
+import { isPastEvent } from '../../../lib/utils'
 
 const htmlSerializer = function (type, element, content, children, key) {
   switch (type) {
@@ -152,15 +153,16 @@ const RightNav = () => {
 export const Event = ({ event, events }) => {
   const router = useRouter()
 
-  const isPastEvent = useMemo(() => new Date(event?.date) < new Date(), [event])
+  const isPast = useMemo(() => isPastEvent(event), [event])
+
   const otherEvents = useMemo(
     () =>
       events?.filter(({ node }) =>
-        node._meta.uid !== event?._meta?.uid && isPastEvent
+        node._meta.uid !== event?._meta?.uid && isPast
           ? new Date(node.date) < new Date()
           : new Date(node.date) >= new Date()
       ) || [],
-    [events, event, isPastEvent]
+    [events, event, isPast]
   )
 
   if (!router.isFallback && !event?._meta?.uid) {
@@ -183,7 +185,7 @@ export const Event = ({ event, events }) => {
             <CloseButton />
             <Share url={router.asPath} title={event.title} />
             <Hero image={event.cover} />
-            {!isPastEvent && (
+            {!isPast && (
               <RegisterButton
                 className="hidden lg:flex lg:mb-4"
                 url={event.eventurl.url}
@@ -195,7 +197,7 @@ export const Event = ({ event, events }) => {
                 htmlSerializer={htmlSerializer}
               />
             </div>
-            {!isPastEvent && (
+            {!isPast && (
               <RegisterButton
                 className="flex lg:hidden"
                 url={event.eventurl.url}
@@ -207,7 +209,7 @@ export const Event = ({ event, events }) => {
             )}
             {event?.press?.length > 0 && <Press press={event.press} />}
             {otherEvents?.length > 0 && (
-              <OtherEvents events={otherEvents} isPastEvent={isPastEvent} />
+              <OtherEvents events={otherEvents} isPastEvent={isPast} />
             )}
           </div>
           <RightNav />
