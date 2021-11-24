@@ -2,7 +2,6 @@ import cn from 'classnames'
 import Link from 'next/link'
 import useTranslation from 'next-translate/useTranslation'
 import styles from './styles.module.scss'
-import { repeat } from '../../../lib/utils'
 import { useEventDateString } from '../../../lib/hooks'
 
 const OtherEvent = ({
@@ -33,19 +32,14 @@ const OtherEvent = ({
 
 export const OtherEvents = ({ events, isPastEvent }) => {
   const { t } = useTranslation('common')
-  const fakeEvents = repeat(4, events).flat()
   return (
     <section className="col-start-2 col-end-20 border-t pt-2 lg:w-screen lg:transform lg:translate-x-[-2rem] lg:bg-white lg:border-t-0">
       <h2 className="mb-8 lg:mb-6 text-m leading-m uppercase font-bold tracking-wider lg:ml-4">
         {t(isPastEvent ? 'moreEventsPast' : 'moreEventsUpcoming')}
       </h2>
       <div className="flex flex-wrap lg:flex-nowrap lg:overflow-auto">
-        {fakeEvents.map(({ node }, index) => (
-          <OtherEvent
-            key={`${node._meta.uid}-${index}`}
-            {...node}
-            index={index}
-          />
+        {events.map(({ node }, index) => (
+          <OtherEvent key={node._meta.uid} {...node} index={index} />
         ))}
       </div>
     </section>

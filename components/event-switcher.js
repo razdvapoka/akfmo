@@ -1,9 +1,7 @@
 import cn from 'classnames'
 import useTranslation from 'next-translate/useTranslation'
-import { useToggle } from 'react-use'
 
-export const EventSwitcher = () => {
-  const [viewAll, toggleViewAll] = useToggle(true)
+export const EventSwitcher = ({ viewAll, toggleViewAll }) => {
   const { t } = useTranslation('common')
 
   return (

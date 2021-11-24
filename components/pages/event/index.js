@@ -168,6 +168,7 @@ export const Event = ({ event, events }) => {
   if (!router.isFallback && !event?._meta?.uid) {
     return <ErrorPage statusCode={404} />
   }
+  const hasPress = event.press.filter(({ item }) => item).length > 0
 
   return (
     <PopUpLayout>
@@ -207,7 +208,7 @@ export const Event = ({ event, events }) => {
             {event?.partners?.length > 0 && (
               <Partners partners={event.partners} />
             )}
-            {event?.press?.length > 0 && <Press press={event.press} />}
+            {hasPress && <Press press={event.press} />}
             {otherEvents?.length > 0 && (
               <OtherEvents events={otherEvents} isPastEvent={isPast} />
             )}
