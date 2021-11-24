@@ -81,7 +81,7 @@ const Hero = ({ image }) => {
     <figure
       className={cn(
         'mb-12 lg:mb-4',
-        isHeroImagePortrait ? 'col-start-2 col-end-8' : 'col-start-2 col-end-11'
+        isHeroImagePortrait ? 'col-start-2 col-end-8' : 'col-start-2 col-end-13'
       )}
     >
       <Image
