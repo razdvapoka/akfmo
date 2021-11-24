@@ -62,7 +62,7 @@ const RegisterButton = ({ url, className }) => {
     <ButtonLink
       link={url}
       className={cn(
-        'col-start-2 col-end-20 h-18 lg:h-12 mt-4 lg:mt-0',
+        'col-start-2 col-end-18 h-18 lg:h-12 mt-4 lg:mt-0',
         className
       )}
     >
@@ -81,7 +81,7 @@ const Hero = ({ image }) => {
     <figure
       className={cn(
         'mb-12 lg:mb-4',
-        isHeroImagePortrait ? 'col-start-2 col-end-9' : 'col-start-2 col-end-13'
+        isHeroImagePortrait ? 'col-start-2 col-end-8' : 'col-start-2 col-end-11'
       )}
     >
       <Image
@@ -102,7 +102,7 @@ const Hero = ({ image }) => {
 
 const LeftNav = () => {
   return (
-    <div className="col-span-2 border-r uppercase text-m leading-m font-bold lg:hidden">
+    <div className="col-span-3 border-r uppercase text-m leading-m font-bold lg:hidden">
       <div className="sticky top-[20rem]">
         <hr className="mr-4" />
         <nav className="space-y-4 pt-2">
@@ -124,7 +124,7 @@ const CloseButton = () => {
     }
   }, [router])
   return (
-    <div className="col-start-19 col-end-20 flex justify-end lg:absolute lg:right-2 lg:top-0">
+    <div className="col-start-16 col-end-18 flex justify-end lg:absolute lg:right-2 lg:top-0">
       <button className="w-9 h-9 lg:hidden" onClick={goBack}>
         <X />
       </button>
@@ -137,7 +137,7 @@ const CloseButton = () => {
 
 const RightNav = () => {
   return (
-    <div className="col-span-2 border-l lg:hidden">
+    <div className="col-span-3 border-l lg:hidden">
       <div className="sticky top-[20rem]">
         <hr className="ml-4" />
         <Link href="/">
@@ -181,7 +181,7 @@ export const Event = ({ event, events }) => {
             <meta property="og:image" content={event.cover.url} />
           </Head>
           <LeftNav />
-          <div className="col-start-3 col-end-23 grid grid-cols-20 lg:flex lg:flex-col">
+          <div className="col-start-4 col-end-22 grid grid-cols-18 lg:flex lg:flex-col">
             <EventHeader title={event.title} tags={event._meta.tags} />
             <CloseButton />
             <Share url={router.asPath} title={event.title} />

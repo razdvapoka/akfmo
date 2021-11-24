@@ -33,7 +33,7 @@ const OtherEvent = ({
 export const OtherEvents = ({ events, isPastEvent }) => {
   const { t } = useTranslation('common')
   return (
-    <section className="col-start-2 col-end-20 border-t pt-2 lg:w-screen lg:transform lg:translate-x-[-2rem] lg:bg-white lg:border-t-0">
+    <section className="col-start-2 col-end-18 border-t pt-2 lg:w-screen lg:transform lg:translate-x-[-2rem] lg:bg-white lg:border-t-0">
       <h2 className="mb-8 lg:mb-6 text-m leading-m uppercase font-bold tracking-wider lg:ml-4">
         {t(isPastEvent ? 'moreEventsPast' : 'moreEventsUpcoming')}
       </h2>

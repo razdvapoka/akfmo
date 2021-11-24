@@ -10,7 +10,7 @@ export const Share = ({ url, title }) => {
   const { t, lang } = useTranslation('common')
   const sharingUrl = `${process.env.NEXT_PUBLIC_BASE_URL}${lang}${url}`
   return (
-    <div className="mt-4 mb-6 lg:mb-4 flex items-center col-start-2 col-end-6">
+    <div className="mt-4 mb-6 lg:mb-4 flex items-center col-start-2 col-end-10">
       <h2 className="font-bold text-m uppercase mr-2">{t('share.share')}</h2>
       <a
         href={`https://twitter.com/share?url=${sharingUrl}&text=${title}`}

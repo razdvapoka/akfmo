@@ -19,7 +19,7 @@ export const EventInfo = ({ event, className }) => {
       className={cn(
         `
         flex lg:flex-col
-        col-start-2 col-end-15 
+        col-start-2 col-end-13
         h-20 lg:h-auto
         text-m leading-ml uppercase
         mb-16 lg:mb-4
