@@ -177,7 +177,7 @@ export const MenuMobile = ({ hasLogoOnTop }) => {
             </Link>
             <a
               className="block w-17 text-center"
-              href="https://www.facebook.com/austrian.cultural.forum/"
+              href="https://www.facebook.com/akfmow"
               target="_blank"
               rel="noopener noreferrer"
             >

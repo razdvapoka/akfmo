@@ -9,7 +9,7 @@ const SOCIAL_ITEMS = [
   },
   {
     title: 'social.facebook',
-    href: 'https://www.facebook.com/austrian.cultural.forum',
+    href: 'https://www.facebook.com/akfmow',
     isExternal: true,
   },
 ]
