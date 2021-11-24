@@ -29,8 +29,8 @@ export const Publications = ({ publications }) => {
         <div className="pl-4 lg:pl-0">
           <div className="border-t lg:border-t-0"></div>
         </div>
-        <nav className="pt-4 lg:pt-0">
-          <ul className="border-l pl-4 pt-4 lg:border-l-0 lg:p-0">
+        <nav className="py-4 lg:pt-0 h-full lg:h-auto">
+          <ul className="border-l pl-4 pt-4 lg:border-l-0 lg:p-0 h-full lg:h-auto">
             {publications.map((item, index) => (
               <Fragment key={index}>
                 <Publication
