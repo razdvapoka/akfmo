@@ -15,6 +15,7 @@ export const Publications = ({ publications }) => {
         <div className="py-4 border-t h-full">
           <div className="w-2/3 mx-auto sticky top-4">
             <Image
+              key={publicationIndex}
               src={publication.cover.url}
               alt={publication.title}
               layout="responsive"
