@@ -11,7 +11,7 @@ export const Publications = ({ publications }) => {
       <h1 className="hidden lg:inline-flex items-center justify-center pb-4 border-b font-bold uppercase">
         Publications
       </h1>
-      <div className="pr-4 w-1/2 lg:hidden">
+      <div className="pr-4 w-1/2 lg:hidden min-h-screen">
         <div className="py-4 border-t h-full">
           <div className="w-2/3 mx-auto sticky top-4">
             <Image

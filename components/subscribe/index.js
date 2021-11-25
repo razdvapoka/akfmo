@@ -78,7 +78,7 @@ export const Subscribe = () => {
                 value="→"
               />
             </label>
-            <label className="lg:text-[1rem] flex items-center cursor-pointer">
+            <label className="lg:text-[1rem] flex items-center cursor-pointer mt-1">
               <input
                 type="checkbox"
                 checked={isTermsActive}
@@ -86,7 +86,7 @@ export const Subscribe = () => {
                 className="w-0 h-0 opacity-0 -z-1"
                 required
               ></input>
-              <CheckboxIcon checked={isTermsActive} className="mr-2" /> By
+              <CheckboxIcon checked={isTermsActive} className="mr-1" /> By
               submitting you are agreeing to the &nbsp;
               <Link href="/terms">
                 <a className="underline"> terms and conditions.</a>
