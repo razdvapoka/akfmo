@@ -62,7 +62,7 @@ const RegisterButton = ({ url, className }) => {
     <ButtonLink
       link={url}
       className={cn(
-        'col-start-2 col-end-18 h-18 lg:h-12 mt-4 lg:mt-0',
+        'col-start-2 col-end-18 h-18 lg:h-12 mt-4 lg:mt-0 hover:text-white hover:bg-black transition-colors ease-out',
         className
       )}
     >
@@ -126,7 +126,7 @@ const CloseButton = () => {
   return (
     <div className="col-start-16 col-end-18 flex justify-end lg:absolute lg:right-2 lg:top-0">
       <button className="w-9 h-9 lg:hidden" onClick={goBack}>
-        <X />
+        <X className="hover:fill-[black] hover:text-white transition-colors ease-out" />
       </button>
       <button className="w-8 h-8 hidden lg:block" onClick={goBack}>
         <BigX />
