@@ -152,23 +152,25 @@ const RightNav = () => {
 
 export const Event = ({ event, events }) => {
   const router = useRouter()
-
-  const isPast = useMemo(() => isPastEvent(event), [event])
+  const isPast = useMemo(() => (event ? isPastEvent(event) : false), [event])
 
   const otherEvents = useMemo(
     () =>
       events?.filter(({ node }) =>
         node._meta.uid !== event?._meta?.uid && isPast
-          ? new Date(node.date) < new Date()
-          : new Date(node.date) >= new Date()
+          ? isPastEvent(node)
+          : !isPastEvent(node)
       ) || [],
     [events, event, isPast]
   )
 
+  const hasPress = event
+    ? event.press.filter(({ item }) => item).length > 0
+    : false
+
   if (!router.isFallback && !event?._meta?.uid) {
     return <ErrorPage statusCode={404} />
   }
-  const hasPress = event.press.filter(({ item }) => item).length > 0
 
   return (
     <PopUpLayout>
