@@ -3,7 +3,7 @@ import LogoSvg from '../../assets/svg/logo.svg'
 import cn from 'classnames'
 import useTranslation from 'next-translate/useTranslation'
 
-export const Logo = ({ isMain }) => {
+export const Logo = ({ isMain, classNames }) => {
   const { t } = useTranslation('common')
   let isDarkTheme = false // future: page past events
   return (
@@ -15,9 +15,13 @@ export const Logo = ({ isMain }) => {
         aria-label={t('logotype')}
       >
         <LogoSvg
-          className={cn('w-[35.5rem] lg:w-full', {
-            'stroke-white text-white': isDarkTheme,
-          })}
+          className={cn(
+            'lg:w-full',
+            {
+              'stroke-white text-white': isDarkTheme,
+            },
+            classNames
+          )}
         />
       </a>
     </Link>

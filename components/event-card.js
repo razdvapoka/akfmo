@@ -20,7 +20,7 @@ export const EventCard = ({
     <Link href={`/events/${uid}`}>
       <a
         className={cn(
-          'block pt-4 pb-6 lg:p-2 lg:relative',
+          'block pt-4 pb-6 lg:p-2 lg:relative ',
           isInverted ? 'bg-grey4 text-white' : 'bg-grey1',
           styles.eventCard,
           className
@@ -40,7 +40,7 @@ export const EventCard = ({
           >
             <Image
               className={cn(
-                'filter grayscale transition-all',
+                'filter grayscale transition-all ease-out duration-300',
                 styles.eventCardImage
               )}
               alt={cover.alt || title}
