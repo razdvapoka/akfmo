@@ -27,10 +27,16 @@ export const CityContact = ({ embassy, email, url }) => {
             <RichText render={embassy} />
           </address>
           <div className="flex justify-between h-24 space-x-8 lg:h-10 lg:space-x-2">
-            <ButtonLink link={email} className="w-1/2">
+            <ButtonLink
+              link={email}
+              className="w-1/2 hover:text-white hover:bg-black transition-colors ease-out duration-300"
+            >
               {t('contactCity.emailButton')}
             </ButtonLink>
-            <ButtonLink link={url} className="w-1/2">
+            <ButtonLink
+              link={url}
+              className="w-1/2 hover:text-white hover:bg-black transition-colors ease-out duration-300"
+            >
               {t('contactCity.siteButton')}
             </ButtonLink>
           </div>

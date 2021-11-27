@@ -8,7 +8,7 @@ export const Publication = ({ setPublicationIndex, index, item }) => {
   }
   return (
     <li
-      className="border-b uppercase font-bold mb-8 lg:hidden hover:underline"
+      className="border-b uppercase font-bold mb-8 lg:hidden underline-hover"
       onMouseEnter={handleMouseEnter}
     >
       <Link href={item.externallink ? item.externallink.url : item.file.url}>

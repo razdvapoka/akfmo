@@ -95,7 +95,7 @@ export const Subscribe = () => {
                 value="→"
               />
             </label>
-            <label className="lg:text-[1rem] flex items-center cursor-pointer mt-1">
+            <label className="lg:text-[1rem] flex items-center cursor-pointer mt-3 lg:mt-1">
               <input
                 type="checkbox"
                 checked={isTermsActive}
