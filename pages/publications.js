@@ -11,7 +11,7 @@ export default function PublicationsPage({ data }) {
   return (
     <Layout>
       <Head>
-        <title>AKFMO Publications</title>
+        <title>AKFMO: Publications</title>
       </Head>
 
       <Publications publications={publications}></Publications>
