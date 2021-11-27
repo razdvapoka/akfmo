@@ -126,7 +126,7 @@ const CloseButton = () => {
   return (
     <div className="col-start-16 col-end-18 flex justify-end lg:absolute lg:right-2 lg:top-0">
       <button className="w-9 h-9 lg:hidden" onClick={goBack}>
-        <X className="hover:fill-[black] hover:text-white transition-colors ease-out" />
+        <X className="hover:text-white hover:bg-black hover:border-black rounded-full border transition-colors ease-out" />
       </button>
       <button className="w-8 h-8 hidden lg:block" onClick={goBack}>
         <BigX />

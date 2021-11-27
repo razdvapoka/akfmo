@@ -23,19 +23,19 @@ export const LocaleContact = ({
           </address>
           <ButtonLink
             link={email}
-            className="w-1/2 h-24 mr-4 lg:w-[15.6rem] lg:h-10 lg:mr-2 hover:text-white hover:bg-black transition-colors ease-out duration-300"
+            className="w-1/2 h-24 mr-4 lg:w-[15.6rem] lg:h-10 lg:mr-2"
           >
             {t('contactLocale.emailButton')}
           </ButtonLink>
           <ButtonLink
             link={facebookUrl}
-            className="w-24 h-24 mr-4 rounded-full lg:w-10 lg:h-10 lg:mr-2 hover:text-white hover:bg-black transition-colors ease-out duration-300"
+            className="w-24 h-24 mr-4 rounded-full lg:w-10 lg:h-10 lg:mr-2"
           >
             {t('contactLocale.fbButton')}
           </ButtonLink>
           <ButtonLink
             link={instagramUrl}
-            className="w-24 h-24 rounded-full lg:w-10 lg:h-10 hover:text-white hover:bg-black transition-colors ease-out duration-300"
+            className="w-24 h-24 rounded-full lg:w-10 lg:h-10"
           >
             {t('contactLocale.inButton')}
           </ButtonLink>
