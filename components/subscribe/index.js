@@ -20,8 +20,25 @@ export const Subscribe = () => {
     (e) => {
       e.preventDefault()
       if (isEmailValid) {
-        console.log(`subscribed: ${email}`)
-        setIsSubscribed(true)
+        fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/subscribe`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email }),
+        })
+          .then((res) => {
+            if (res.status === 200) {
+              setIsSubscribed(true)
+            } else {
+              res.json().then((error) => {
+                console.log('ERROR:', error)
+              })
+            }
+          })
+          .catch((error) => {
+            console.log('ERROR:', error)
+          })
       }
     },
     [email, isEmailValid, setIsSubscribed]
