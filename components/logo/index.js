@@ -13,6 +13,9 @@ export const Logo = ({ isMain, classNames }) => {
           'lg:hidden': !isMain,
         })}
         aria-label={t('logotype')}
+        style={{
+          willChange: 'width',
+        }}
       >
         <LogoSvg
           className={cn(

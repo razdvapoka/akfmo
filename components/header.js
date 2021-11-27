@@ -13,13 +13,19 @@ const Spacer = () => {
 
 export const Header = ({ isMain }) => {
   const [isInverted] = useInvertedContext()
-  const [offset, setOffset] = useState(0)
+  const [hasScrolled, setHasScrolled] = useState(false)
 
   useEffect(() => {
-    window.onscroll = () => {
-      setOffset(window.pageYOffset)
+    const handleScroll = () => {
+      setHasScrolled(true)
     }
-  }, [])
+    setTimeout(handleScroll, 1000)
+    window.addEventListener('scroll', handleScroll, { once: true })
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [setHasScrolled])
+
   return (
     <header
       className={cn(
@@ -29,9 +35,10 @@ export const Header = ({ isMain }) => {
     >
       <Logo
         isMain={isMain}
-        classNames={cn('transition-all  w-[35.5rem] duration-[1300ms]', {
-          'w-[93.5rem]': offset === 0,
-        })}
+        classNames={cn(
+          'transition-all duration-[1300ms] ease-in-out',
+          hasScrolled ? 'w-[35.5rem]' : 'w-[93.5rem]'
+        )}
       />
       <Spacer />
       <Menu isMain={isMain} />
