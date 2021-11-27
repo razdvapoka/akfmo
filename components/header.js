@@ -37,7 +37,7 @@ export const Header = ({ isMain }) => {
         isMain={isMain}
         classNames={cn(
           'transition-all duration-[1300ms] ease-in-out',
-          hasScrolled ? 'w-[35.5rem]' : 'w-[93.5rem]'
+          hasScrolled || !isMain ? 'w-[35.5rem]' : 'w-[93.5rem]'
         )}
       />
       <Spacer />
