@@ -13,7 +13,7 @@ const EMAIL_REGEX =
 export const Subscribe = () => {
   const [email, setEmail] = useState(null)
   const [isTermsActive, setIsTermsActive] = useToggle(false)
-  const [isSubscribed, setIsSubscribed] = useState(false)
+  const [isSubscribed, setIsSubscribed] = useToggle(false)
   const [isEmailValid, setIsEmailValid] = useToggle(false)
   const [isErrorActive, setIsErrorActive] = useToggle(false)
   const [isInputFocus, setIsInputFocus] = useToggle(false)
@@ -22,22 +22,39 @@ export const Subscribe = () => {
     (e) => {
       e.preventDefault()
       console.log('work')
-      setIsErrorActive(true)
       if (isEmailValid) {
         console.log(`subscribed: ${email}`)
-        setIsSubscribed(true)
-        setEmail('')
+        const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+        wait(1000)
+          .then((res) => {
+            setIsSubscribed(true)
+            console.log(res)
+            setEmail('')
+            setTimeout(() => {
+              setIsErrorActive(false)
+              setIsTermsActive(false)
+              setIsSubscribed(false)
+            }, 2000)
+          })
+          .catch(() => {
+            setIsErrorActive(true)
+            setIsSubscribed(false)
+          })
       }
-      setTimeout(() => {
-        setIsErrorActive(false)
-        setIsSubscribed(false)
-      }, 2000)
     },
-    [email, isEmailValid, setIsSubscribed, setIsErrorActive, setEmail]
+    [
+      email,
+      isEmailValid,
+      setIsSubscribed,
+      setIsErrorActive,
+      setEmail,
+      setIsTermsActive,
+    ]
   )
 
   const handleEmailChange = useCallback(
     (e) => {
+      console.log('work')
       const newEmailValue = e.target.value
       setIsEmailValid(EMAIL_REGEX.test(newEmailValue))
       setEmail(newEmailValue)
@@ -49,8 +66,7 @@ export const Subscribe = () => {
     setIsTermsActive(e.target.value)
   }
 
-  const clearInput = (e) => {
-    e.preventDefault()
+  const clearInput = () => {
     setEmail('')
   }
 
@@ -67,21 +83,29 @@ export const Subscribe = () => {
             <input
               type="email"
               className={cn(
-                'uppercase font-bold w-full focus:bg-grey3 bg-grey3 pb-2 pr-4 border-b focus:text-white placeholder-black clear-autofill lg:mb-1'
+                'uppercase font-bold w-full focus:bg-grey3 bg-grey3 pb-2 pr-4 border-b focus:text-white placeholder-black clear-autofill lg:mb-1',
+                (isErrorActive && !isEmailValid) ||
+                  (isErrorActive && !isSubscribed) ||
+                  (email && !isEmailValid)
+                  ? 'text-red'
+                  : null
               )}
               name="email"
+              required
+              disabled={isSubscribed}
               placeholder={t('subscribeForm.input')}
               value={email}
               onChange={handleEmailChange}
               onFocus={() => setIsInputFocus(true)}
-              onBlur={() => setIsInputFocus(false)}
+              onBlur={() => setTimeout(() => setIsInputFocus(false), 200)}
             />
           </label>
           <label className="absolute right-0 h-4">
-            {email && !isEmailValid ? (
+            {(email && !isEmailValid && isInputFocus) ||
+            (email && isInputFocus) ? (
               <input
                 className="bg-grey3 w-4 cursor-pointer align-middle text-center text-white"
-                onClick={(e) => clearInput(e)}
+                onClick={clearInput}
                 type="button"
                 value="←"
               />
@@ -90,33 +114,39 @@ export const Subscribe = () => {
                 className={cn(
                   'bg-grey3 w-4 cursor-pointer align-middle text-center',
                   isEmailValid ? 'cursor-pointer' : 'pointer-events-none',
-                  isErrorActive && !isEmailValid ? 'text-red' : null
+                  (isErrorActive && !isEmailValid) ||
+                    (isErrorActive && !isSubscribed) ||
+                    (email && !isEmailValid)
+                    ? 'text-red'
+                    : null
                 )}
                 type="submit"
                 value="→"
               />
             )}
           </label>
-          <label className="lg:text-[1rem] flex items-center cursor-pointer">
+          <label className="lg:text-xs flex items-center cursor-pointer">
             <input
+              required
               type="checkbox"
               checked={isTermsActive}
               onChange={handleTermsChange}
               className="w-0 h-0 opacity-0 -z-1"
             ></input>
-            <CheckboxIcon checked={isTermsActive} className={'mr-1'} /> By
+            <CheckboxIcon checked={isTermsActive} className="mr-1" /> By
             submitting you are agreeing to the &nbsp;
             <Link href="/terms">
               <a className="underline"> terms and conditions.</a>
             </Link>
           </label>
         </form>
-        {isErrorActive && isSubscribed ? (
+        {isSubscribed ? (
           <div className="uppercase text-xxs leading-m font-medium h-6 pt-[0.2rem]">
             {t('subscribeForm.subscribed')}
           </div>
         ) : null}
-        {isErrorActive && !isEmailValid ? (
+        {(isErrorActive && !isEmailValid) ||
+        (isErrorActive && !isSubscribed && isEmailValid) ? (
           <div className="uppercase text-xxs leading-m font-medium text-red h-6 pt-[0.2rem]">
             {t('subscribeForm.subscribedError')}
           </div>
