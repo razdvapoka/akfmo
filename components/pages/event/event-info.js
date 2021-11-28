@@ -1,6 +1,6 @@
-import { format } from 'date-fns'
-import { useMemo } from 'react'
 import useTranslation from 'next-translate/useTranslation'
+import cn from 'classnames'
+import { useEventDateString } from '../../../lib/hooks'
 
 export const EventInfoItem = ({ title, children, date }) => {
   return (
@@ -11,25 +11,24 @@ export const EventInfoItem = ({ title, children, date }) => {
   )
 }
 
-export const EventInfo = ({ event }) => {
+export const EventInfo = ({ event, className }) => {
   const { t } = useTranslation('common')
-  const dateString = useMemo(
-    () => format(new Date(event.date), 'dd.MM.yy'),
-    [event.date]
-  )
+  const dateString = useEventDateString(event.date, event.end_date)
   return (
     <div
-      className={`
+      className={cn(
+        `
         flex lg:flex-col
-        col-start-2 col-end-15 
-        lg:col-start-1 lg:col-span-full
+        col-start-2 col-end-13
         h-20 lg:h-auto
         text-m leading-ml uppercase
-        mb-16 lg:mb-8
+        mb-16 lg:mb-4
+        mt-16 lg:mt-8
         space-x-2 lg:space-x-0
         lg:space-y-8
-        lg:order-6
-      `}
+      `,
+        className
+      )}
     >
       <EventInfoItem title={t('eventInfo.date')} date={event.date}>
         {dateString}

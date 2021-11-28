@@ -6,15 +6,14 @@ export const Publication = ({ setPublicationIndex, index, item }) => {
   const handleMouseEnter = () => {
     setPublicationIndex(index)
   }
-
   return (
     <li
-      className="py-4 border-b uppercase font-bold mb-8 lg:hidden"
+      className="border-b uppercase font-bold mb-8 lg:hidden underline-hover"
       onMouseEnter={handleMouseEnter}
     >
-      <Link href={item.file.url}>
+      <Link href={item.externallink ? item.externallink.url : item.file.url}>
         <a
-          className="flex cursor-pointer hover:underline"
+          className="flex cursor-pointer py-4"
           target="_blank"
           rel="noopener noreferrer"
         >

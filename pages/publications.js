@@ -1,29 +1,17 @@
 import Head from 'next/head'
-import { useMemo } from 'react'
-import { repeat } from '../lib/utils'
 import { getPublications } from '../lib/api'
 import { Layout, Publications } from '../components'
+import { useMemo } from 'react'
 
 export default function PublicationsPage({ data }) {
   const publications = useMemo(
-    () =>
-      repeat(
-        10,
-        data.publications.map(({ publication }) => publication)
-      )
-        .flat()
-        .map((p, i) => ({
-          ...p,
-          title: `${p.title}—(${i + 1})`,
-          year: p.year + i,
-        })),
+    () => data.sort((p1, p2) => (p1.year < p2.year ? 1 : -1)),
     [data]
   )
-
   return (
     <Layout>
       <Head>
-        <title>AKFMO Publications</title>
+        <title>AKFMO: Publications</title>
       </Head>
 
       <Publications publications={publications}></Publications>
@@ -34,7 +22,11 @@ export default function PublicationsPage({ data }) {
 export async function getStaticProps(context) {
   const data = await getPublications(context.locale)
   return {
-    props: { data: data.main },
+    props: {
+      data: data.publications_page.publications.map(
+        ({ publication }) => publication
+      ),
+    },
     revalidate: 60,
   }
 }

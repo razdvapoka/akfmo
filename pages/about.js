@@ -51,7 +51,7 @@ const AboutSection = ({ title, content, index }) => {
 
 const AboutPressSection = ({ title, items }) => {
   return (
-    <section className="grid grid-cols-24 pt-2 pb-16 border-t lg:pb-6">
+    <section className="grid grid-cols-24 pt-2 pb-16 border-t lg:pb-0 lg:mb-[-1px]">
       <div className="col-start-1 col-span-6 text-m leading-m tracking-wider uppercase font-bold">
         <RichText render={title} />
       </div>

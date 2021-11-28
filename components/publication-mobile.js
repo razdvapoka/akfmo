@@ -23,7 +23,7 @@ export const PublicationMobile = ({ item }) => {
           />
         </div>
       </div>
-      <Link href={item.file.url}>
+      <Link href={item.externallink ? item.externallink.url : item.file.url}>
         <a
           className="flex cursor-pointer py-3 border justify-center rounded-full"
           target="_blank"

@@ -1,5 +1,5 @@
 import useTranslation from 'next-translate/useTranslation'
-import { SinglePartner } from '.'
+import { SinglePartner } from './single-partner'
 
 export const Partners = ({ partners }) => {
   const { t } = useTranslation('common')
@@ -10,9 +10,11 @@ export const Partners = ({ partners }) => {
         {t('partners.title')}
       </h2>
       <ul className="space-y-4 lg:space-y-6">
-        {partners.map((item, index) => (
-          <SinglePartner partner={item.item} key={index} />
-        ))}
+        {partners
+          .filter((item) => item.item)
+          .map((item, index) => (
+            <SinglePartner partner={item.item} key={index} />
+          ))}
       </ul>
     </section>
   )

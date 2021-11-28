@@ -11,10 +11,11 @@ export const Publications = ({ publications }) => {
       <h1 className="hidden lg:inline-flex items-center justify-center pb-4 border-b font-bold uppercase">
         Publications
       </h1>
-      <div className="pr-4 w-1/2 lg:hidden">
+      <div className="pr-4 w-1/2 lg:hidden min-h-screen">
         <div className="py-4 border-t h-full">
           <div className="w-2/3 mx-auto sticky top-4">
             <Image
+              key={publicationIndex}
               src={publication.cover.url}
               alt={publication.title}
               layout="responsive"
@@ -29,8 +30,8 @@ export const Publications = ({ publications }) => {
         <div className="pl-4 lg:pl-0">
           <div className="border-t lg:border-t-0"></div>
         </div>
-        <nav className="pt-4 lg:pt-0">
-          <ul className="border-l pl-4 pt-4 lg:border-l-0 lg:p-0">
+        <nav className="py-4 lg:pt-0 h-full lg:h-auto">
+          <ul className="border-l pl-4 pt-4 lg:border-l-0 lg:p-0 h-full lg:h-auto">
             {publications.map((item, index) => (
               <Fragment key={index}>
                 <Publication

@@ -1,18 +1,20 @@
 import { getEventsWithSlugs } from '../../lib/api'
-import { repeat } from '../../lib/utils'
-import { useMemo } from 'react'
 import { Events } from '../../components/pages'
+import { isPastEvent, not } from '../../lib/utils'
 
 export default function EventsPage({ events }) {
-  const fakeEvents = useMemo(() => repeat(5, events).flat().reverse(), [events])
-
-  return <Events events={fakeEvents} />
+  return <Events events={events} />
 }
 
 export async function getStaticProps(context) {
   const data = await getEventsWithSlugs(context.locale)
   return {
-    props: { events: data?.allEvents?.edges?.map((edge) => edge.node) || [] },
+    props: {
+      events:
+        data?.allEvents?.edges
+          ?.map((edge) => edge.node)
+          ?.filter(not(isPastEvent)) || [],
+    },
     revalidate: 60,
   }
 }

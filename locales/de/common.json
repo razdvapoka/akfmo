@@ -1,16 +1,16 @@
 {
-  "allEvents": "all events",
-  "logotype": "Logotype image",
+  "allEvents": "Alle Veranstaltungen",
+  "logotype": "das ÖKF-Logo",
   "subscribe": "Subscribe",
   "akfmo": "AKFMO",
   "akfmoFooter": "AKFMO 2021",
-  "collectiveFooter": "website by Kit collective",
-  "events": "Events",
+  "collectiveFooter": "Webdesign & Programmierung Kit collective",
+  "events": "Veranstaltungen",
   "navigation": {
-    "events": "Events",
-    "publications": "Publications",
-    "about": "About AKFMO",
-    "contact": "Contact Us"
+    "events": "Veranstaltungen",
+    "publications": "Publikationen",
+    "about": "Über uns",
+    "contact": "Kontakt"
   },
   "social": {
     "instagram": "Instagram",
@@ -18,66 +18,59 @@
     "visitUs": "Visit Us"
   },
   "intro": {
-    "text": "The Cultural Forum Moscow sees itself as a co-operational partner and contact point for Austrian artists, cultural institutions and scientists for the initiation, planning and implementation of Austro-Russian and Austro-Belarusian cultural and scientific projects.",
-    "linkText": "Learn more about AKFMO",
+    "linkText": "Mehr über uns",
     "imageAltText": "intro image"
   },
   "switchEvents": {
-    "all": "view all events",
-    "past": "view past events"
+    "all": "Zu allen laufenden Events",
+    "past": "Zu allen vergangenen Events"
   },
   "subscribeForm": {
-    "title": "Sign up for our newsletter. It will inform you periodically about all important events and other news concerning the Austrian Culturl Forum Moscow.",
-    "input": "Your Email",
+    "subscribedError": "something went wrong",
+    "title": "Unser Newsletter informiert Sie periodisch über alle wichtigen Veranstaltungen und sonstigen Neuigkeiten rund um das KULTURFORUM MOSKAU.",
+    "input": "Ihre Emailadresse",
     "imageAlt": "image",
-    "subscribed": "Thank you! check you inbox 💌",
-    "subscribedError": "something went wrong"
+    "subscribed": " Sie sind angemeldet!"
   },
   "eventInfo": {
-    "date": "date",
-    "format": "format",
-    "location": "location"
+    "date": "Datum",
+    "format": "Format",
+    "location": "Veranstaltungsort"
   },
   "buttons": {
-    "register": "Register",
-    "openPdf": "open pdf"
+    "register": "Registrierung",
+    "openPdf": "das pdf-Datei öffnen"
   },
   "share": {
-    "twitter": "Share on twitter",
-    "facebook": "Share on facebook",
-    "telegram": "Share on telegram",
-    "share": "share"
+    "twitter": "Share via witter",
+    "facebook": "Share via facebook",
+    "telegram": "Share via telegram",
+    "share": "Share"
   },
   "contactLocale": {
-    "title": "AKFMO address & contacts",
-    "adress": "Located at the Austrian Embassy, Moscow",
-    "tel": "Tel",
-    "telNumber": "+7 (495) 780 60 66",
-    "fax": "Fax",
-    "faxNumber": "+7 (495) 937 42 69",
-    "mail": "info@akfmo.com",
-    "fbLink": "fb.com",
-    "inLink": "in.com",
-    "emailButton": "EMAIL",
+    "title": "ÖKF die Adresse & Kontakte",
+    "emailButton": "die Emailadresse",
     "fbButton": "FB",
     "inButton": "IN"
   },
   "contactCity": {
-    "title": "Austrian Embassy Address & contacts",
-    "adress": "Starokonyushenniy per. 1 119034 Moscow",
-    "tel": "Tel",
-    "telNumber": "+7 (495) 780 60 66",
-    "fax": "Fax",
-    "faxNumber": "+7 (495) 937 42 69",
-    "mail": "info@akfmo.com",
-    "emailButton": "EMAIL",
-    "siteButton": "Website",
-    "siteLink": "akfmo.com"
+    "title": "ÖSTERREICHISCHE BOTSCHAFT MOSKAU die Adresse & Kontakte",
+    "emailButton": "die Emailadresse",
+    "siteButton": "die Webseite"
   },
   "partners": {
-    "title": "Partner & Organizer"
+    "title": "Partner & Оrganisatoren"
   },
   "press": {
-    "title": "press"
-  }
+    "title": "die Presse"
+  },
+  "eventsPast": "Vergangene Veranstaltungen",
+  "eventsUpcoming": "Bevorstehende Veranstaltungen",
+  "eventsPastShort": "Vergangene Veranstaltungen",
+  "eventsUpcomingShort": "Bevorstehende Veranstaltungen",
+  "moreEventsPast": "Mehr vergangene Veranstaltungen",
+  "moreEventsUpcoming": "Mehr bevorstehende Veranstaltungen",
+  "menu": "Menü",
+  "close": "Schließen",
+  "home": "Home"
 }

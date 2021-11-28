@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import useTranslation from 'next-translate/useTranslation'
+import cn from 'classnames'
 
 const NAV_ITEMS = [
   {
@@ -20,10 +21,10 @@ const NAV_ITEMS = [
   },
 ]
 
-export const NavigationList = () => {
+export const NavigationList = ({ className }) => {
   const { t } = useTranslation('common')
   return (
-    <ul className="leading-l lg:space-y-2 lg:leading-m">
+    <ul className={cn('leading-l lg:space-y-2 lg:leading-m', className)}>
       {NAV_ITEMS.map(({ title, href }, index) => (
         <li key={index}>
           <Link href={href}>

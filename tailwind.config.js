@@ -44,6 +44,7 @@ module.exports = {
       l: '1.8rem',
       ml: '2rem',
       mx: '3rem',
+      mxx: '4rem',
       xl: '3.2rem',
       xxl: '7.8rem',
     },
@@ -59,6 +60,7 @@ module.exports = {
     },
     extend: {
       gridTemplateColumns: {
+        18: 'repeat(18, minmax(0, 1fr))',
         20: 'repeat(20, minmax(0, 1fr))',
         24: 'repeat(24, minmax(0, 1fr))',
       },

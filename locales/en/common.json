@@ -1,6 +1,6 @@
 {
   "allEvents": "all events",
-  "logotype": "Logotype image",
+  "logotype": "AKFMO logo",
   "subscribe": "Subscribe",
   "akfmo": "AKFMO",
   "akfmoFooter": "AKFMO 2021",
@@ -18,7 +18,6 @@
     "visitUs": "Visit Us"
   },
   "intro": {
-    "text": "The Cultural Forum Moscow sees itself as a co-operational partner and contact point for Austrian artists, cultural institutions and scientists for the initiation, planning and implementation of Austro-Russian and Austro-Belarusian cultural and scientific projects.",
     "linkText": "Learn more about AKFMO",
     "imageAltText": "intro image"
   },
@@ -50,29 +49,14 @@
   },
   "contactLocale": {
     "title": "AKFMO address & contacts",
-    "adress": "Located at the Austrian Embassy, Moscow",
-    "tel": "Tel",
-    "telNumber": "+7 (495) 780 60 66",
-    "fax": "Fax",
-    "faxNumber": "+7 (495) 937 42 69",
-    "mail": "info@akfmo.com",
-    "fbLink": "fb.com",
-    "inLink": "in.com",
     "emailButton": "EMAIL",
     "fbButton": "FB",
     "inButton": "IN"
   },
   "contactCity": {
     "title": "Austrian Embassy Address & contacts",
-    "adress": "Starokonyushenniy per. 1 119034 Moscow",
-    "tel": "Tel",
-    "telNumber": "+7 (495) 780 60 66",
-    "fax": "Fax",
-    "faxNumber": "+7 (495) 937 42 69",
-    "mail": "info@akfmo.com",
     "emailButton": "EMAIL",
-    "siteButton": "Website",
-    "siteLink": "akfmo.com"
+    "siteButton": "Website"
   },
   "partners": {
     "title": "Partner & Organizer"
@@ -80,8 +64,13 @@
   "press": {
     "title": "press"
   },
-  "events": {
-    "past": "Past Events",
-    "upcoming": "Upcoming Events"
-  }
+  "eventsPast": "Past Events",
+  "eventsUpcoming": "Upcoming Events",
+  "eventsPastShort": "Past",
+  "eventsUpcomingShort": "Upcoming",
+  "moreEventsPast": "More Past Events",
+  "moreEventsUpcoming": "More Upcoming Events",
+  "menu": "menu",
+  "close": "close",
+  "home": "home"
 }
