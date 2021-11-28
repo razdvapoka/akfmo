@@ -14,7 +14,7 @@ export const EventGrid = ({ events }) => {
   return (
     <div className="grid grid-cols-24 gap-y-16 items-center lg:gap-y-4">
       {events.map((event, index) =>
-        (index + 1) % 6 === 0 ? (
+        (index + 1) % 3 === 0 ? (
           <EventCardBig
             key={`${event._meta.uid}-${index}`}
             className="col-span-full w-screen transform -translate-x-4"
