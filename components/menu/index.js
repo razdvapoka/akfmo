@@ -59,9 +59,9 @@ export const MenuMobile = ({ hasLogoOnTop }) => {
     if (ref.current) {
       const { y } = ref.current.getBoundingClientRect()
       setState((currentState) =>
-        currentState === MENU_INIT && y <= 0
+        currentState === MENU_INIT && Math.round(y) <= 0
           ? MENU_CLOSED
-          : currentState === MENU_CLOSED && y > 0
+          : currentState === MENU_CLOSED && Math.round(y) > 0
           ? MENU_INIT
           : currentState
       )
@@ -102,6 +102,7 @@ export const MenuMobile = ({ hasLogoOnTop }) => {
   }, [updateState])
 
   const [isInverted] = useInvertedContext()
+  console.log(state)
   return (
     <div
       className={cn(
