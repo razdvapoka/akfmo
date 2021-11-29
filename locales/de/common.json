@@ -26,6 +26,7 @@
     "past": "Zu allen vergangenen Events"
   },
   "subscribeForm": {
+    "subscribedError": "something went wrong",
     "title": "Unser Newsletter informiert Sie periodisch über alle wichtigen Veranstaltungen und sonstigen Neuigkeiten rund um das KULTURFORUM MOSKAU.",
     "input": "Ihre Emailadresse",
     "imageAlt": "image",
