@@ -5,7 +5,6 @@ import useTranslation from 'next-translate/useTranslation'
 
 export const Logo = ({ isMain, classNames }) => {
   const { t } = useTranslation('common')
-  let isDarkTheme = false // future: page past events
   return (
     <Link href="/">
       <a
@@ -13,18 +12,12 @@ export const Logo = ({ isMain, classNames }) => {
           'lg:hidden': !isMain,
         })}
         aria-label={t('logotype')}
-        style={{
-          willChange: 'width',
-        }}
       >
         <LogoSvg
-          className={cn(
-            'lg:w-full',
-            {
-              'stroke-white text-white': isDarkTheme,
-            },
-            classNames
-          )}
+          className={cn('lg:w-full', classNames)}
+          style={{
+            willChange: 'width',
+          }}
         />
       </a>
     </Link>

@@ -23,6 +23,7 @@ import { EventInfo } from './event-info'
 import { Partners } from './partners'
 import { Press } from './press'
 import { isPastEvent } from '../../../lib/utils'
+import { usePrevLocationContext } from '../../../lib/contexts'
 
 const htmlSerializer = function (type, element, content, children, key) {
   switch (type) {
@@ -114,15 +115,17 @@ const LeftNav = () => {
   )
 }
 
-const CloseButton = () => {
+const CloseButton = ({ isPast }) => {
   const router = useRouter()
+  const [prevLocation] = usePrevLocationContext()
   const goBack = useCallback(() => {
-    if (window.history.length > 1) {
-      window.history.back()
+    if (prevLocation) {
+      console.log(prevLocation)
+      router.push(prevLocation)
     } else {
-      router.push('/')
+      router.push(isPast ? '/events/past' : '/events')
     }
-  }, [router])
+  }, [router, prevLocation, isPast])
   return (
     <div className="col-start-16 col-end-18 flex justify-end lg:absolute lg:right-2 lg:top-0">
       <button className="w-9 h-9 lg:hidden" onClick={goBack}>
@@ -185,7 +188,7 @@ export const Event = ({ event, events }) => {
           <LeftNav />
           <div className="col-start-4 col-end-22 grid grid-cols-18 lg:flex lg:flex-col">
             <EventHeader title={event.title} tags={event._meta.tags} />
-            <CloseButton />
+            <CloseButton isPast={isPast} />
             <Share url={router.asPath} title={event.title} />
             <Hero image={event.cover} />
             {!isPast && (

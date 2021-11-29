@@ -1,6 +1,6 @@
 import cn from 'classnames'
 import { Logo, Menu } from '.'
-import { useInvertedContext } from '../lib/contexts'
+import { useInvertedContext, useLogoAnimationContext } from '../lib/contexts'
 import { useState, useEffect } from 'react'
 
 const Spacer = () => {
@@ -13,18 +13,21 @@ const Spacer = () => {
 
 export const Header = ({ isMain }) => {
   const [isInverted] = useInvertedContext()
-  const [hasScrolled, setHasScrolled] = useState(false)
+  const [hasLogoBeenAnimated, setHasLogoBeenAnimated] =
+    useLogoAnimationContext()
+  const [hasScrolled, setHasScrolled] = useState(hasLogoBeenAnimated)
 
   useEffect(() => {
     const handleScroll = () => {
       setHasScrolled(true)
+      setHasLogoBeenAnimated(true)
     }
     setTimeout(handleScroll, 1000)
     window.addEventListener('scroll', handleScroll, { once: true })
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [setHasScrolled])
+  }, [setHasScrolled, setHasLogoBeenAnimated])
 
   return (
     <header

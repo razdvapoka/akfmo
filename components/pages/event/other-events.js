@@ -1,8 +1,8 @@
 import cn from 'classnames'
-import Link from 'next/link'
 import useTranslation from 'next-translate/useTranslation'
 import styles from './styles.module.scss'
 import { useEventDateString } from '../../../lib/hooks'
+import { EventLink } from '../..'
 
 const OtherEvent = ({
   _meta: { uid },
@@ -14,19 +14,20 @@ const OtherEvent = ({
 }) => {
   const dateString = useEventDateString(date, endDate)
   return (
-    <Link href={`/events/${uid}`}>
-      <a className={cn('block w-1/2 mb-6 lg:min-w-[75%]', styles.otherEvent)}>
-        {index > 1 && (
-          <hr className={cn(styles.otherEventSeparator, 'mb-6 lg:mb-0')} />
-        )}
-        <div className={cn('', styles.otherEventInnerBox)}>
-          <h3 className="text-xl leading-ml tracking-tighter font-medium mb-8 lg:text-mx">
-            {title}
-          </h3>
-          <div className="text-m leading-m uppercase font-bold tracking-wider">{`${location} | ${dateString}`}</div>
-        </div>
-      </a>
-    </Link>
+    <EventLink
+      href={`/events/${uid}`}
+      className={cn('block w-1/2 mb-6 lg:min-w-[75%]', styles.otherEvent)}
+    >
+      {index > 1 && (
+        <hr className={cn(styles.otherEventSeparator, 'mb-6 lg:mb-0')} />
+      )}
+      <div className={cn('', styles.otherEventInnerBox)}>
+        <h3 className="text-xl leading-ml tracking-tighter font-medium mb-8 lg:text-mx">
+          {title}
+        </h3>
+        <div className="text-m leading-m uppercase font-bold tracking-wider">{`${location} | ${dateString}`}</div>
+      </div>
+    </EventLink>
   )
 }
 
