@@ -3,3 +3,10 @@
     filter: none;
   }
 }
+
+.eventCardImage {
+  @screen lg {
+    object-fit: contain;
+    object-position: center;
+  }
+}
