@@ -28,7 +28,10 @@ export const NavigationList = ({ className }) => {
       {NAV_ITEMS.map(({ title, href }, index) => (
         <li key={index}>
           <Link href={href}>
-            <a className="hover:underline" aria-label={t(title)}>
+            <a
+              className="hover:underline lg:block lg:overflow-hidden lg:overflow-ellipsis"
+              aria-label={t(title)}
+            >
               {t(title)}
             </a>
           </Link>

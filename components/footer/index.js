@@ -22,7 +22,7 @@ export const Footer = () => {
             styles.rightLine
           )}
         >
-          <NavigationList />
+          <NavigationList className="max-w-full" />
         </div>
         <div className="flex items-end border-b pb-4 lg:items-start">
           <SocialList />
