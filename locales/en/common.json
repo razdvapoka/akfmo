@@ -39,7 +39,8 @@
   },
   "buttons": {
     "register": "Register",
-    "openPdf": "open pdf"
+    "openPdf": "open pdf",
+    "link": "Link to the event"
   },
   "share": {
     "twitter": "Share on twitter",

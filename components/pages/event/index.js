@@ -57,8 +57,7 @@ const htmlSerializer = function (type, element, content, children, key) {
       return null
   }
 }
-const RegisterButton = ({ url, className }) => {
-  const { t } = useTranslation('common')
+const RegisterButton = ({ url, className, children }) => {
   return (
     <ButtonLink
       link={url}
@@ -67,7 +66,7 @@ const RegisterButton = ({ url, className }) => {
         className
       )}
     >
-      {t('buttons.register')}
+      {children}
     </ButtonLink>
   )
 }
@@ -154,6 +153,7 @@ const RightNav = () => {
 }
 
 export const Event = ({ event, events }) => {
+  const { t } = useTranslation('common')
   const router = useRouter()
   const isPast = useMemo(() => (event ? isPastEvent(event) : false), [event])
 
@@ -191,11 +191,13 @@ export const Event = ({ event, events }) => {
             <CloseButton isPast={isPast} />
             <Share url={router.asPath} title={event.title} />
             <Hero image={event.cover} />
-            {!isPast && (
+            {event?.eventurl?.url && (
               <RegisterButton
                 className="hidden lg:flex lg:mb-4"
                 url={event.eventurl.url}
-              />
+              >
+                {t(isPast ? 'buttons.link' : 'buttons.register')}
+              </RegisterButton>
             )}
             <div className={cn('col-start-2 col-end-13', styles.richText)}>
               <RichText
@@ -203,11 +205,13 @@ export const Event = ({ event, events }) => {
                 htmlSerializer={htmlSerializer}
               />
             </div>
-            {!isPast && (
+            {event?.eventurl?.url && (
               <RegisterButton
                 className="flex lg:hidden"
                 url={event.eventurl.url}
-              />
+              >
+                {t(isPast ? 'buttons.link' : 'buttons.register')}
+              </RegisterButton>
             )}
             <EventInfo key="event-info-mob" event={event} />
             {event?.partners?.length > 0 && (

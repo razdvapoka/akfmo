@@ -39,7 +39,8 @@
   },
   "buttons": {
     "register": "Registrierung",
-    "openPdf": "das pdf-Datei öffnen"
+    "openPdf": "das pdf-Datei öffnen",
+    "link": "Link zur Veranstaltung"
   },
   "share": {
     "twitter": "Share via witter",

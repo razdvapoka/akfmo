@@ -17,6 +17,10 @@
   margin-top: 1em;
 }
 
+.richText a {
+  text-decoration: underline;
+}
+
 .otherEvent:nth-of-type(odd) > .otherEventInnerBox {
   @apply border-r;
   @apply pr-17;
