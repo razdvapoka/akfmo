@@ -3,6 +3,7 @@ import cn from 'classnames'
 import styles from './styles.module.scss'
 import { useEventDateString } from '../lib/hooks'
 import { EventLink } from '.'
+import { useTp } from '../lib/tp'
 
 export const EventCardBig = ({
   _meta: { uid, tags },
@@ -13,6 +14,7 @@ export const EventCardBig = ({
   location,
   className,
 }) => {
+  const titleTp = useTp(title)
   const dateString = useEventDateString(date, endDate)
   const isLandscape = cover.dimensions.width > cover.dimensions.height
 
@@ -46,7 +48,10 @@ export const EventCardBig = ({
             layout="responsive"
           />
         </div>
-        <h3 className="text-xxl font-medium leading-ml lg:text-ml">{title}</h3>
+        <h3
+          className="text-xxl font-medium leading-ml lg:text-ml"
+          dangerouslySetInnerHTML={{ __html: titleTp }}
+        />
       </div>
       <div className="col-start-17 col-end-24 relative lg:hidden">
         <Image

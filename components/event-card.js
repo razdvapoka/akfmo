@@ -5,6 +5,7 @@ import styles from './styles.module.scss'
 import { useEventDateString } from '../lib/hooks'
 import { EventLink } from '.'
 import { useMeasure } from 'react-use'
+import { useTp } from '../lib/tp'
 
 const getPortraitPaths = (width, height) => {
   return [
@@ -60,6 +61,7 @@ export const EventCard = ({
   className,
   end_date: endDate,
 }) => {
+  const titleTp = useTp(title)
   const [isInverted] = useInvertedContext()
   const dateString = useEventDateString(date, endDate)
 
@@ -113,9 +115,10 @@ export const EventCard = ({
             ))}
           </ul>
         </div>
-        <h3 className="text-xl font-medium leading-ml mt-2 w-4/5 pl-5 lg:w-full lg:p-0 lg:pr-4 lg:pb-6 lg:mt-0 lg:text-ml">
-          {title}
-        </h3>
+        <h3
+          className="text-xl font-medium leading-ml mt-2 w-4/5 pl-5 lg:w-full lg:p-0 lg:pr-4 lg:pb-6 lg:mt-0 lg:text-ml"
+          dangerouslySetInnerHTML={{ __html: titleTp }}
+        />
       </EventLink>
     </div>
   )
