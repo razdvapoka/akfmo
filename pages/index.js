@@ -1,22 +1,13 @@
 import Head from 'next/head'
 import { useMemo } from 'react'
 import useTranslation from 'next-translate/useTranslation'
-import { useToggle } from 'react-use'
 
 import { EventGrid, Layout, Intro, EventSwitcher } from '../components'
 import { getMainPage } from '../lib/api'
-import { isPastEvent } from '../lib/utils'
 
 export default function Index({ data }) {
   const { t } = useTranslation('common')
-  const [viewAll, toggleViewAll] = useToggle(true)
-  const events = useMemo(
-    () =>
-      data.events
-        .map(({ event }) => event)
-        .filter((event) => viewAll || isPastEvent(event)),
-    [data, viewAll]
-  )
+  const events = useMemo(() => data.events.map(({ event }) => event), [data])
 
   return (
     <Layout className="overflow-hidden lg:overflow-visible" isMain>
