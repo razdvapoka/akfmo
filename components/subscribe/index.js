@@ -4,7 +4,7 @@ import cn from 'classnames'
 import useTranslation from 'next-translate/useTranslation'
 import Image from 'next/image'
 import subscribeImage from '../../assets/images/subscribe.jpg'
-import { CheckboxIcon } from '..'
+// import { CheckboxIcon } from '..'
 import TickIcon from '../../assets/svg/tick.svg'
 
 const EMAIL_REGEX =
@@ -12,7 +12,8 @@ const EMAIL_REGEX =
 
 export const Subscribe = () => {
   const [email, setEmail] = useState('')
-  const [isTermsActive, setIsTermsActive] = useToggle(false)
+  // const [isTermsActive, setIsTermsActive] = useToggle(false)
+  const [isSubmitting, setIsSubmitting] = useToggle(false)
   const [isSubscribed, setIsSubscribed] = useToggle(false)
   const [isErrorActive, setIsErrorActive] = useToggle(false)
 
@@ -22,6 +23,7 @@ export const Subscribe = () => {
     (e) => {
       e.preventDefault()
       if (isEmailValid) {
+        setIsSubmitting(true)
         fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/subscribe`, {
           method: 'POST',
           headers: {
@@ -42,9 +44,19 @@ export const Subscribe = () => {
           .catch(() => {
             setIsErrorActive(true)
           })
+          .finally(() => {
+            setIsSubmitting(false)
+          })
       }
     },
-    [email, isEmailValid, setIsSubscribed, setIsErrorActive, setEmail]
+    [
+      email,
+      isEmailValid,
+      setIsSubscribed,
+      setIsErrorActive,
+      setEmail,
+      setIsSubmitting,
+    ]
   )
 
   const handleEmailChange = useCallback(
@@ -55,9 +67,9 @@ export const Subscribe = () => {
     [setEmail, setIsErrorActive]
   )
 
-  const handleTermsChange = (e) => {
-    setIsTermsActive(e.target.value)
-  }
+  // const handleTermsChange = (e) => {
+  //   setIsTermsActive(e.target.value)
+  // }
 
   const { t } = useTranslation('common')
 
@@ -82,7 +94,7 @@ export const Subscribe = () => {
               )}
               name="email"
               required
-              disabled={isSubscribed}
+              disabled={isSubscribed || isSubmitting}
               placeholder={t('subscribeForm.input')}
               value={email}
               onChange={handleEmailChange}
@@ -106,7 +118,7 @@ export const Subscribe = () => {
                   'bg-grey3 w-4 align-middle text-center',
                   isErrorActive
                     ? 'text-red pointer-events-none'
-                    : isEmailValid && isTermsActive
+                    : isEmailValid && !isSubmitting // && isTermsActive
                     ? 'cursor-pointer'
                     : 'pointer-events-none'
                 )}
@@ -115,8 +127,8 @@ export const Subscribe = () => {
               />
             )}
           </label>
-          <div className="flex justify-between items-baseline mt-1 lg:mt-0 lg:flex-col">
-            <label
+          <div className="flex justify-end items-baseline mt-1 lg:mt-0 lg:flex-col">
+            {/* <label
               className={cn(
                 'lg:text-xs flex items-center cursor-pointer select-none font-medium',
                 {
@@ -133,7 +145,7 @@ export const Subscribe = () => {
               />
               <CheckboxIcon checked={isTermsActive} className="mr-1" />
               <span dangerouslySetInnerHTML={{ __html: t('terms') }} />
-            </label>
+            </label> */}
             <div
               className={cn('leading-m font-medium text-xs lg:mt-1', {
                 'text-red': isErrorActive,

@@ -102,7 +102,6 @@ export const MenuMobile = ({ hasLogoOnTop }) => {
   }, [updateState])
 
   const [isInverted] = useInvertedContext()
-  console.log(state)
   return (
     <div
       className={cn(

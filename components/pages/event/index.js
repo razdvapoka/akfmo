@@ -119,7 +119,6 @@ const CloseButton = ({ isPast }) => {
   const [prevLocation] = usePrevLocationContext()
   const goBack = useCallback(() => {
     if (prevLocation) {
-      console.log(prevLocation)
       router.push(prevLocation)
     } else {
       router.push(isPast ? '/events/past' : '/events')

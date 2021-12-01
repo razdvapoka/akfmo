@@ -12,7 +12,7 @@ const getColStart = (index) => {
 
 export const EventGrid = ({ events }) => {
   return (
-    <div className="grid grid-cols-24 gap-y-16 items-center lg:gap-y-4">
+    <div className="grid grid-cols-24 gap-y-16 items-center lg:gap-y-6">
       {events.map((event, index) =>
         (index + 1) % 6 === 0 ? (
           <EventCardBig
