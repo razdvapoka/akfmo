@@ -29,7 +29,7 @@ export default function Index({ data }) {
           {t('events')}
         </h2>
         <EventGrid events={events} />
-        <EventSwitcher viewAll={viewAll} toggleViewAll={toggleViewAll} />
+        <EventSwitcher />
       </section>
     </Layout>
   )
