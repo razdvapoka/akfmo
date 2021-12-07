@@ -6,11 +6,11 @@ import { getAbout } from '../lib/api'
 import styles from './styles.module.scss'
 import cn from 'classnames'
 
-const htmlSerializer = function (type, element) {
+const htmlSerializer = function (type, element, content, children, key) {
   switch (type) {
     case 'image':
       return (
-        <figure className="w-3/5 lg:w-full">
+        <figure key={key} className="w-3/5 lg:w-full">
           <Image
             src={element.url}
             width={element.dimensions.width}

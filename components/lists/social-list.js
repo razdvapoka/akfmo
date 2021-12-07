@@ -12,6 +12,11 @@ const SOCIAL_ITEMS = [
     href: 'https://www.facebook.com/akfmow',
     isExternal: true,
   },
+  {
+    title: 'social.youtube',
+    href: 'https://www.youtube.com/channel/UCFULm4xEvpNhfE8GGzOQvPg',
+    isExternal: true,
+  },
 ]
 
 export const SocialList = () => {
