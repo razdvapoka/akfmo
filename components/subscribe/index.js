@@ -24,7 +24,7 @@ export const Subscribe = () => {
       e.preventDefault()
       if (isEmailValid) {
         setIsSubmitting(true)
-        fetch(`${process.env.NEXT_PUBLIC_BASE_URL}en/api/subscribe`, {
+        fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/subscribe`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
