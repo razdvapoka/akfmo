@@ -1,5 +1,6 @@
 import { EventCard, EventCardBig } from './'
 import cn from 'classnames'
+import { useMemo } from 'react'
 
 const getColStart = (index) => {
   const remainder = (index + 1) % 3
@@ -11,9 +12,13 @@ const getColStart = (index) => {
 }
 
 export const EventGrid = ({ events }) => {
+  const sortedEvents = useMemo(
+    () => events.sort((event1, event2) => (event1.date < event2.date ? 1 : -1)),
+    [events]
+  )
   return (
     <div className="grid grid-cols-24 gap-y-16 items-center lg:gap-y-6">
-      {events.map((event, index) =>
+      {sortedEvents.map((event, index) =>
         (index + 1) % 6 === 0 ? (
           <EventCardBig
             key={`${event._meta.uid}-${index}`}
