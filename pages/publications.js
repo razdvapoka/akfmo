@@ -19,13 +19,15 @@ export default function PublicationsPage({ data }) {
   )
 }
 
+const isEmpty = (obj) => Object.keys(obj).length === 0
+
 export async function getStaticProps(context) {
   const data = await getPublications(context.locale)
   return {
     props: {
-      data: data.publications_page.publications.map(
-        ({ publication }) => publication
-      ),
+      data: data.publications_page.publications
+        .map(({ publication }) => publication)
+        .filter((publication) => !isEmpty(publication)),
     },
     revalidate: 60,
   }

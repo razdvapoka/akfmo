@@ -14,15 +14,17 @@ export const Publications = ({ publications }) => {
       <div className="pr-4 w-1/2 lg:hidden min-h-screen">
         <div className="py-4 border-t h-full">
           <div className="w-2/3 mx-auto sticky top-4">
-            <Image
-              key={publicationIndex}
-              src={publication.cover.url}
-              alt={publication.title}
-              layout="responsive"
-              width={publication.cover.dimensions.width}
-              height={publication.cover.dimensions.height}
-              objectFit="cover"
-            />
+            {publication.cover && (
+              <Image
+                key={publicationIndex}
+                src={publication.cover.url}
+                alt={publication.title}
+                layout="responsive"
+                width={publication.cover.dimensions.width}
+                height={publication.cover.dimensions.height}
+                objectFit="cover"
+              />
+            )}
           </div>
         </div>
       </div>

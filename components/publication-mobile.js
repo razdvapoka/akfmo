@@ -13,17 +13,27 @@ export const PublicationMobile = ({ item }) => {
       </header>
       <div className="py-4">
         <div className="w-2/3 mx-auto">
-          <Image
-            src={item.cover.url}
-            alt={item.title}
-            layout="responsive"
-            width={item.cover.dimensions.width}
-            height={item.cover.dimensions.height}
-            objectFit="cover"
-          />
+          {item.cover && (
+            <Image
+              src={item.cover.url}
+              alt={item.title}
+              layout="responsive"
+              width={item.cover.dimensions.width}
+              height={item.cover.dimensions.height}
+              objectFit="cover"
+            />
+          )}
         </div>
       </div>
-      <Link href={item.externallink ? item.externallink.url : item.file.url}>
+      <Link
+        href={
+          item.externallink
+            ? item.externallink.url
+            : item.file
+            ? item.file.url
+            : ''
+        }
+      >
         <a
           className="flex cursor-pointer py-3 border justify-center rounded-full"
           target="_blank"
