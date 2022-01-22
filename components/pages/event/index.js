@@ -181,8 +181,10 @@ export const Event = ({ event, events }) => {
       ) : (
         <article className="grid grid-cols-24 pt-8 lg:pt-0 lg:mt-2 lg:px-2 lg:flex lg:flex-col lg:border-l lg:border-r lg:relative">
           <Head>
-            <title>event</title>
-            <meta property="og:image" content={event.cover.url} />
+            <title>{event.title}</title>
+            {event?.cover?.url && (
+              <meta property="og:image" content={event.cover.url} />
+            )}
           </Head>
           <LeftNav />
           <div className="col-start-4 col-end-22 grid grid-cols-18 lg:flex lg:flex-col">

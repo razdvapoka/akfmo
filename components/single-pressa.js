@@ -15,7 +15,7 @@ export const SinglePressa = ({ pressa }) => {
           <div className="flex justify-between w-full">
             {RichText.render(pressa.title)}
             <span className="lg:w-1/4 lg:text-right">
-              <span className="lg:hidden">{t('buttons.openPdf')}</span> ↓
+              <span className="lg:hidden">{t('buttons.open')}</span> ↓
             </span>
           </div>
         </a>

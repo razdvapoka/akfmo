@@ -41,6 +41,7 @@
   "buttons": {
     "register": "Registrierung",
     "openPdf": "das pdf-Datei öffnen",
+    "open": "öffnen",
     "link": "Link zur Veranstaltung"
   },
   "share": {
