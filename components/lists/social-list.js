@@ -3,16 +3,6 @@ import useTranslation from 'next-translate/useTranslation'
 
 const SOCIAL_ITEMS = [
   {
-    title: 'social.instagram',
-    href: 'https://instagram.com/akf_mow',
-    isExternal: true,
-  },
-  {
-    title: 'social.facebook',
-    href: 'https://www.facebook.com/akfmow',
-    isExternal: true,
-  },
-  {
     title: 'social.youtube',
     href: 'https://www.youtube.com/channel/UCFULm4xEvpNhfE8GGzOQvPg',
     isExternal: true,

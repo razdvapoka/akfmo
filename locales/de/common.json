@@ -13,8 +13,6 @@
     "contact": "Kontakt"
   },
   "social": {
-    "instagram": "Instagram",
-    "facebook": "Facebook",
     "youtube": "YouTube",
     "visitUs": "Visit Us"
   },
@@ -46,7 +44,6 @@
   },
   "share": {
     "twitter": "Share via witter",
-    "facebook": "Share via facebook",
     "telegram": "Share via telegram",
     "share": "Share"
   },

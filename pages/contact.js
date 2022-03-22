@@ -3,15 +3,7 @@ import { CityContact, Layout, LocaleContact } from '../components'
 import { getContacts } from '../lib/api'
 
 export default function Contact({
-  data: {
-    address,
-    embassy,
-    facebook,
-    instagram,
-    email,
-    embassyemail,
-    embassyurl,
-  },
+  data: { address, embassy, email, embassyemail, embassyurl },
 }) {
   return (
     <Layout>
@@ -22,12 +14,7 @@ export default function Contact({
         <h1 className="hidden lg:flex border-t py-4 items-center justify-center text-m uppercase font-bold">
           contact us
         </h1>
-        <LocaleContact
-          address={address}
-          facebookUrl={facebook.url}
-          instagramUrl={instagram.url}
-          email={email.url}
-        />
+        <LocaleContact address={address} email={email.url} />
         <CityContact
           embassy={embassy}
           email={embassyemail.url}

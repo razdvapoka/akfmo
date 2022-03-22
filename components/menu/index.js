@@ -162,27 +162,11 @@ export const MenuMobile = ({ hasLogoOnTop }) => {
           </Link>
           <NavigationList className="text-center text-mxx space-y-2 font-bold" />
           <div className="mt-auto flex justify-between space-x-2 text-m font-bold tracking-wider">
-            <a
-              className="block w-17 text-center"
-              href="https://www.instagram.com/akf_mow/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              inst
-            </a>
             <Link href="/#subscribe">
               <a className="block w-17 text-center" onClick={toggleMenu}>
                 {t('subscribe')}
               </a>
             </Link>
-            <a
-              className="block w-17 text-center"
-              href="https://www.facebook.com/akfmow"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              fb
-            </a>
           </div>
         </div>
       </div>

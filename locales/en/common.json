@@ -13,8 +13,6 @@
     "contact": "Contact Us"
   },
   "social": {
-    "instagram": "Instagram",
-    "facebook": "Facebook",
     "youtube": "YouTube",
     "visitUs": "Visit Us"
   },
@@ -46,7 +44,6 @@
   },
   "share": {
     "twitter": "Share on twitter",
-    "facebook": "Share on facebook",
     "telegram": "Share on telegram",
     "share": "share"
   },

@@ -4,12 +4,7 @@ import AboutEllipse from '../assets/svg/about-ellipse.svg'
 import AboutEllipseMob from '../assets/svg/about-ellipse-m.svg'
 import { RichText } from 'prismic-reactjs'
 
-export const LocaleContact = ({
-  address,
-  email,
-  facebookUrl,
-  instagramUrl,
-}) => {
+export const LocaleContact = ({ address, email }) => {
   const { t } = useTranslation('common')
   return (
     <div className="flex pb-4 lg:flex-col lg:pb-6">
@@ -26,18 +21,6 @@ export const LocaleContact = ({
             className="w-1/2 h-24 mr-4 lg:w-[15.6rem] lg:h-10 lg:mr-2"
           >
             {t('contactLocale.emailButton')}
-          </ButtonLink>
-          <ButtonLink
-            link={facebookUrl}
-            className="w-24 h-24 mr-4 rounded-full lg:w-10 lg:h-10 lg:mr-2"
-          >
-            {t('contactLocale.fbButton')}
-          </ButtonLink>
-          <ButtonLink
-            link={instagramUrl}
-            className="w-24 h-24 rounded-full lg:w-10 lg:h-10"
-          >
-            {t('contactLocale.inButton')}
           </ButtonLink>
         </div>
       </div>

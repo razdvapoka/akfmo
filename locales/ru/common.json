@@ -13,8 +13,6 @@
     "contact": "Контакты"
   },
   "social": {
-    "instagram": "Instagram",
-    "facebook": "Facebook",
     "youtube": "YouTube",
     "visitUs": "Visit Us"
   },
@@ -46,7 +44,6 @@
   },
   "share": {
     "twitter": "поделиться в twitter",
-    "facebook": "поделиться в facebook",
     "telegram": "поделиться в telegram",
     "share": "поделиться"
   },
